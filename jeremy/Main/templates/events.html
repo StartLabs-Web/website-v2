@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upcoming Events</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css"
+      href="{{url_for('static', filename='styles/bootstrap.css')}}"/>
+    <link rel="stylesheet" type="text/css"
+      href="{{url_for('static', filename='styles/main.css')}}"/>
+  </head>
+  <body>
+    <table>
+    {%if events%}
+    {%for event in events%}
+    <tr>
+      <td>
+        <h3>{{event['summary']}}</h3>
+        <p>{{event['summary']}}</p>
+      </td>
+    </tr>
+    {%endfor%}
+    {%else%}
+    <li>No upcoming Events </li>
+    {%endif%}
+    </ol>
+  </body>
+</html>
