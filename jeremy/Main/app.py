@@ -1,15 +1,31 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 import datetime
 from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
+import os
 
 app = Flask(__name__)
+
+# For debugging only
+@app.context_processor
+def override_url_for():
+    return dict(url_for=dated_url_for)
+
+def dated_url_for(endpoint, **values):
+    if endpoint == 'static':
+        filename = values.get('filename', None)
+        if filename:
+            file_path = os.path.join(app.root_path,
+                                 endpoint, filename)
+            values['q'] = int(os.stat(file_path).st_mtime)
+    return url_for(endpoint, **values)
 
 # Index Page
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 # Events Page
 @app.route('/events')
@@ -28,10 +44,11 @@ def getUpcomingEvents(num_events):
     calendarId = 'e5bo6318kog0sq0u66tqpqn5l4@group.calendar.google.com'
 
     # Authentication
-    store = file.Storage('token.json')
+    rootDir = os.path.dirname(os.path.abspath(__file__))
+    store = file.Storage(os.path.join(rootDir, 'token.json'))
     creds = store.get()
     if not creds or creds.invalid:
-        flow = client.flow_from_clientsecrets('credentials.json', SCOPES)
+        flow = client.flow_from_clientsecrets(os.path.join(rootDir, 'credentials.json'), SCOPES)
         creds = tools.run_flow(flow, store)
     service = build('calendar', 'v3', http=creds.authorize(Http()))
 
