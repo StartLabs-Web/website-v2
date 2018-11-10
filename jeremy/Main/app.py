@@ -53,10 +53,10 @@ def getStringForEventTimeRange(event):
 
         if start.date() == end.date():
             # One day event
-            return start.strftime("%d %B %Y, %I:%M%p") + " – " + end.strftime("%I:%M%p")
+            return start.strftime("%d %B %Y, %I:%M %p") + " – " + end.strftime("%I:%M %p")
         else:
             # One day event
-            return start.strftime("%d %B %Y, %I:%M%p") + " – " + end.strftime("%d %B %Y, %I:%M%p")
+            return start.strftime("%d %B %Y, %I:%M %p") + " – " + end.strftime("%d %B %Y, %I:%M %p")
 # Gets events from google calendar
 # Returns array of specified length or total number of upcoming events
 # Based on https://developers.google.com/calendar/quickstart/python

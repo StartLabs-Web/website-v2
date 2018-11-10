@@ -28,9 +28,11 @@
             </svg> <span>{{getStringForEventTimeRange(event)}}</span>
           </div></td>
           <td style="width:25%">
-            <img src="https://image.flaticon.com/icons/svg/63/63349.svg" width="20" height="20"/> 
-            {{event['location']}}<div>
-          </div></td>
+            {%if event['location']%}
+            <img src="https://image.flaticon.com/icons/svg/63/63349.svg" width="20" height="20"/>
+            {{event['location']}}
+            {%endif%}
+          </td>
 
         </tr>
         {%endfor%}
