@@ -4,6 +4,7 @@ from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
 import os
+from dateutil import parser
 
 app = Flask(__name__)
 
@@ -30,8 +31,32 @@ def index():
 # Events Page
 @app.route('/events')
 def events():
-    return render_template('events.html', events=getUpcomingEvents(5))
+    return render_template('events.html', events=getUpcomingEvents(5), getStringForEventTimeRange=getStringForEventTimeRange)
 
+# Gets date range string from event
+# i.e. 05 November 2018, 3:00 PM - 4:00 PM
+def getStringForEventTimeRange(event):
+    if 'date' in event['start']:
+        # All day event
+        start = datetime.datetime.strptime(event['start']['date'], "%Y-%m-%d")
+        end = datetime.datetime.strptime(event['end']['date'], "%Y-%m-%d") - datetime.timedelta(days=1)
+        if start.date() == end.date():
+            # One day event
+            return start.strftime("%d %B %Y")
+        else:
+            # One day event
+            return start.strftime("%d %B %Y") + " – " + end.strftime("%d %B %Y")
+    else:
+        # Not all day event
+        start = datetime.datetime.strptime(event['start']['dateTime'][:-6], "%Y-%m-%dT%H:%M:%S")
+        end = datetime.datetime.strptime(event['end']['dateTime'][:-6], "%Y-%m-%dT%H:%M:%S")
+
+        if start.date() == end.date():
+            # One day event
+            return start.strftime("%d %B %Y, %I:%M%p") + " – " + end.strftime("%I:%M%p")
+        else:
+            # One day event
+            return start.strftime("%d %B %Y, %I:%M%p") + " – " + end.strftime("%d %B %Y, %I:%M%p")
 # Gets events from google calendar
 # Returns array of specified length or total number of upcoming events
 # Based on https://developers.google.com/calendar/quickstart/python

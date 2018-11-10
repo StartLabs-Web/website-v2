@@ -24,6 +24,10 @@ p {
 table {
     width: 100%;
 }
+
+div {
+    align-items: center;
+}
 .icon {
     vertical-align:middle;
 }
