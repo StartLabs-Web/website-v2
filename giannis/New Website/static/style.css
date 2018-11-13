@@ -1,0 +1,97 @@
+body, html {
+
+    height: 100%;
+    margin: 0;
+}
+
+.animation {
+
+    animation:fadeInDown 2s;
+    -moz-animation:fadeInDown 2s;
+    -webkit-animation:fadeInDown 2s;
+    -o-animation:fadeInDown 2s;
+
+}
+
+.top-background {
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/image.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+
+@-webkit-keyframes fadeInDown {
+
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -10%, 0);
+      transform: translate3d(0, -10%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+.top-background #motto {
+
+    color: #fff;
+    text-align: center;
+    padding-top: 40px;
+    font-size:3.5em;
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 300;
+
+}
+
+.top-background img {
+
+    height: 100px;
+    width: 100px;
+    margin-left: 45%;
+    margin-top: 10%;
+}
+
+.top-background input  {
+
+    margin-top: 50px;
+    margin-left: 28%;
+    height: 50px;
+    width: 320px;
+    vertical-align: top;
+    padding-left: 20px;
+    font-size: 20px;
+
+}
+
+.top-background button {
+
+    cursor: pointer;
+    height: 60px;
+    width: 100px;
+    background-color: #61ce78;
+    color: #ffffff!important;
+    border-color: #406740;
+    margin-top: 50px;
+    margin-left: 20px;
+    border-radius: 4px;
+    height: 60px;
+    width: 160px;
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+
+.top-background button:hover {
+
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

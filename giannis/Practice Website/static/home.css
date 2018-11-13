@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
+@import url('https://fonts.googleapis.com/css?family=Niconne');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.top-background {
+    background: url(images/large-bg.jpg) center;
+    background-size: cover;
+      
+    text-align: center;
+    color: white;
+    padding: 70px 0;
+}
+
+.top-background #title {
+    font-weight: bold;
+    font-style: normal;
+    font-size: 68px;
+    text-transform: uppercase;
+    line-height: 1em;
+    color: #fff;
+    padding: 20px;
+    letter-spacing: 0.0588235em;
+}
+
+.top-background button {
+    border-radius: 300px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 1.75em;
+    background-color: #36b3a8;
+    display: inline-block;
+    line-height: 1em;
+    margin: 10px 0;
+    color: #fff;
+    border: none;
+}
+
+.first-section #title{
+    padding: 30px;
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.first-section #body {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    letter-spacing: 0px;
+    line-height: 1.6em;
+    color: rgba(26,26,26,.7);
+    font-family: 'Cormorant Garamond', serif;
+    display: block;
+    text-align: center; 
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 30px;
+}
+
+.footer {
+    text-align: center; 
+    padding: 64px 32px;
+    box-sizing: border-box;
+    margin: auto;
+    display: block;
+    color: rgba(255,255,255,.4);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    letter-spacing: 0px;
+    line-height: 1.6em;
+    background-color: #000;
+    color: #fff;
+}
