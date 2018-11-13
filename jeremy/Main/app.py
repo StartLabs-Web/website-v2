@@ -33,6 +33,11 @@ def index():
 def events():
     return render_template('events.html', events=getUpcomingEvents(5), getStringForEventTimeRange=getStringForEventTimeRange)
 
+# Mission Statement Page
+@app.route('/mission')
+def mission():
+    return render_template('mission-statement.html')
+
 # Gets date range string from event
 # i.e. 05 November 2018, 3:00 PM - 4:00 PM
 def getStringForEventTimeRange(event):
@@ -44,7 +49,7 @@ def getStringForEventTimeRange(event):
             # One day event
             return start.strftime("%d %B %Y")
         else:
-            # One day event
+            # Multiple day event
             return start.strftime("%d %B %Y") + " – " + end.strftime("%d %B %Y")
     else:
         # Not all day event
@@ -55,8 +60,9 @@ def getStringForEventTimeRange(event):
             # One day event
             return start.strftime("%d %B %Y, %I:%M %p") + " – " + end.strftime("%I:%M %p")
         else:
-            # One day event
+            # Multiple day event
             return start.strftime("%d %B %Y, %I:%M %p") + " – " + end.strftime("%d %B %Y, %I:%M %p")
+
 # Gets events from google calendar
 # Returns array of specified length or total number of upcoming events
 # Based on https://developers.google.com/calendar/quickstart/python
@@ -84,11 +90,6 @@ def getUpcomingEvents(num_events):
                                         orderBy='startTime').execute()
     events = events_result.get('items', [])
     return events
-    # if not events:
-    #     print('No upcoming events found.')
-    # for event in events:
-    #     start = event['start'].get('dateTime', event['start'].get('date'))
-    #     print(start, event['summary'])
 
 if __name__ == '__main__':
     app.run(debug=True)
