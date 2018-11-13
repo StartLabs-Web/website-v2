@@ -1,0 +1,37 @@
+table {
+    clear: both;
+    list-style-type: none;
+    margin-top: 12px !important;
+    margin-right: 0px !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px !important;
+    padding-left: 0;
+}
+tr {
+    border-bottom: 1px solid rgba(215,215,215,0.7);
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    text-align: left;
+    vertical-align: middle;
+}
+td {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+p {
+    vertical-align: middle;
+}
+table {
+    width: 100%;
+}
+
+div {
+    align-items: center;
+}
+.icon {
+    vertical-align:middle;
+}
+.events_padding {
+    width:100%;
+    padding:20px;
+}
