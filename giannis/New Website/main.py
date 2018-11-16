@@ -2,9 +2,8 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
 @app.route('/')
-def function():
+def home():
     return render_template('web.html')
 
     
