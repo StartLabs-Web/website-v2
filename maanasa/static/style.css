@@ -1,0 +1,32 @@
+
+body {
+    margin: 0;
+}
+.about {
+    font-family:'Open Sans',Arial,sans-serif;
+    background:#FFF;
+    color:#141a1d;
+}
+.about-section {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+.horizontal {
+    float: left;
+    text-align:center;
+    font-family: Verdana,Geneva,sans-serif;
+    box-sizing:border-box;
+    width: 25%;
+    padding-top: 2%;
+    padding-right: 2%;
+    padding-left: 2%;
+    color:#384047;
+}
+.about-section-title {
+    background-image: url(images/startup.jpg);
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    text-align:center;
+    color:#FFF;
+}
