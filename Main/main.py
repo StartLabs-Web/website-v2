@@ -11,6 +11,10 @@ def new_version():
 def old_version():
     return render_template('old/indexold.html')
 
+@app.route('/email')
+def old_email():
+    return render_template('old/email.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 
