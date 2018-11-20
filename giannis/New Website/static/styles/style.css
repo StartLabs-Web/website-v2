@@ -1,7 +1,8 @@
 body, html {
 
-    height: 100%;
     margin: 0;
+    font-family: 'Open Sans',Arial,sans-serif;
+    background-color: lightblue;
 }
 
 .animation {
@@ -16,11 +17,10 @@ body, html {
 .top-background {
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/image.jpg);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    background-position: center;
+    background-attachment: fixed;
+
 
 }
 
@@ -43,47 +43,46 @@ body, html {
 
     color: #fff;
     text-align: center;
-    padding-top: 40px;
-    font-size:3.5em;
-    font-family: "Montserrat", "sans-serif";
+    font-size: 4em;
     font-weight: 300;
+    padding-top: 5%;
 
 }
 
 .top-background img {
 
-    height: 200px;
-    width: 450px;
-    margin-left: 30%;
-    margin-top: 10%;
+    height: 250px;
+    width: 400px;
+    padding-top: 5%;
+    cursor: pointer;
 }
 
 .top-background input  {
 
-    margin-top: 50px;
-    margin-left: 28%;
-    height: 50px;
-    width: 320px;
+    margin-top: 5%;
+    height: 70px;
+    width: 600px;
     vertical-align: top;
-    padding-left: 20px;
-    font-size: 20px;
+    font-size: 35px;
+    padding-left: 15px;
+    background-color: #F7F0F0;
+    border-radius: 6px;
+    margin-bottom: 10%;
 
 }
 
 .top-background button {
 
     cursor: pointer;
-    height: 60px;
-    width: 100px;
+    height: 80px;
+    width: 250px;
+    margin-left: 1%;
     background-color: #61ce78;
     color: #ffffff!important;
     border-color: #406740;
-    margin-top: 50px;
-    margin-left: 20px;
-    border-radius: 4px;
-    height: 60px;
-    width: 160px;
-    font-size: 20px;
+    margin-top: 5%;
+    border-radius: 6px;
+    font-size: 30px;
     font-weight: 300;
     text-transform: uppercase;
     text-align: center;
