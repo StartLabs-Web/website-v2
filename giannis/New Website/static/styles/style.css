@@ -1,8 +1,8 @@
 body, html {
 
     margin: 0;
+    overflow: auto;
     font-family: 'Open Sans',Arial,sans-serif;
-    background-color: lightblue;
 }
 
 .animation {
@@ -20,7 +20,7 @@ body, html {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
+    margin-top: -2%;
 
 }
 
@@ -43,8 +43,7 @@ body, html {
 
     color: #fff;
     text-align: center;
-    font-size: 4em;
-    font-weight: 300;
+    font-size: 3em;
     padding-top: 5%;
 
 }
@@ -60,29 +59,30 @@ body, html {
 .top-background input  {
 
     margin-top: 5%;
-    height: 70px;
-    width: 600px;
+    height: 50px;
+    width: 400px;
     vertical-align: top;
-    font-size: 35px;
+    font-size: 25px;
     padding-left: 15px;
     background-color: #F7F0F0;
     border-radius: 6px;
     margin-bottom: 10%;
+    font-weight: 300;
 
 }
 
 .top-background button {
 
     cursor: pointer;
-    height: 80px;
-    width: 250px;
+    height: 60px;
+    width: 180px;
     margin-left: 1%;
     background-color: #61ce78;
     color: #ffffff!important;
     border-color: #406740;
     margin-top: 5%;
     border-radius: 6px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 300;
     text-transform: uppercase;
     text-align: center;
