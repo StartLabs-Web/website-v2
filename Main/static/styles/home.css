@@ -3,6 +3,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
 
+
+/********************************************************/
+/* Leon's CSS - General Website Setup and Sample Section*/
+/********************************************************/
+
 body, html {
     height: 100%;
     margin: 0;
@@ -88,7 +93,10 @@ body, html {
     background-color: #000;
     color: #fff;
 }
+
+/*********************/
 /* Stuart's CSS - FAQ*/
+/*********************/
 #title {
     text-align: center;
 }
@@ -106,7 +114,10 @@ div.inner {
     padding:20px;
 }
 
+/*************8*******************/
 /* Maanasa's CSS - About Section */
+/*********************************/
+
 .about {
     font-family:'Open Sans',Arial,sans-serif;
     background:#FFF;
