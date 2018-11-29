@@ -70,9 +70,9 @@ def getUpcomingEvents(num_events):
     # indicates readonly access to calendar api
     SCOPES = 'https://www.googleapis.com/auth/calendar.readonly'
     # id of startlabs calendar
-    # calendarId = 'startlabs.management@gmail.com'
+    calendarId = 'startlabs.management@gmail.com'
     # temporarily using other calendar because startlabs one is empty :(
-    calendarId = 'e5bo6318kog0sq0u66tqpqn5l4@group.calendar.google.com'
+    # calendarId = 'e5bo6318kog0sq0u66tqpqn5l4@group.calendar.google.com'
 
     # Authentication
     rootDir = os.path.dirname(os.path.abspath(__file__))
