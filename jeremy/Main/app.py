@@ -31,7 +31,7 @@ def index():
 # Events Page
 @app.route('/events')
 def events():
-    return render_template('events.html', events=getUpcomingEvents(5), getStringForEventTimeRange=getStringForEventTimeRange)
+    return render_template('events.html', events=getUpcomingEvents(5, 3), getStringForEventTimeRange=getStringForEventTimeRange)
 
 # Mission Statement Page
 @app.route('/mission')
@@ -66,15 +66,15 @@ def getStringForEventTimeRange(event):
 # Gets events from google calendar
 # Returns array of specified length or total number of upcoming events
 # Based on https://developers.google.com/calendar/quickstart/python
-def getUpcomingEvents(num_events):
+def getUpcomingEvents(num_future, num_past):
     # indicates readonly access to calendar api
-    SCOPES = 'https://www.googleapis.com/auth/calendar.readonly'
+    SCOPES = 'https://www.googeeleapis.com/auth/calendar.readonly'
     # id of startlabs calendar
     calendarId = 'startlabs.management@gmail.com'
-    # temporarily using other calendar because startlabs one is empty :(
+    # for debugging only, use to test without changing active startlabs calendar
     # calendarId = 'e5bo6318kog0sq0u66tqpqn5l4@group.calendar.google.com'
 
-    # Authentication
+    # Authentication using Google CalendarAPi
     rootDir = os.path.dirname(os.path.abspath(__file__))
     store = file.Storage(os.path.join(rootDir, 'token.json'))
     creds = store.get()
@@ -86,9 +86,15 @@ def getUpcomingEvents(num_events):
     # Call the Calendar API and fetch events
     now = datetime.datetime.now().isoformat() + 'Z' # 'Z' indicates UTC time
     events_result = service.events().list(calendarId=calendarId, timeMin=now,
-                                        maxResults=num_events, singleEvents=True,
+                                        maxResults=num_future, singleEvents=True,
                                         orderBy='startTime').execute()
-    events = events_result.get('items', [])
+    future_events = events_result.get('items', [])
+
+    events_result = service.events().list(calendarId=calendarId, timeMax=now,
+                                        singleEvents=True, orderBy='startTime').execute()
+    past_events = events_result.get('items', [])
+    past_events = past_events[len(past_events)-num_past:]
+    events = past_events + future_events
     return events
 
 if __name__ == '__main__':

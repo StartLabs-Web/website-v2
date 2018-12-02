@@ -35,3 +35,10 @@ div {
     width:100%;
     padding:20px;
 }
+
+.logo-plus-button-lockup-text {
+    font-family: "Product Sans", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    opacity: 0.54;
+    color: black;
+}
