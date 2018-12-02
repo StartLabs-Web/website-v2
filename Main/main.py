@@ -4,7 +4,6 @@ from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
 import os
-from dateutil import parser
 
 app = Flask(__name__)
 
