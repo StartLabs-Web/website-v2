@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="{{url_for('static', filename='styles/home.css')}}">
     </head>
     <body>
-        
+
 
         {% include "top.html" ignore missing %}
 
@@ -23,10 +23,13 @@
 
         {% include "about.html" ignore missing %}
         <br><br>
+
+        {% include "events.html" ignore missing with context%}
+
         <hr>
         {% include "faq.html" ignore missing %}
 
-        
+
 
         <!-- Footer Section -->
         <div class="footer">
