@@ -6,6 +6,9 @@
 	<meta name="description" content="">
 	<title>StartLabs</title>
 
+	
+	
+
 	<link href="{{url_for('static', filename='old/css/bootstrap.css')}}" rel="stylesheet">
 	<link href="{{url_for('static', filename='old/css/main.css')}}" rel="stylesheet">
 
@@ -31,8 +34,9 @@
 			</a>
 	</div>
 
-	<!-- <div style="text-align: center;">
+	<div style="text-align: center;">
 	    <div style="display: inline-block; text-align: left;">
+				<!-- <form method="POST" action="https://formspree.io/startlabs-contact@mit.edu"> -->
 				<form method="POST" onSubmit="return onSubmitForm();" name="email-form">
 	      	<input type="email" class="form-control" name="email" placeholder="Your email">
 					<br>
@@ -56,33 +60,43 @@
 		    </form>
 
 	    </div>
-	</div> -->
-
-	<center style="font-size: 2em">
-		<div>
-			<a href="mailto:startlabs-contact@mit.edu">Contact</a> startlabs-contact@mit.edu
-			<br>
-			<a href="mailto:startlabs-finance@mit.edu">Finance</a> startlabs-finance@mit.edu
-			<br>
-			<a href="mailto:startlabs-innovate@mit.edu">Innovate</a> startlabs-innovate@mit.edu
-			<br>
-			<a href="mailto:startlabs-large-events@mit.edu">Large Events</a> startlabs-large-events@mit.edu
-			<br>
-			<a href="mailto:startlabs-tech-treks@mit.edu">TechTreks</a> startlabs-tech-treks@mit.edu
-			<br>
-			<a href="mailto:incube@mit.edu">Incube</a> incube@mit.edu
-			<br><br>
-			We'll get back to you as soon as possible!		
-		</div>
-	</center>
+	</div>
 
 
-	<script src="{{url_for('static', filename='old/js/jquery.js')}}"></script>
-	<script src="{{url_for('static', filename='old/js/bootstrap.js')}}"></script>
-	<script src="{{url_for('static', filename='old/js/easing.js')}}"></script>
-	<script src="{{url_for('static', filename='old/js/nicescroll.js')}}"></script>
-	<script src="{{url_for('static', filename='old/js/smoothscroll.js')}}"></script>
 
 
-	</body>
+<script src="{{url_for('static', filename='old/js/jquery.js')}}"></script>
+<script src="{{url_for('static', filename='old/js/bootstrap.js')}}"></script>
+<script src="{{url_for('static', filename='old/js/easing.js')}}"></script>
+<script src="{{url_for('static', filename='old/js/nicescroll.js')}}"></script>
+<script src="{{url_for('static', filename='old/js/smoothscroll.js')}}"></script>
+
+<script>
+// Dynamically change which url the email form sends a POST request to, based on the category chosen
+
+function onSubmitForm()
+{
+	var category = document.getElementsByName("category")[0].value;
+	var categoriesToLinks = {
+		"contact": "https://formspree.io/startlabs-contact@mit.edu",
+		"finance": "https://formspree.io/startlabs-finance@mit.edu",
+		"innovate": "https://formspree.io/startlabs-innovate@mit.edu",
+		"largeEvents": "https://formspree.io/startlabs-large-events@mit.edu",
+		"techTreks": "https://formspree.io/startlabs-tech-treks@mit.edu",
+		"incube": "https://formspree.io/incube@mit.edu",
+	};
+
+	var formspreeLink = categoriesToLinks[category];
+	document.getElementsByName("_subject")[0].value = "New email submitted to " + formspreeLink.substring(formspreeLink.lastIndexOf("/") + 1, formspreeLink.length);
+
+  document.getElementsByName("email-form")[0].action = formspreeLink;
+  return true;
+}
+
+
+
+
+</script>
+
+</body>
 </html>
