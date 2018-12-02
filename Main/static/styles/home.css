@@ -147,12 +147,12 @@ body, html {
 
 
 /*********************/
-/* Leon's CSS - */
+/* Leon's CSS - First Section*/
 /*********************/
 
 
 
-.first-section #title{
+/* .first-section #title{
     padding: 30px;
     text-align: center;
     font-weight: 400;
@@ -161,8 +161,8 @@ body, html {
     text-transform: none;
     text-rendering: optimizeLegibility;
     font-family: 'Cormorant Garamond', serif;
-}
-
+} */
+/* 
 .first-section #body {
     font-weight: 400;
     font-style: normal;
@@ -171,12 +171,16 @@ body, html {
     line-height: 1.6em;
     color: rgba(26,26,26,.7);
     font-family: 'Cormorant Garamond', serif;
-    /* display: block; */
     text-align: center; 
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding: 30px;
-}
+} */
+
+/*********************/
+/* Leon's Footer - */
+/*********************/
+
 
 .footer {
     text-align: center; 
@@ -241,7 +245,8 @@ div.inner {
     color:#384047;
 }
 .about-section-title {
-    background-image: url(../images/startup.jpg);
+    /* background-image: url(../images/startup.jpg); */
+    background-color: rgba(17, 104, 14, 0.945);
     background-size: cover;
     height: 100%;
     overflow: hidden;
