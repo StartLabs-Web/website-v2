@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<title>StartLabs</title>
+
+	
+	
+
+	<link href="{{url_for('static', filename='old/css/bootstrap.css')}}" rel="stylesheet">
+	<link href="{{url_for('static', filename='old/css/main.css')}}" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+	  <script src="js/html5shiv.js"></script>
+	  <script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	
+
+	<link rel="shortcut icon" href="{{url_for('static', filename='old/images/startlabs-2017.png')}}">
+	<script type="text/javascript" src="{{url_for('static', filename='old/js/pace.js')}}"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="logo">
+			<a href="./">
+				<img src="{{url_for('static', filename='old/images/startlabs-2017.png')}}" width = "33%" height="33%" alt="logo">
+			</a>
+	</div>
+
+	<div style="text-align: center;">
+	    <div style="display: inline-block; text-align: left;">
+				<!-- <form method="POST" action="https://formspree.io/startlabs-contact@mit.edu"> -->
+				<form method="POST" onSubmit="return onSubmitForm();" name="email-form">
+	      	<input type="email" class="form-control" name="email" placeholder="Your email">
+					<br>
+					<input type="subject" class="form-control" name="subject" placeholder="Subject">
+					<br>
+		      <select name="category" class="form-control">
+						<option value="contact">Choose a Category</option>
+						<option value="contact">Contact</option>
+						<option value="finance">Finance</option>
+						<option value="innovate">Innovate</option>
+						<option value="largeEvents">Large Events</option>
+						<option value="techTreks">Tech Treks</option>
+		        <option value="incube">Incube</option>
+		      </select>
+		      <br>
+		      <textarea name="message" placeholder="Your message" class="form-control" rows="10" cols="50"></textarea>
+		      <br><br>
+		      <input type="hidden" name="_subject" value="default subject" />
+					<center> <h4> We'll get back to you as soon as possible! </h4> </center> <br>
+		      <center> <button type="submit">Send</button> </center>
+		    </form>
+
+	    </div>
+	</div>
+
+
+
+
+<script src="{{url_for('static', filename='old/js/jquery.js')}}"></script>
+<script src="{{url_for('static', filename='old/js/bootstrap.js')}}"></script>
+<script src="{{url_for('static', filename='old/js/easing.js')}}"></script>
+<script src="{{url_for('static', filename='old/js/nicescroll.js')}}"></script>
+<script src="{{url_for('static', filename='old/js/smoothscroll.js')}}"></script>
+
+<script>
+// Dynamically change which url the email form sends a POST request to, based on the category chosen
+
+function onSubmitForm()
+{
+	var category = document.getElementsByName("category")[0].value;
+	var categoriesToLinks = {
+		"contact": "https://formspree.io/startlabs-contact@mit.edu",
+		"finance": "https://formspree.io/startlabs-finance@mit.edu",
+		"innovate": "https://formspree.io/startlabs-innovate@mit.edu",
+		"largeEvents": "https://formspree.io/startlabs-large-events@mit.edu",
+		"techTreks": "https://formspree.io/startlabs-tech-treks@mit.edu",
+		"incube": "https://formspree.io/incube@mit.edu",
+	};
+
+	var formspreeLink = categoriesToLinks[category];
+	document.getElementsByName("_subject")[0].value = "New email submitted to " + formspreeLink.substring(formspreeLink.lastIndexOf("/") + 1, formspreeLink.length);
+
+  document.getElementsByName("email-form")[0].action = formspreeLink;
+  return true;
+}
+
+
+
+
+</script>
+
+</body>
+</html>
