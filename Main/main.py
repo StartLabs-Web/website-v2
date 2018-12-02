@@ -40,7 +40,7 @@ def getStringForEventTimeRange(event):
             return start.strftime("%d %B %Y")
         else:
             # Multiple day event
-            return start.strftime("%d %B %Y") + " – " + end.strftime("%d %B %Y")
+            return start.strftime("%d %B %Y") + " - " + end.strftime("%d %B %Y")
     else:
         # Not all day event
         start = datetime.datetime.strptime(event['start']['dateTime'][:-6], "%Y-%m-%dT%H:%M:%S")
@@ -48,10 +48,10 @@ def getStringForEventTimeRange(event):
 
         if start.date() == end.date():
             # One day event
-            return start.strftime("%d %B %Y, %I:%M %p") + " – " + end.strftime("%I:%M %p")
+            return start.strftime("%d %B %Y, %I:%M %p") + " - " + end.strftime("%I:%M %p")
         else:
             # Multiple day event
-            return start.strftime("%d %B %Y, %I:%M %p") + " – " + end.strftime("%d %B %Y, %I:%M %p")
+            return start.strftime("%d %B %Y, %I:%M %p") + " - " + end.strftime("%d %B %Y, %I:%M %p")
 
 # Gets events from google calendar
 # Returns array of specified length or total number of upcoming events
