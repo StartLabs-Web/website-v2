@@ -1,2 +1,0 @@
-# StartLabsTraining
-Hey
