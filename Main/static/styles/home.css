@@ -16,7 +16,7 @@ body, html {
 /* .top-background {
     background: url(../images/large-bg.jpg) center;
     background-size: cover;
-      
+
     text-align: center;
     color: white;
     padding: 70px 0;
@@ -81,7 +81,7 @@ body, html {
       -webkit-transform: translate3d(0, -10%, 0);
       transform: translate3d(0, -10%, 0);
     }
-  
+
     to {
       opacity: 1;
       -webkit-transform: translate3d(0, 0, 0);
@@ -162,7 +162,7 @@ body, html {
     text-rendering: optimizeLegibility;
     font-family: 'Cormorant Garamond', serif;
 } */
-/* 
+/*
 .first-section #body {
     font-weight: 400;
     font-style: normal;
@@ -252,4 +252,32 @@ div.inner {
     overflow: hidden;
     text-align:center;
     color:#FFF;
+}
+
+/** Footer Section **/
+
+
+.footercta {
+	padding: 60px 15px;
+	color: #FFF;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+	background-color: #6883cc;
+	background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/image.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.footerlinks {
+	text-align:center;
+}
+.footerlinks a {
+	text-align:center;
+	padding:0 13px;
+	display:inline-block;
+	padding-bottom: 15px;
 }
