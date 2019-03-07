@@ -13,8 +13,15 @@ num_past_events = 3
 # Index Page
 @app.route('/new')
 def new_version():
+    # Get headshots
+    filepaths = os.listdir("Main/static/old/images/2018-members")
+    filepaths = ["old/images/2018-members/" + f for f in filepaths]
+    headshots_paths = []
+    for f in filepaths:
+        if "white" in f:
+            headshots_paths.append(f)
     return render_template('index.html', events=getUpcomingEvents(num_future_events, num_past_events),
-    getStringForEventTimeRange=getStringForEventTimeRange)
+    getStringForEventTimeRange=getStringForEventTimeRange, headshots=headshots_paths)
 
 # Old version of Startlabs Website
 @app.route('/')
