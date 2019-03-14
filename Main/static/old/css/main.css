@@ -6,8 +6,8 @@
 	Project Name: LANDON - Bootstrap 3 Theme
 	Version: 1.0
 	URL: http://blacktie.co
-	
-################################################################# */ 
+
+################################################################# */
 
 @charset "utf-8";
 body{
@@ -19,9 +19,9 @@ body{
 	padding:0;
 	color:#141a1d;
 	}
-	
+
 strong,b{
-	font-weight:600;	
+	font-weight:600;
 	}
 
 h1{font-size:50px;line-height:60px;margin:25px 0;}
@@ -59,7 +59,7 @@ a:hover,a:focus{color:#5173bd;}
 	width:100%;
 	background:#fff;
 	}
-	
+
 .pace .pace-progress{
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
@@ -84,7 +84,7 @@ a:hover,a:focus{color:#5173bd;}
 	height:100%;
 	background:#61b5f0;
 	}
-	
+
 .pace.pace-inactive{display:none;}
 
 .btn,.btn-lg,.input-lg{border-radius:3px;}
@@ -94,7 +94,7 @@ a:hover,a:focus{color:#5173bd;}
 	-webkit-box-shadow:none;
 	box-shadow:none;border:0;
 	}
-	
+
 .input-lg{height:55px;}
 
 .btn-lg,.btn-group-lg>.btn{
@@ -145,7 +145,7 @@ a:hover,a:focus{color:#5173bd;}
 	-webkit-transform:translateY(0);
 	-moz-transform:translateY(0);
 	transform:translateY(0);}}
-	
+
 @-moz-keyframes fadein { /* Firefox */
 	 from {
 	 opacity:0;
@@ -345,37 +345,37 @@ to {
 	transform:scale(1.05);
 	z-index:2;
 }
-imageWrapper { 
+imageWrapper {
   padding: .5vw;
   font-size: 10;
   display: -ms-flexbox;
   -ms-flex-wrap: wrap;
   -ms-flex-direction: column;
-  -webkit-flex-flow: row wrap; 
-  flex-flow: row wrap; 
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
   display: -webkit-box;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-imageWrapper div { 
+imageWrapper div {
   -webkit-box-flex: auto;
   -ms-flex: auto;
-  flex: auto; 
-  width: 200px; 
+  flex: auto;
+  width: 200px;
   max-width: 200px;
-  margin: .1vw; 
+  margin: .1vw;
 }
-.imageIn { 
-  width: 100%; 
-  min-height: 200px; 
+.imageIn {
+  width: 100%;
+  min-height: 200px;
   overflow:hidden;
   margin-bottom: 50px;
 }
-imageWrapper div:hover { 
- 
+imageWrapper div:hover {
+
 }
-.imageIn .texts { 
+.imageIn .texts {
 	opacity: 0;
     margin-top: -70%;
     width: 100%;
@@ -388,16 +388,16 @@ imageWrapper div:hover {
     -moz-transition: opacity 500ms;
     -o-transition: opacity 500ms;
     transition: opacity 500ms;
-    
+
 }
-.imageIn .texts:hover { 
+.imageIn .texts:hover {
  	opacity: 0.8;
-    
+
 }
 @media screen and (max-width: 400px) {
   header div { margin: 0; }
   header { padding: 0; }
-  
+
 }
 /*========== 5. TESTIMONIALS ==============*/
 
