@@ -253,12 +253,12 @@ div.inner {
 }
 .about-section-title {
     /* background-image: url(../images/startup.jpg); */
-    background-color: rgba(17, 104, 14, 0.945);
+    background-color: #ffffff;
     background-size: cover;
     height: 100%;
     overflow: hidden;
     text-align:center;
-    color:#FFF;
+    color:#141a1d;
 }
 
 /** Footer Section **/
