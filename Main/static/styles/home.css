@@ -13,6 +13,13 @@ body, html {
     margin: 0;
 }
 
+h1{font-size:50px;line-height:60px;margin:25px 0;}
+h2{font-size:40px;font-weight:600;margin:15px 0;}
+h3{font-size:20px;margin:10px 0;font-weight:600;}
+h4{font-size:20px;margin:10px 0;}
+h5{font-size:28px;font-weight:600;margin:15px 0;color:#384047;}
+h6{font-size:16px;font-weight:600;margin:10px 0;color:#384047;}
+
 /* .top-background {
     background: url(../images/large-bg.jpg) center;
     background-size: cover;
@@ -171,7 +178,7 @@ body, html {
     line-height: 1.6em;
     color: rgba(26,26,26,.7);
     font-family: 'Cormorant Garamond', serif;
-    text-align: center; 
+    text-align: center;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding: 30px;
@@ -183,7 +190,7 @@ body, html {
 
 
 .footer {
-    text-align: center; 
+    text-align: center;
     padding: 64px 32px;
     box-sizing: border-box;
     margin: auto;
@@ -206,7 +213,7 @@ body, html {
     text-align: center;
 }
 div.outer {
-    display:table; 
+    display:table;
     table-layout: fixed;
     width:100%;
 }

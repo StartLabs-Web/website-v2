@@ -28,7 +28,7 @@ def dated_url_for(endpoint, **values):
 @app.route('/new')
 def new_version():
     return render_template('index.html', events=getUpcomingEvents(num_future_events, num_past_events),
-    getStringForEventTimeRange=getStringForEventTimeRange)
+    getTimeStringForEvent=getTimeStringForEvent, getDateStringForEvent=getDateStringForEvent)
 
 # Old version of Startlabs Website
 @app.route('/')
@@ -43,28 +43,34 @@ def old_email():
 
 # Gets date range string from event
 # i.e. 05 November 2018, 3:00 PM - 4:00 PM
-def getStringForEventTimeRange(event):
+def getTimeStringForEvent(event):
+    if 'date' not in event['start']:
+        start = datetime.datetime.strptime(event['start']['dateTime'][:-6], "%Y-%m-%dT%H:%M:%S")
+        end = datetime.datetime.strptime(event['end']['dateTime'][:-6], "%Y-%m-%dT%H:%M:%S")
+        if start.date() == end.date():
+            # All day event
+            return start.strftime("%I:%M %p") + " - " + end.strftime("%I:%M %p")
+        else:
+            return None
+    else:
+        return None
+
+def getDateStringForEvent(event):
     if 'date' in event['start']:
         # All day event
         start = datetime.datetime.strptime(event['start']['date'], "%Y-%m-%d")
         end = datetime.datetime.strptime(event['end']['date'], "%Y-%m-%d") - datetime.timedelta(days=1)
-        if start.date() == end.date():
-            # One day event
-            return start.strftime("%d %B %Y")
-        else:
-            # Multiple day event
-            return start.strftime("%d %B %Y") + " - " + end.strftime("%d %B %Y")
     else:
         # Not all day event
         start = datetime.datetime.strptime(event['start']['dateTime'][:-6], "%Y-%m-%dT%H:%M:%S")
         end = datetime.datetime.strptime(event['end']['dateTime'][:-6], "%Y-%m-%dT%H:%M:%S")
 
-        if start.date() == end.date():
-            # One day event
-            return start.strftime("%d %B %Y, %I:%M %p") + " - " + end.strftime("%I:%M %p")
-        else:
-            # Multiple day event
-            return start.strftime("%d %B %Y, %I:%M %p") + " - " + end.strftime("%d %B %Y, %I:%M %p")
+    if start.date() == end.date():
+        # One day event
+        return start.strftime("%d %B %Y")
+    else:
+        # Multiple day event
+        return start.strftime("%d %B %Y") + " - " + end.strftime("%d %B %Y")
 
 # Gets events from google calendar
 # Returns array of specified length or total number of upcoming events
