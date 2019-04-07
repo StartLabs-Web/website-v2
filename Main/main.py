@@ -14,7 +14,7 @@ num_past_events = 3
 @app.route('/new')
 def new_version():
     # Get headshots
-    filepaths = os.listdir("Main/static/old/images/2018-members")
+    filepaths = os.listdir("static/old/images/2018-members")
     filepaths = ["old/images/2018-members/" + f for f in filepaths]
     headshots_paths = []
     for f in filepaths:
