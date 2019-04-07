@@ -10,6 +10,26 @@ app = Flask(__name__)
 num_future_events = 5
 num_past_events = 3
 
+# Old version of Startlabs Website
+@app.route('/')
+def old_version():
+    return render_template('old/indexold.html')
+
+@app.route('/email')
+def old_email():
+    return render_template('old/email.html')
+
+
+
+# Redesign
+
+@app.route('/redesign/')
+def redesign():
+    return render_template("redesign/index.html")
+
+
+
+
 # Index Page
 @app.route('/new')
 def new_version():
@@ -23,14 +43,6 @@ def new_version():
     return render_template('index.html', events=getUpcomingEvents(num_future_events, num_past_events),
     getStringForEventTimeRange=getStringForEventTimeRange, headshots=headshots_paths)
 
-# Old version of Startlabs Website
-@app.route('/')
-def old_version():
-    return render_template('old/indexold.html')
-
-@app.route('/email')
-def old_email():
-    return render_template('old/email.html')
 
 # Google Calendar API
 
