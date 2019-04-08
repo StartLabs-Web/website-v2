@@ -59,6 +59,8 @@
         </style>
 
         <script>
+            // FEATURE: Highlighting the link on the navbar for the page you are currently on
+
             var url = location.href;
             var url_split = url.split('/');
             if (url_split[url_split.length - 1] == ""){
@@ -66,14 +68,13 @@
             }
             var link_ending = url_split[url_split.length - 1];
             console.log(link_ending); //ex: "redesign", "home", "about"
-            // TODO: use this to highlight the current page (on navbar) when you are on it
 
             $( document ).ready(function() {
                 $("#navbar").children("ul").children("li").children("a").each(function() {
                     var nav_link = ($(this).attr("href"));
                     if (nav_link.includes(link_ending)) {
                         console.log(nav_link);
-                        $(this).css("color", "rgb(48, 211, 70)");
+                        $(this).css("color", "rgb(48, 211, 70)"); //change the color to light green
                     }
                 });
             });
