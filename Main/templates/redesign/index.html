@@ -51,7 +51,19 @@
             li a:hover {
                 color: rgb(48, 211, 70);
             }
+
         </style>
+
+        <script>
+            var url = location.href;
+            var url_split = url.split('/');
+            if (url_split[url_split.length - 1] == ""){
+                url_split.pop();
+            }
+            var link_ending = url_split[url_split.length - 1];
+            console.log(p); //ex: "redesign", "home", "about"
+            // TODO: use this to highlight the current page (on navbar) when you are on it
+        </script>
     </head>
     <body>
 
