@@ -22,10 +22,29 @@ def old_email():
 
 
 # Redesign
-
 @app.route('/redesign/')
 def redesign():
     return render_template("redesign/index.html")
+
+@app.route('/redesign/about')
+def redesign_about():
+    return render_template("redesign/about.html")
+
+@app.route('/redesign/events')
+def redesign_events():
+    return render_template("redesign/events.html")
+
+@app.route('/redesign/partners')
+def redesign_partners():
+    return render_template("redesign/partners.html")
+
+@app.route('/redesign/team')
+def redesign_team():
+    return render_template("redesign/team.html")
+
+@app.route('/redesign/contact')
+def redesign_contact():
+    return render_template("redesign/contact.html")
 
 
 
