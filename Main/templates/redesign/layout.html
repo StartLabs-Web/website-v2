@@ -4,6 +4,8 @@
         
         {% block head %}
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
         <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
         <style>
             body {
@@ -63,9 +65,20 @@
                 url_split.pop();
             }
             var link_ending = url_split[url_split.length - 1];
-            console.log(p); //ex: "redesign", "home", "about"
+            console.log(link_ending); //ex: "redesign", "home", "about"
             // TODO: use this to highlight the current page (on navbar) when you are on it
+
+            $( document ).ready(function() {
+                $("#navbar").children("ul").children("li").children("a").each(function() {
+                    var nav_link = ($(this).attr("href"));
+                    if (nav_link.includes(link_ending)) {
+                        console.log(nav_link);
+                        $(this).css("color", "rgb(48, 211, 70)");
+                    }
+                });
+            });
         </script>
+
 
         {% endblock %}
 
