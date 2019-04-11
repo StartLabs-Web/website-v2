@@ -1,32 +1,12 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html>
-    <head>
-        <title> New Website </title>
-        <!-- Stylesheet -->
-        <link rel="stylesheet" href="{{url_for('static', filename='styles/home.css')}}">
-    </head>
-    <body>
+{% block content %}
 
+    {% for i in range(100) %}
+    ok <br>
+    {% endfor %}
 
-        {% include "top.html" ignore missing %}
-
-        {% include "about.html" ignore missing %}
-        <br><br>
-
-        {% include "events.html" ignore missing with context%}
-
-        {% include "headshots.html" ignore missing with context%}
-
-        <hr>
-        {% include "faq.html" ignore missing %}
+{% endblock %}
 
 
 
-        <!-- Footer Section -->
-        <div class="footer">
-            Powered by StartLabs
-        </div>
-
-    </body>
-</html>

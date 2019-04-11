@@ -1,36 +1,14 @@
-<div class="about">
-    <!-- About Title -->
-    <div class= "about-section-title">
-        <h1> We're a student-run group whose mission is promoting entrepreneurship and innovation at MIT. </h1>
-        <h2>What do we do?</h2>
-    </div>
-    <!-- the fours sections on what we do-->
-    <div class="about-section">
-        <div>
-            <!-- Innovation -->
-            <div class="horizontal">
-                <img src="static/images/innovation.png" alt="analytics-icon"> 
-                <h3>Innovation</h3>
-                <p>We come up with new ideas, new companies.</p>
-            </div>
-            <!-- Startups -->
-            <div class="horizontal">
-                <img src="static/images/startups.png" alt="analytics-icon"> 
-                <h3>Startups</h3>
-                <p>We connect with local Boston startups.</p>
-            </div>
-            <!-- Community -->
-            <div class="horizontal">
-                <img src="static/images/community.png" alt="analytics-icon">
-                <h3>Community</h3>
-                <p>We provide students with a support network of entrepreneurs.</p>
-            </div>
-            <!-- Fun -->
-            <div class="horizontal">
-                <img src="static/images/fun.png" alt="analytics-icon">
-                <h3>Fun</h3>
-                <p>We bond, we party, we have fun!</p>
-            </div>
-        </div>
-    </div>
-</div>
+{% extends "layout.html" %}
+
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <h1>About</h1>
+  <p class="important">
+    Welcome to the about page.
+{% endblock %}
