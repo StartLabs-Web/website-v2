@@ -5,8 +5,8 @@
         {% block head %}
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
         <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+
         <style>
             body {
                 font-family: 'Acme', sans-serif;
@@ -22,18 +22,18 @@
                 width: 100%;
             }
 
-            #topbar #upper-logo {
+            #topbar #upper_logo {
                 float: left;
                 padding: 14px 16px;
             }
-            #topbar #upper-logo a{
+            #topbar #upper_logo a{
                 text-decoration: none;
             }
-            #topbar #upper-logo p {
+            #topbar #upper_logo p {
                 display: inline;
                 font-size: 1.8em; 
                 vertical-align: top;    
-                color: rgb(13, 133, 77);
+                color: {{colors.upper_logo}};
             }
 
             #topbar #navbar {
@@ -50,13 +50,13 @@
             }
             #topbar #navbar li a {
                 display: block;
-                color: rgb(13, 133, 77);
+                color: {{colors.navbar_nonactive}};
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
             }
             #topbar #navbar li a:hover {
-                color: rgb(48, 211, 70);
+                color: {{colors.navbar_active}};
             }
 
         </style>
@@ -91,7 +91,7 @@
 
         <div id="topbar">
             
-            <div id="upper-logo">
+            <div id="upper_logo">
                 <a href="./">
                     <img src="{{url_for('static', filename='images/logos/logo-small.PNG')}}"
                     style="height:1.8em">

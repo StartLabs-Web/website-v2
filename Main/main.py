@@ -7,30 +7,36 @@ import os
 
 app = Flask(__name__)
 
+# Define CSS colors here!
+colors = {}
+colors["upper_logo"] = "rgb(13, 133, 77)"
+colors["navbar_nonactive"] = "rgb(13, 133, 77)"
+colors["navbar_active"] = "rgb(48, 211, 70)"
+
 # Redesign
 @app.route('/')
 def home():
-    return render_template("home.html")
+    return render_template("home.html", colors=colors)
 
 @app.route('/about')
 def about():
-    return render_template("about.html")
+    return render_template("about.html", colors=colors)
 
 @app.route('/events')
 def events():
-    return render_template("events.html")
+    return render_template("events.html", colors=colors)
 
 @app.route('/partners')
 def partners():
-    return render_template("partners.html")
+    return render_template("partners.html", colors=colors)
 
 @app.route('/team')
 def team():
-    return render_template("team.html")
+    return render_template("team.html", colors=colors)
 
 @app.route('/contact')
 def contact():
-    return render_template("contact.html")
+    return render_template("contact.html", colors=colors)
 
 
 
