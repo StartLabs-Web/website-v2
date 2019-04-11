@@ -26,6 +26,9 @@
                 float: left;
                 padding: 14px 16px;
             }
+            #topbar #upper-logo a{
+                text-decoration: none;
+            }
             #topbar #upper-logo p {
                 display: inline;
                 font-size: 1.8em; 
@@ -89,14 +92,15 @@
         <div id="topbar">
             
             <div id="upper-logo">
-                <img src="{{url_for('static', filename='images/logos/logo-small.PNG')}}"
-                style="height:1.8em">
-                <p> startlabs </p>
+                <a href="./">
+                    <img src="{{url_for('static', filename='images/logos/logo-small.PNG')}}"
+                    style="height:1.8em">
+                    <p> startlabs </p>
+                </a>
             </div>
 
             <div id="navbar">
                 <ul>
-                    <li><a href="./">home</a></li>
                     <li><a href="./about">about</a></li>
                     <li><a href="./events">events</a></li>
                     <li><a href="./partners">partners</a></li>
