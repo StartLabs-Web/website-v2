@@ -39,6 +39,15 @@ def contact():
     return render_template("contact.html", colors=colors)
 
 
+def get_team_headshots():
+    # Get headshots
+    filepaths = os.listdir("static/old/images/2018-members")
+    filepaths = ["old/images/2018-members/" + f for f in filepaths]
+    headshots_paths = []
+    for f in filepaths:
+        if "white" in f:
+            headshots_paths.append(f)
+
 
 # num_future_events = 5
 # num_past_events = 3
