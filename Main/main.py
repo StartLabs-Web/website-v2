@@ -12,6 +12,7 @@ colors = {}
 colors["upper_logo"] = "rgb(13, 133, 77)"
 colors["navbar_nonactive"] = "rgb(13, 133, 77)"
 colors["navbar_active"] = "rgb(48, 211, 70)"
+colors["heading"] = "rgb(29, 156, 97)"
 
 # Redesign
 @app.route('/')
@@ -32,21 +33,27 @@ def partners():
 
 @app.route('/team')
 def team():
-    return render_template("team.html", colors=colors)
+    headshot_paths = get_team_headshots()
+    return render_template("team.html", colors=colors, headshot_paths = headshot_paths)
 
 @app.route('/contact')
 def contact():
     return render_template("contact.html", colors=colors)
 
 
+"""
+Purpose: Retreive all filepaths to white headshot photos
+Params:  None
+Returns: (list of strings) all the filepaths to the photos 
+"""
 def get_team_headshots():
-    # Get headshots
-    filepaths = os.listdir("static/old/images/2018-members")
-    filepaths = ["old/images/2018-members/" + f for f in filepaths]
     headshots_paths = []
+    filepaths = os.listdir("static/images/2018-members")
+    filepaths = ["images/2018-members/" + f for f in filepaths]
     for f in filepaths:
         if "white" in f:
             headshots_paths.append(f)
+    return headshots_paths
 
 
 # num_future_events = 5

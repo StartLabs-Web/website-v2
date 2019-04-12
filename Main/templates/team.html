@@ -2,8 +2,50 @@
 
 {% block head %}
   {{ super() }}
+  <style type="text/css">
+    h1 {
+      color: {{colors.heading}};
+      font-size: 50px;
+      letter-spacing: 4px;
+    }
+
+    .headshots {
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+      /* border: blueviolet; */
+      /* border-style: dashed; */
+    }
+    .fullname {
+      font-size: 20px;
+      margin: 5px 5px 5px 5px;
+    }
+    .position {
+      font-size: 10px;
+      font-style: italic; 
+      margin: 5px 5px 5px 5px;
+    }
+
+  </style>
+
 {% endblock %}
 
 {% block content %}
-Team
+  <center>
+      <h1> team </h1>
+  </center>
+
+  <center>
+  {% for path in headshot_paths %}
+    <div class="headshots">
+      <img src="{{url_for('static', filename=path)}}" height=160 width=200  alt="" />
+      <p class="fullname">
+        First Last
+      </p>
+      <p class="position">
+        position
+      </p>
+    </div>    
+  {% endfor %}
+</center>
 {% endblock %}
