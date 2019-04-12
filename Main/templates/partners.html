@@ -2,8 +2,47 @@
 
 {% block head %}
   {{ super() }}
+
+  <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+  <style>
+    #partners_descrip {
+      display: inline-block;
+      width: 60%;
+      font-family: 'Karla', sans-serif;
+      text-align: justify;
+    }
+    #partners_descrip a {
+      text-decoration: none;
+      color: {{colors.link}};
+    }
+
+    #partners_logos {
+      display: block;
+      width: 90%;
+      margin: 20px 20px 20px 20px;
+    }
+    #partners_logos img{
+      height: 150px;
+      margin: 30px 30px 30px 30px;
+    }
+  </style>
+
 {% endblock %}
 
 {% block content %}
-  Partners
+  <center>
+    <h1> partners </h1>
+
+    <p id="partners_descrip">
+      Over the year, we organize a wide variety of dierent events, ranging from case studies and speaker series to international
+tech treks and Entrepalooza. We love experimenting with new ideas, so each semester always has a unique and creative
+lineup of amazing events. To keep up to date with all our events, <a href="#">click here</a> (TODO: this is not done yet!) to add our Google Calendar!
+startlabs.
+    </p>
+
+    <div id="partners_logos">
+      <img src="{{url_for('static', filename='images/sponsors/mtcenter_logo.jpeg')}}"> 
+      <img src="{{url_for('static', filename='images/sponsors/innovation-initiative-logo.png')}}"> 
+    </div>
+  </center>
 {% endblock %}

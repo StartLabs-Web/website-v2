@@ -13,6 +13,7 @@ colors["upper_logo"] = "rgb(13, 133, 77)"
 colors["navbar_nonactive"] = "rgb(13, 133, 77)"
 colors["navbar_active"] = "rgb(48, 211, 70)"
 colors["heading"] = "rgb(29, 156, 97)"
+colors["link"] = "rgb(48, 211, 70)"
 
 # Redesign
 @app.route('/')
