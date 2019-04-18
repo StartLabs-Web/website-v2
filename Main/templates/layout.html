@@ -18,7 +18,7 @@
             }
 
             h1 {
-                color: {{colors.heading}};
+                color: {{colors.h1}};
                 font-size: 50px;
                 letter-spacing: 4px;
             }
@@ -101,7 +101,7 @@
                     var nav_link = ($(this).attr("href"));
                     if (nav_link.includes(link_ending)) {
                         console.log(nav_link);
-                        $(this).css("color", "rgb(48, 211, 70)"); //change the color to light green
+                        $(this).css("color", "{{colors.navbar_active}}");
                     }
                 });
             });

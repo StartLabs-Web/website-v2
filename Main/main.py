@@ -8,12 +8,20 @@ import os
 app = Flask(__name__)
 
 # Define CSS colors here!
+base = {}
+base["medium"] = "rgb(29, 161, 67)"
+base["dark"] = "rgb(0, 106, 72)"
+base["light"] = "rgb(48, 211, 70)"
+base["accent_one"] = "rgb(13, 0, 92)"
+base["accent_two"] = "rgb(255, 194, 0)"
+
+# second layer
 colors = {}
-colors["upper_logo"] = "rgb(13, 133, 77)"
-colors["navbar_nonactive"] = "rgb(13, 133, 77)"
-colors["navbar_active"] = "rgb(48, 211, 70)"
-colors["heading"] = "rgb(29, 156, 97)"
-colors["link"] = "rgb(48, 211, 70)"
+colors["upper_logo"] = base["dark"]
+colors["navbar_nonactive"] = base["dark"]
+colors["navbar_active"] = base["light"]
+colors["h1"] = base["medium"]
+colors["link"] = base["light"]
 
 # Redesign
 @app.route('/')
