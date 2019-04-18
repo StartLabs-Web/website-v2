@@ -2,8 +2,29 @@
 
 {% block head %}
   {{ super() }}
+  <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+  <style>
+  .description {
+      display: inline-block;
+      width: 60%;
+      font-family: 'Karla', sans-serif;
+      text-align: justify;
+    }
+    .description a {
+      text-decoration: none;
+      color: {{colors.link}};
+    }
+   </style>
 {% endblock %}
 
 {% block content %}
-  Events
+<center>
+    <h1> partners </h1>
+
+    <p id="events_descrip" class="description">
+      Over the year, we organize a wide variety of dierent events, ranging from case studies and speaker series to international
+tech treks and Entrepalooza. We love experimenting with new ideas, so each semester always has a unique and creative
+lineup of amazing events. To keep up to date with all our events, <a href="https://calendar.google.com/calendar/render?cid=startlabs.management%40gmail.com">click here</a> to add our Google Calendar!.
+    </p>
+
 {% endblock %}
