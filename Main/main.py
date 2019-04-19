@@ -7,7 +7,10 @@ import os
 
 app = Flask(__name__)
 
-# Define CSS colors here!
+#####################
+# Define CSS colors #
+#####################
+# first layer
 base = {}
 base["medium"] = "rgb(29, 161, 67)"
 base["dark"] = "rgb(0, 106, 72)"
@@ -23,7 +26,9 @@ colors["navbar_active"] = base["light"]
 colors["h1"] = base["medium"]
 colors["link"] = base["light"]
 
-# Redesign
+############
+# Redesign #
+############
 @app.route('/')
 def home():
     return render_template("home.html", colors=colors)
@@ -65,22 +70,9 @@ def get_team_headshots():
     return headshots_paths
 
 
-
-# # Index Page
-# @app.route('/new')
-# def new_version():
-#     # Get headshots
-#     filepaths = os.listdir("static/old/images/2018-members")
-#     filepaths = ["old/images/2018-members/" + f for f in filepaths]
-#     headshots_paths = []
-#     for f in filepaths:
-#         if "white" in f:
-#             headshots_paths.append(f)
-#     return render_template('index.html', events=getUpcomingEvents(num_future_events, num_past_events),
-#     getStringForEventTimeRange=getStringForEventTimeRange, headshots=headshots_paths)
-
-
-# Google Calendar API
+#######################
+# Google Calendar API #
+#######################
 
 num_future_events = 4
 num_past_events = 0
