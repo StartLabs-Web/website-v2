@@ -15,6 +15,8 @@
         width: 100%;
     }
 
+    /* Wide Section / Dark Section */
+
     .wide_section {
         background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("{{url_for('static', filename='images/homepage/wideimage.jpg')}}");
         height: 100vh;
@@ -34,7 +36,15 @@
         margin: 20px;
         color: white;
         font-size: 40px;
-    } 
+    }
+
+    .trigger_contrast {
+        background-color: transparent !important;
+    }
+    .trigger_contrast * {
+        color: white !important;
+    }
+
 
     /* Contact Us Button */
     button {
@@ -55,6 +65,31 @@
 
     
   </style>
+
+  <script>
+    /*
+    FEATURE: Changing the color of the topbar (for dark section of homepage)
+    */
+    $( document ).ready(function() {
+
+        var topbar = document.getElementById("topbar");
+        var dark_section = document.getElementById("dark_section");
+        var height_start = dark_section.offsetTop;
+        var height_end = height_start + dark_section.clientHeight; 
+
+        function addContrast() {
+            if (window.pageYOffset >= height_start && window.pageYOffset <= height_end) {
+                console.log("height start!!!!");
+                topbar.classList.add("trigger_contrast");
+            } else {
+                topbar.classList.remove("trigger_contrast");
+            }
+        }
+
+        window.onscroll = function() {addContrast()};
+    });
+
+  </script>
 
 {% endblock %}
 
@@ -80,7 +115,7 @@
     <br><br><br><br><br><br><br><br><br><br>
 
 
-    <div class="wide_section">
+    <div class="wide_section" id="dark_section">
         <div class="inner_left">
             <p>
                 empowering the next generation of technical entrepreneurs
@@ -106,7 +141,8 @@
     </div>
 
 
-    <br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
 
 
 {% endblock %}
