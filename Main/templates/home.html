@@ -3,68 +3,80 @@
 {% block head %}
   {{ super() }}
 
-  <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
   <style>
-    
-    .homepage-wrapper {
-        margin: 15 px;
+
+    .half_page_section {
+        width: 50%;
+        display: inline-block;
+        vertical-align: middle;
     }
 
-    .row {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%
-    }
-
-    .column {
-        display: flex;
-        flex-direction: column;
-        flex-basis: 100%;
-        flex: 50%;
-    }
-    
-    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 1000000px) {
-    .column {
-    width: 100%;
-    }
-    } 
-
-    .leftcol {
-      display: block;
-      width: 50%;
-      margin: 20px 20px 20px 20px;
-    }
-
-    #leftcol img {
+    .half_page_section .large_image{
         width: 100%;
     }
 
+    /* Contact Us Button */
+    button {
+        color: {{colors.contact_button}};
+        background-color: white;
+        border-style: solid;
+    	border-radius: 10px;
+        border-color: {{colors.contact_button}};
+        padding: 2px 10px 2px 10px;
+    }
+
+    .nothing{
+        color: white;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .half_page_section {
+            width: 100%;
+        }
+    }
+
+    
   </style>
 
 {% endblock %}
 
 {% block content %}
-    <div class="homepage-wrapper">
-        <div class="row">
-            <div class="column" id="leftcol">
-                <img src="{{url_for('static', filename='images/homepage/ideafactory-25.jpg')}}"> 
-            </div>
-            <div class="column" id="rightcol">
-                <center>
-                <h2> welcome to </h2>
-                <h1> startlabs </h1>
-                <p id="home_descrip" class="description">
-                    We are the premier undergraduate entrepreneurship club at MIT, 
-                    providing opportunities for student entrepreneurs and working to 
-                    foster an innovative environment for the entire community.
-                </p>
-                </center>
-            </div>
-        </div>
+
+    <div class="half_page_section">
+        <img class="large_image" src="{{url_for('static', filename='images/homepage/ideafactory-25.jpg')}}"> 
+    </div><div class="half_page_section"> 
+        <center>
+            <p class="common"> <i> welcome to </i> </p>
+            <h1> startlabs </h1>
+            <p class="description">
+                We are the premier undergraduate entrepreneurship club at MIT, 
+                providing opportunities for student entrepreneurs and working to 
+                foster an innovative environment for the entire community.
+            </p>
+            <br><br>
+            <button class="common">
+                contact us
+            </button>
+        </center>
     </div>
     
+    <br><br><br><br>
+
+    <div class="half_page_section"> 
+        <center>
+            <h2> events </h2>
+            <p id="home_descrip" class="description">
+                StartLabs hosts a gamut of events, both for team members and for the entire MIT community. From Entrepalooza, our large entrepreneurship forum, to our annual international tech trek, we provide opportunities for students to explore, connect, and innovate.            </p>
+            <br><br>
+            <button class="common">
+                learn more
+            </button>
+        </center>
+    </div><div class="half_page_section">
+        <img class="large_image" src="{{url_for('static', filename='images/homepage/somewhere.png')}}"> 
+    </div>
+    
+
 
 {% endblock %}
 
