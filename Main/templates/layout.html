@@ -59,14 +59,14 @@
             /* *************** */
 
             #topbar {
-                display: block;
+                display: flex;
                 overflow: hidden;
                 width: 100%;
+                background-color: white;
             }
 
             #topbar #upper_logo {
-                float: left;
-                padding: 14px 16px;
+                padding: 8px 16px;
             }
             #topbar #upper_logo a{
                 text-decoration: none;
@@ -79,7 +79,7 @@
             }
 
             #topbar #navbar {
-                float: right;
+                margin-left: auto;
             }
             #topbar #navbar ul {
                 list-style-type: none;
@@ -100,6 +100,21 @@
             #topbar #navbar li a:hover {
                 color: {{colors.navbar_active}};
             }
+
+            /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+            /* .sticky {
+                position: fixed;
+                top: 0;
+                width: 100%;
+            } */
+
+            div.sticky {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+                padding: 5px;
+            }
+
 
 
             /* *************** */
@@ -191,7 +206,7 @@
     </head>
     <body>
 
-        <div id="topbar">
+        <div id="topbar" class="sticky">
             
             <div id="upper_logo">
                 <a href="./">
@@ -212,7 +227,6 @@
             </div>
             
         </div>
-
 
         <div id="content">
             {% block content %}{% endblock %}
