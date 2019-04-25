@@ -12,8 +12,8 @@ app = Flask(__name__)
 #####################
 # first layer (DO NOT USE THESE IN THE HTML/CSS)
 base = {}
-base["medium"] = "rgb(29, 161, 67)"
 base["dark"] = "rgb(0, 106, 72)"
+base["medium"] = "rgb(29, 161, 67)"
 base["light"] = "rgb(48, 211, 70)"
 base["accent_one"] = "rgb(13, 0, 92)"
 base["accent_two"] = "rgb(255, 194, 0)"
@@ -27,6 +27,7 @@ colors["h1"] = base["medium"]
 colors["h2"] = base["light"]
 colors["link"] = base["light"]
 colors["contact_button"] = base["accent_two"]
+colors["footer"] = base["dark"]
 
 ############
 # Redesign #
