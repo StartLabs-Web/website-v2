@@ -5,32 +5,55 @@
 
   <style>
 
-    .half_page_section {
+    html, body {
+        margin:0;
+        padding:0;
+    }
+
+    .half_wide_section {
         width: 50%;
         display: inline-block;
         vertical-align: middle;
     }
 
-    .half_page_section .large_image{
+    .half_wide_section .large_image{
         width: 100%;
     }
+
+    .wide_section {
+        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("{{url_for('static', filename='images/homepage/wideimage.jpg')}}");
+        height: 100vh;
+        width: 100%;
+        background-size: auto 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .wide_section .inner_left {
+        height: auto;
+        width: 70%;
+        display: inline-block;
+    }
+
+    .wide_section .inner_left p {
+        margin: 20px;
+        color: white;
+        font-size: 40px;
+    } 
 
     /* Contact Us Button */
     button {
         color: {{colors.contact_button}};
-        background-color: white;
+        background-color: transparent;
         border-style: solid;
     	border-radius: 10px;
         border-color: {{colors.contact_button}};
         padding: 2px 10px 2px 10px;
     }
 
-    .nothing{
-        color: white;
-    }
 
     @media only screen and (max-width: 800px) {
-        .half_page_section {
+        .half_wide_section {
             width: 100%;
         }
     }
@@ -42,9 +65,9 @@
 
 {% block content %}
 
-    <div class="half_page_section">
+    <div class="half_wide_section">
         <img class="large_image" src="{{url_for('static', filename='images/homepage/ideafactory-25.jpg')}}"> 
-    </div><div class="half_page_section"> 
+    </div><div class="half_wide_section"> 
         <center>
             <p class="common"> <i> welcome to </i> </p>
             <h1> startlabs </h1>
@@ -54,25 +77,36 @@
                 foster an innovative environment for the entire community.
             </p>
             <br><br>
-            <button class="common">
-                contact us
-            </button>
+            <button class="common"> contact us </button>
         </center>
     </div>
     
-    <br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
 
-    <div class="half_page_section"> 
+
+    <div class="wide_section">
+        <div class="inner_left">
+            <p>
+                empowering the next generation of technical entrepreneurs
+                <br>
+                <button class="common"> contact us </button>
+            </p>
+        </div>
+    </div>
+
+
+    <div class="half_wide_section"> 
         <center>
             <h2> events </h2>
-            <p id="home_descrip" class="description">
+            <p class="description">
                 StartLabs hosts a gamut of events, both for team members and for the entire MIT community. From Entrepalooza, our large entrepreneurship forum, to our annual international tech trek, we provide opportunities for students to explore, connect, and innovate.            </p>
             <br><br>
-            <button class="common">
-                learn more
-            </button>
+            <button class="common"> learn more </button>
+            <br>
+            <br>
         </center>
-    </div><div class="half_page_section">
+    </div><div class="half_wide_section">
         <img class="large_image" src="{{url_for('static', filename='images/homepage/somewhere.png')}}"> 
     </div>
     
