@@ -5,6 +5,7 @@
 
   <style>
 
+    /* Half wide sections */
     .half_wide_section {
         width: 50%;
         display: inline-block;
@@ -16,7 +17,6 @@
     }
 
     /* Wide Section / Dark Section */
-
     .wide_section {
         background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("{{url_for('static', filename='images/homepage/wideimage.jpg')}}");
         height: 100vh;
@@ -38,12 +38,12 @@
         font-size: 40px;
     }
 
-    .trigger_contrast {
+    /* .trigger_contrast {
         background-color: transparent !important;
     }
     .trigger_contrast * {
         color: white !important;
-    }
+    } */
 
 
     /* Contact Us Button */
@@ -57,6 +57,7 @@
     }
 
 
+    /* Changing CSS for small screens */
     @media only screen and (max-width: 800px) {
         .half_wide_section {
             width: 100%;
@@ -71,18 +72,30 @@
     FEATURE: Changing the color of the topbar (for dark section of homepage)
     */
     $( document ).ready(function() {
-
         var topbar = document.getElementById("topbar");
         var dark_section = document.getElementById("dark_section");
-        var height_start = dark_section.offsetTop;
-        var height_end = height_start + dark_section.clientHeight; 
 
         function addContrast() {
+            var height_start = dark_section.offsetTop;
+            var height_end = height_start + dark_section.clientHeight; 
+
+            console.log("height: ", window.pageYOffset);
+            topbar = document.getElementById("topbar");
+            tags = document.getElementById("topbar").getElementsByTagName("*");
             if (window.pageYOffset >= height_start && window.pageYOffset <= height_end) {
-                console.log("height start!!!!");
-                topbar.classList.add("trigger_contrast");
+                // topbar.classList.add("trigger_contrast");
+                // $("#topbar").css("background-color", "transparent");
+                // $("#topbar").css("color", "white");
+                topbar.style.backgroundColor = "transparent";
+                for (i = 0; i < tags.length; i++){
+                    tags[i].style.color = "white";
+                }
             } else {
-                topbar.classList.remove("trigger_contrast");
+                // topbar.classList.remove("trigger_contrast");
+                topbar.style.backgroundColor = "white";
+                for (i = 0; i < tags.length; i++){
+                    tags[i].style.color = "{{colors.navbar_nonactive}}";
+                }
             }
         }
 
