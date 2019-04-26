@@ -2,8 +2,115 @@
 
 {% block head %}
   {{ super() }}
+    <style>
+    /* Wide Section */
+    .wide_section {
+        background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("{{url_for('static', filename='images/contact-us-wide-bg.jpg')}}");
+        height: 250px;
+        background-size: 1000px auto;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .wide_section .title {
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      font-size: 60px;
+      color: white;
+    }
+    .wide_section .body {
+      width: 70%;
+      padding: 10px;
+      margin: 0 auto;
+      text-align: left;
+      color: white;
+    }
+
+    @media only screen and (max-width: 800px) {
+      .wide_section .title {
+        font-size: 40px;
+      }
+
+      .wide_section .body {
+        font-size: 14px;
+      }
+    }
+
+    /* */
+    .bigbox {
+      width: 70%;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .smallbox {
+      margin: 10px 0px;
+      width: 25%;
+      text-align: center;
+    }
+    .smallbox img {
+      width: 70%;
+    }
+    .smallbox .minititle {
+      color: {{colors.minititle}};
+      font-size: 30px;
+      margin: 0px;
+    }
+
+    @media only screen and (max-width: 800px) {
+      .bigbox {
+        flex-direction: column;
+      }
+      .smallbox {
+        width: 100%;
+      }
+      .smallbox img {
+        width: 40%;
+      }
+    }
+
+
+  </style>
+
 {% endblock %}
 
 {% block content %}
-  Contact
+  <div class="wide_section">
+    <div class="title">
+      contact us
+    </div>
+    <div class="body common">
+      MIT StartLabs is always looking to meet new people and bring these people together under a common passion for entrepreneurship and innovation. If you would love to be part of our community, team, or partnerships, please reach out any time. We would love to meet you!
+    </div>
+  </div>
+
+  <div class="bigbox">
+    <div class="smallbox">
+        <img src="{{url_for('static', filename='images/community_icon.png')}}">
+        <p class="minititle">community</p>
+        <p class="common">
+          Click here to join our community! StartLabs community members get access to our innovation and entrepreneurship resources and events on campus.
+        </p>
+    </div>
+    <div class="smallbox">
+      <img src="{{url_for('static', filename='images/team_icon.png')}}">
+      <p class="minititle">team</p>
+      <p class="common">
+          Applications to join our team with open
+          next fall. To be notified when they open,
+          click here
+      </p>
+    </div>
+    <div class="smallbox">
+      <img src="{{url_for('static', filename='images/partner_icon.png')}}">
+      <p class="minititle">partner/sponsor</p>
+      <p class="common">
+        If you’re interested in partnering with or
+        sponsoring StartLabs, shoot us an email at
+        startlabs-contact@mit.edu.      
+      </p>
+    </div>
+  </div>
 {% endblock %}

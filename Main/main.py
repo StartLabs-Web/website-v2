@@ -28,7 +28,7 @@ colors["h2"] = base["light"]
 colors["link"] = base["light"]
 colors["contact_button"] = base["accent_two"]
 colors["footer"] = base["dark"]
-
+colors["minititle"] = base["medium"]
 ############
 # Redesign #
 ############
