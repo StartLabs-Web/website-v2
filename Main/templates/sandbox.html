@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Acme', sans-serif;
+        }
+
+        /* DROPDOWN SETTINGS */
+
+        /* Dropdown Icon */
+        #dropdown {
+            float: right;
+        }
+        #dropbtn {
+            background-color: white;
+            padding: 16px;
+            border: none;
+            cursor: pointer;
+            margin: 0px 20px 0px 20px;
+        }
+
+        /* Dropdown show contents */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            text-align: right;
+        }
+
+        .dropdown-content a {
+            color: {{colors.navbar_nonactive}};
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #dropdown a:hover {
+            color: {{colors.navbar_active}};
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        $( document ).ready(function() {
+            document.getElementById("dropbtn").onclick = function(){myFunction();};
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+        });
+
+    </script>
+
+</head>
+<body>
+    <div id="dropdown">
+        <button id="dropbtn">
+            <img src="{{url_for('static', filename='images/hamburger_icon.svg')}}">
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+                
+
+    <br>
+    more stufff <br>
+    more stufff <br>
+    more stufff <br>
+    more stufff <br>
+    more stufff <br>
+    more stufff <br>
+    more stufff <br>
+    more stufff <br>
+    more stufff <br>
+    more stufff <br>
+    more stufff <br>
+
+</body>
+</html>
