@@ -61,49 +61,91 @@
             #topbar {
                 display: flex;
                 align-items: center;
-                overflow: hidden;
                 width: 100%;
                 background-color: white;
             }
 
-            #topbar #upper_logo {
-                padding: 12px 16px;
+            /* Navbar Logo */
+            #navbar_logo {
+                padding: 12px 8px;
             }
-            #topbar #upper_logo:hover{
+            #navbar_logo:hover{
                 opacity: 0.8;
             }
-            #topbar #upper_logo a{
-                text-decoration: none;
-            }
-            #topbar #upper_logo p {
-                display: inline;
-                font-size: 1.8em; 
-                vertical-align: top;    
-                color: {{colors.upper_logo}};
+            #navbar_logo img{
+                height: 50px;
             }
 
-            #topbar #navbar {
+            /* Navbar Links */
+            #navbar {
                 margin-left: auto;
             }
-            #topbar #navbar ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-            }
-            #topbar #navbar li {
-                float: left;
-            }
-            #topbar #navbar li a {
-                display: block;
+            #navbar a {
+                display: inline-block;
                 color: {{colors.navbar_nonactive}};
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
             }
-            #topbar #navbar li a:hover {
+            #navbar a:hover {
                 color: {{colors.navbar_active}};
             }
+
+            /* hide hamburger */
+            #dropdown {
+                display: none;
+            }
+
+            /* DROPDOWN SETTINGS (Mobile) */
+            @media only screen and (max-width: 800px) {
+                #navbar {
+                    display: none;
+                }
+
+                /* Dropdown Icon */
+                #dropdown {
+                    display: block;
+                    margin-left: auto;
+                }
+                #dropbtn {
+                    background-color: white;
+                    padding: 16px;
+                    border: none;
+                    cursor: pointer;
+                    margin: 0px 20px 0px 20px;
+                }
+                #dropbtn :hover {
+                    opacity: 0.6;
+                }
+
+                /* Dropdown show contents */
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: white;
+                    overflow: auto;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    z-index: 1;
+                    text-align: right;
+                }
+
+                .dropdown-content a {
+                    color: {{colors.navbar_nonactive}};
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+
+                #dropdown a:hover {
+                    color: {{colors.navbar_active}};
+                }
+
+                .show {
+                    display: block;
+                }
+
+            }
+
 
             /* The sticky class is added to the navbar with JS when it reaches its scroll position */
             .sticky {
@@ -226,6 +268,15 @@
                 });
             });
 
+            /*
+            FEATURE: Clicking hamburger icon will show dropdown content
+            */
+            $( document ).ready(function() {
+                document.getElementById("dropbtn").onclick = function(){
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+            });
+
         </script>
 
 
@@ -234,32 +285,45 @@
     </head>
     <body>
 
+        <!-- Topbar -->
         <div id="topbar" class="sticky">
-            
-            <div id="upper_logo">
+
+            <!-- Navbar Logo -->
+            <div id="navbar_logo">
                 <a href="./">
-                    <img src="{{url_for('static', filename='images/logos/logo-small.PNG')}}"
-                    style="height:1.8em">
-                    <p> startlabs </p>
+                    <img src="{{url_for('static', filename='images/logos/navbar_logo.PNG')}}">
                 </a>
             </div>
 
+            <!-- Navbar Links (Normal and Mobile versions) -->
             <div id="navbar">
-                <ul>
-                    <li><a href="./about">about</a></li>
-                    <li><a href="./events">events</a></li>
-                    <li><a href="./partners">partners</a></li>
-                    <li><a href="./team">team</a></li>
-                    <li><a href="./contact">contact</a></li>
-                </ul>
+                <a href="./about">about</a>
+                <a href="./events">events</a>
+                <a href="./partners">partners</a>
+                <a href="./team">team</a>
+                <a href="./contact">contact</a>
+            </div>
+            <div id="dropdown">
+                <button id="dropbtn">
+                    <img src="{{url_for('static', filename='images/hamburger_icon.svg')}}">
+                </button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="./about">about</a>
+                    <a href="./events">events</a>
+                    <a href="./partners">partners</a>
+                    <a href="./team">team</a>
+                    <a href="./contact">contact</a>
+                </div>
             </div>
             
         </div>
 
+        <!-- Content -->
         <div id="content">
             {% block content %}{% endblock %}
         </div>
         
+        <!-- Footer -->
         <footer>
             <div id="left">
                 <!-- nothing here -->

@@ -20,7 +20,6 @@ base["accent_two"] = "rgb(255, 194, 0)"
 
 # second layer (USE THESE IN THE HTML/CSS)
 colors = {}
-colors["upper_logo"] = base["dark"]
 colors["navbar_nonactive"] = base["dark"]
 colors["navbar_active"] = base["light"]
 colors["h1"] = base["medium"]

@@ -77,14 +77,28 @@
             if (window.pageYOffset >= height_start && window.pageYOffset <= height_end) {
                 topbar.style.backgroundColor = "transparent";
                 for (i = 0; i < tags.length; i++){
+                    tags[i].style.backgroundColor = "transparent";
                     tags[i].style.color = "white";
+                    tags[i].onmouseover = function() {
+                        this.style.color = "{{colors.navbar_active}}";
+                    }
+                    tags[i].onmouseout = function() {
+                        this.style.color = "white";
+                    }
                 }
             } 
             // Navbar css in Normal section
             else {
                 topbar.style.backgroundColor = "white";
                 for (i = 0; i < tags.length; i++){
+                    tags[i].style.backgroundColor = "white";
                     tags[i].style.color = "{{colors.navbar_nonactive}}";
+                    tags[i].onmouseover = function() {
+                        this.style.color = "{{colors.navbar_active}}";
+                    }
+                    tags[i].onmouseout = function() {
+                        this.style.color = "{{colors.navbar_nonactive}}";
+                    }
                 }
             }
         }
