@@ -7,12 +7,18 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
         <style>
 
             /* **************** */
             /* General Settings */
             /* **************** */
+
+            html, body {
+                margin:0;
+                padding:0;
+            }
 
             body {
                 font-family: 'Acme', sans-serif;
@@ -24,16 +30,27 @@
                 letter-spacing: 4px;
             }
 
+            h2 {
+                color: {{colors.h2}};
+                font-size: 40px;
+                letter-spacing: 3px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+
             .description {
               display: inline-block;
               width: 60%;
               font-family: 'Karla', sans-serif;
-              text-align: justify;
             }
             
-            .description a {
+            a {
               text-decoration: none;
               color: {{colors.link}};
+            }
+
+            .common {
+                font-family: 'Karla', sans-serif;
             }
 
 
@@ -42,56 +59,200 @@
             /* *************** */
 
             #topbar {
-                display: block;
-                overflow: hidden;
+                display: flex;
+                align-items: center;
                 width: 100%;
+                background-color: white;
             }
 
-            #topbar #upper_logo {
-                float: left;
-                padding: 14px 16px;
+            /* Navbar Logo */
+            #navbar_logo {
+                padding: 12px 8px;
             }
-            #topbar #upper_logo a{
-                text-decoration: none;
+            #navbar_logo:hover{
+                opacity: 0.8;
             }
-            #topbar #upper_logo p {
-                display: inline;
-                font-size: 1.8em; 
-                vertical-align: top;    
-                color: {{colors.upper_logo}};
+            #navbar_logo img{
+                height: 50px;
             }
 
-            #topbar #navbar {
-                float: right;
+            /* Navbar Links */
+            #navbar {
+                margin-left: auto;
             }
-            #topbar #navbar ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-            }
-            #topbar #navbar li {
-                float: left;
-            }
-            #topbar #navbar li a {
-                display: block;
+            #navbar a {
+                display: inline-block;
                 color: {{colors.navbar_nonactive}};
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
             }
-            #topbar #navbar li a:hover {
+            #navbar a:hover {
                 color: {{colors.navbar_active}};
             }
+
+            /* hide hamburger */
+            #dropdown {
+                display: none;
+            }
+
+            /* DROPDOWN SETTINGS (Mobile) */
+            @media only screen and (max-width: 800px) {
+                #navbar {
+                    display: none;
+                }
+
+                /* Dropdown Icon */
+                #dropdown {
+                    display: block;
+                    margin-left: auto;
+                }
+                #dropbtn {
+                    background-color: white;
+                    padding: 16px;
+                    border: none;
+                    cursor: pointer;
+                    margin: 0px 20px 0px 20px;
+                }
+                #dropbtn :hover {
+                    opacity: 0.6;
+                }
+                #dropbtn i {
+                    font-size: 30px;
+                }
+
+                /* Dropdown show contents */
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: white;
+                    overflow: auto;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    z-index: 1;
+                    text-align: right;
+                }
+
+                .dropdown-content a {
+                    color: {{colors.navbar_nonactive}};
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+
+                #dropdown a:hover {
+                    color: {{colors.navbar_active}};
+                }
+
+                .show {
+                    display: block;
+                }
+
+            }
+
+
+            /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+            .sticky {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+            }
+
+
+
+            /* *************** */
+            /* Footer Settings */
+            /* *************** */
+            footer {
+                color: white;
+                width: 100%;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                background-color: {{colors.footer}};
+            }
+            footer p {
+                margin: 12px;
+            }
+
+            footer #left {
+                width: 33%;
+            }
+            footer #center {
+                width: 34%;
+                text-align: center;
+            }
+            footer #right {
+                width: 33%;
+                text-align: right;
+            }
+
+
+            /* ************ */
+            /* Social Icons */
+            /* ************ */
+
+            #social_wrapper {
+                padding-right: 10px;
+            }
+            .fab, .fas {
+                padding: 10px;
+                margin: 5px 4px;
+                color: {{colors.footer}};
+                font-size: 15px;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 50%;
+                background: white;
+            }
+            .fab:hover {
+                opacity: 0.9;
+            }
+
+
+            @media only screen and (max-width: 800px) {
+                footer {
+                    flex-direction: column;
+                    height: 100px;
+                }
+                footer #left {
+                    width: 0%;
+                }
+                footer #center {
+                    width: 100%;
+                }
+                footer #right {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                #social_wrapper {
+                    padding-right: 0px;
+                }
+
+                .fa {
+                    padding: 7px;
+                    font-size: 14px;
+                    width: 14px;
+                    margin: 0px 4px;
+                }
+            }
+
 
             /* *************** */
             /* --------------- */
             /* *************** */
+            
+            .nothing {
+                color: white;
+            }
 
         </style>
 
         <script>
-            // FEATURE: Highlighting the link on the navbar for the page you are currently on
+
+            /*
+            FEATURE: Highlighting the link on the navbar for the page you are currently on
+            */
 
             var url = location.href;
             var url_split = url.split('/');
@@ -110,6 +271,16 @@
                     }
                 });
             });
+
+            /*
+            FEATURE: Clicking hamburger icon will show dropdown content
+            */
+            $( document ).ready(function() {
+                document.getElementById("dropbtn").onclick = function(){
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+            });
+
         </script>
 
 
@@ -118,31 +289,64 @@
     </head>
     <body>
 
-        <div id="topbar">
-            
-            <div id="upper_logo">
+        <!-- Topbar -->
+        <div id="topbar" class="sticky">
+
+            <!-- Navbar Logo -->
+            <div id="navbar_logo">
                 <a href="./">
-                    <img src="{{url_for('static', filename='images/logos/logo-small.PNG')}}"
-                    style="height:1.8em">
-                    <p> startlabs </p>
+                    <img src="{{url_for('static', filename='images/logos/navbar_logo.PNG')}}">
                 </a>
             </div>
 
+            <!-- Navbar Links (Normal and Mobile versions) -->
             <div id="navbar">
-                <ul>
-                    <li><a href="./about">about</a></li>
-                    <li><a href="./events">events</a></li>
-                    <li><a href="./partners">partners</a></li>
-                    <li><a href="./team">team</a></li>
-                    <li><a href="./contact">contact</a></li>
-                </ul>
+                <a href="./about">about</a>
+                <a href="./events">events</a>
+                <a href="./partners">partners</a>
+                <a href="./team">team</a>
+                <a href="./contact">contact</a>
+            </div>
+            <div id="dropdown">
+                <button id="dropbtn">
+                    <!-- <img src="{{url_for('static', filename='images/hamburger_icon.svg')}}"> -->
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="./about">about</a>
+                    <a href="./events">events</a>
+                    <a href="./partners">partners</a>
+                    <a href="./team">team</a>
+                    <a href="./contact">contact</a>
+                </div>
             </div>
             
         </div>
 
+        <!-- Content -->
         <div id="content">
             {% block content %}{% endblock %}
         </div>
+        
+        <!-- Footer -->
+        <footer>
+            <div id="left">
+                <!-- nothing here -->
+            </div><div id="center">
+                <p class="common">
+                    @ 2019 StartLabs
+                </p>
+            </div><div id="right">
+                <div id="social_wrapper">
+                    <a href="#" class="fab fa-facebook"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                    <a href="#" class="fab fa-youtube"></a>
+                    <a href="#" class="fas fa-envelope"></a>
+                    <a href="#" class="placeholder"></a>
+                </div>
+            </div>
+        </footer>
 
     </body>
 
