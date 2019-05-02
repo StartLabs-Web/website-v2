@@ -41,7 +41,7 @@ def about():
 
 @app.route('/events')
 def events():
-    return render_template("events.html", colors=colors, events=getUpcomingEvents(num_total_events, num_future_events), 
+    return render_template("events.html", colors=colors, events=getUpcomingEvents(num_total_events, num_future_events),
         getTimeStringForEvent=getTimeStringForEvent, getDateStringForEvent=getDateStringForEvent, getShortDescription=getShortDescription, isPast=isPast)
 
 @app.route('/partners')
@@ -65,7 +65,7 @@ def sandbox():
 """
 Purpose: Retreive all filepaths to white headshot photos
 Params:  None
-Returns: (list of strings) all the filepaths to the photos 
+Returns: (list of strings) all the filepaths to the photos
 """
 def get_team_headshots():
     headshots_paths = []
@@ -81,8 +81,8 @@ def get_team_headshots():
 # Google Calendar API #
 #######################
 
-num_total_events = 4
-num_future_events = 3
+num_total_events = 3
+num_future_events = 2
 description_length_chars = 140
 
 def isPast(event):
@@ -91,7 +91,7 @@ def isPast(event):
     else:
         end = datetime.datetime.strptime(event['end']['dateTime'][:-6], "%Y-%m-%dT%H:%M:%S")
     return end < datetime.datetime.now()
- 
+
 
 def getShortDescription(description):
     if description != None and len(description) > description_length_chars:
@@ -143,6 +143,7 @@ def getUpcomingEvents(num_total, num_future):
 
     # Authentication using Google CalendarAPi
     rootDir = os.path.dirname(os.path.abspath(__file__))
+    print(rootDir)
     store = file.Storage(os.path.join(rootDir, 'token.json'))
     creds = store.get()
     if not creds or creds.invalid:

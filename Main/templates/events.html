@@ -73,6 +73,10 @@
       margin: 20px 20px 20px 20px;
     }
 
+    .past-event {
+        opacity: .32;
+    }
+
   </style>
 {% endblock %}
 
@@ -91,7 +95,12 @@ lineup of amazing events. To keep up to date with all our events, <a href="https
         {%if events%}
           {%for event in events%}
           <!-- If events exist, create row for each event -->
-          <tr>
+          {%if isPast(event)%}
+          <tr class="past-event">
+          {%else%}
+          <tr class="future-event">
+
+          {%endif%}
             <td style="width:5%">
               <a target="_blank" href="{{event['htmlLink']}}">
                 <img border="0" src="https://calendar.google.com/googlecalendar/images/logo-plus.png">
@@ -131,8 +140,8 @@ lineup of amazing events. To keep up to date with all our events, <a href="https
                 <h2> welcome to </h2>
                 <h1> startlabs </h1>
                 <p id="home_descrip" class="description">
-                    We are the premier undergraduate entrepreneurship club at MIT, 
-                    providing opportunities for student entrepreneurs and working to 
+                    We are the premier undergraduate entrepreneurship club at MIT,
+                    providing opportunities for student entrepreneurs and working to
                     foster an innovative environment for the entire community.
                 </p>
                 </center>
@@ -142,8 +151,8 @@ lineup of amazing events. To keep up to date with all our events, <a href="https
                 <h2> welcome to </h2>
                 <h1> startlabs </h1>
                 <p id="home_descrip" class="description">
-                    We are the premier undergraduate entrepreneurship club at MIT, 
-                    providing opportunities for student entrepreneurs and working to 
+                    We are the premier undergraduate entrepreneurship club at MIT,
+                    providing opportunities for student entrepreneurs and working to
                     foster an innovative environment for the entire community.
                 </p>
                 </center>
