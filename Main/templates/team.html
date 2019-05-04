@@ -33,7 +33,7 @@
   <center>
   {% for path in headshot_paths %}
     <div class="headshots">
-      <img src="{{url_for('static', filename=path)}}" height=160 width=200  alt="" />
+      <img src="{{'./static/' + path}}" height=160 width=200  alt="" />
       <p class="fullname">
         First Last
       </p>
