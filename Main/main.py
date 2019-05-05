@@ -70,10 +70,13 @@ Returns: (list of strings) all the filepaths to the photos
 def get_team_headshots():
     headshots_paths = []
     file_paths = []
+    # find the absolute path to the folder, then list folder contents
     filenames = os.listdir(os.path.join(app.static_folder, 'images/2018-members'))
+    # make the path relative to location of 'static' folder
     for i in range(len(filenames)):
         tmp_path = os.path.join('images/2018-members/', filenames[i])
         file_paths.append(url_for('static', filename=tmp_path))
+    # only accept photos with 'white'
     for f in file_paths:
         if "white" in f:
             headshots_paths.append(f)
