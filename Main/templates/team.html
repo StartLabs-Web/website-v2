@@ -33,7 +33,7 @@
   <center>
   {% for path in headshot_paths %}
     <div class="headshots">
-      <img src="{{'./static/' + path}}" height=160 width=200  alt="" />
+      <img src="{{path}}" height=160 width=200  alt="" />
       <p class="fullname">
         First Last
       </p>
@@ -42,5 +42,5 @@
       </p>
     </div>    
   {% endfor %}
-</center>
+  </center>
 {% endblock %}

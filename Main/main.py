@@ -69,9 +69,12 @@ Returns: (list of strings) all the filepaths to the photos
 """
 def get_team_headshots():
     headshots_paths = []
-    filepaths = os.listdir("static/images/2018-members")
-    filepaths = ["images/2018-members/" + f for f in filepaths]
-    for f in filepaths:
+    file_paths = []
+    filenames = os.listdir(os.path.join(app.static_folder, 'images/2018-members'))
+    for i in range(len(filenames)):
+        tmp_path = os.path.join('images/2018-members/', filenames[i])
+        file_paths.append(url_for('static', filename=tmp_path))
+    for f in file_paths:
         if "white" in f:
             headshots_paths.append(f)
     return headshots_paths
