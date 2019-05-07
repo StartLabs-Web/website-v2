@@ -50,20 +50,48 @@ def partners():
 
 @app.route('/team')
 def team():
-    headshot_paths = get_team_headshots()
-    return render_template("team.html", colors=colors, headshot_paths = headshot_paths)
+    headshots_info = get_headshots_info()
+    return render_template("team.html", colors=colors, headshots_info = headshots_info)
 
 @app.route('/contact')
 def contact():
     return render_template("contact.html", colors=colors)
 
+
+
 """
-Purpose: Retreive all filepaths to white headshot photos
+Purpose: Get photos and info about team member headshots
 Params:  None
-Returns: (list of strings) all the filepaths to the photos
+Returns: a list of dictionaries, with each dict holding information about one team member
+Example: 
+[
+    {'path': '/static/images/2018-members/leon-white.jpg', 'filename': 'leon-white.jpg', 'firstname': 'leon'},
+    {'path': '/static/images/2018-members/matthew-white.jpg', 'filename': 'matthew-white.jpg', 'firstname': 'matthew'}
+]
 """
-def get_team_headshots():
+def get_headshots_info():
+    file_paths = get_headshots_filepaths()
+    # only accept photos with 'white'
     headshots_paths = []
+    for f in file_paths:
+        if "white" in f:
+            headshots_paths.append(f)
+    # turn into a list of dictionary
+    headshots_info = []
+    for path in headshots_paths:
+        d = dict()
+        d["path"] = path
+        d["filename"] = d["path"].split("/")[-1]
+        d["firstname"] = d["filename"].split("-")[0]
+        headshots_info.append(d) 
+    return headshots_info
+
+"""
+Purpose: Retreive all filepaths to files located in "static/images/2018-members"
+Params:  None
+Returns: (list of strings) all the filepaths to the headshot photos
+"""
+def get_headshots_filepaths():
     file_paths = []
     # find the absolute path to the folder, then list folder contents
     filenames = os.listdir(os.path.join(app.static_folder, 'images/2018-members'))
@@ -71,12 +99,7 @@ def get_team_headshots():
     for i in range(len(filenames)):
         tmp_path = os.path.join('images/2018-members/', filenames[i])
         file_paths.append(url_for('static', filename=tmp_path))
-    # only accept photos with 'white'
-    for f in file_paths:
-        if "white" in f:
-            headshots_paths.append(f)
-    return headshots_paths
-
+    return file_paths
 
 #######################
 # Google Calendar API #
