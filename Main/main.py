@@ -57,11 +57,6 @@ def team():
 def contact():
     return render_template("contact.html", colors=colors)
 
-@app.route('/sandbox')
-def sandbox():
-    return render_template("sandbox.html", colors=colors)
-
-
 """
 Purpose: Retreive all filepaths to white headshot photos
 Params:  None
