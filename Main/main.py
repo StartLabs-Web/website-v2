@@ -28,9 +28,10 @@ colors["link"] = base["light"]
 colors["contact_button"] = base["accent_two"]
 colors["footer"] = base["dark"]
 colors["minititle"] = base["medium"]
-############
-# Redesign #
-############
+
+#########
+# Links #
+#########
 @app.route('/')
 def home():
     return render_template("home.html", colors=colors)
@@ -59,6 +60,9 @@ def contact():
 
 
 
+#############
+# Headshots #
+#############
 """
 Purpose: Get photos and info about team member headshots
 Params:  None
