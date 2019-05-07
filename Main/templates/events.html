@@ -63,6 +63,28 @@
 			text-align: center;
 		}
 
+    .column {
+      float: left;
+      width: 50%;
+    }
+
+    .leftcol {
+      display: block;
+      width: 50%;
+      margin: 20px 20px 20px 20px;
+    }
+
+    #leftcol img {
+        width: 100%;
+    }
+
+    img.resize {
+        margin-top: 50px;
+        max-width:50%;
+        max-height:50%;
+    }
+
+
   </style>
 {% endblock %}
 
@@ -106,32 +128,37 @@ lineup of amazing events. To keep up to date with all our events, <a href="https
     </table>
 </center>
 
+  <br>
 
-    <div class="homepage-wrapper">
-        <div class="row">
-            <div class="column" id="leftcol">
-                <center>
-                <h2> welcome to </h2>
-                <h1> startlabs </h1>
-                <p id="home_descrip" class="description">
-                    We are the premier undergraduate entrepreneurship club at MIT, 
-                    providing opportunities for student entrepreneurs and working to 
-                    foster an innovative environment for the entire community.
-                </p>
-                </center>
-            </div>
-            <div class="column" id="rightcol">
-                <center>
-                <h2> welcome to </h2>
-                <h1> startlabs </h1>
-                <p id="home_descrip" class="description">
-                    We are the premier undergraduate entrepreneurship club at MIT, 
-                    providing opportunities for student entrepreneurs and working to 
-                    foster an innovative environment for the entire community.
-                </p>
-                </center>
-            </div>
-        </div>
-    </div>
+
+  <div class="row">
+      <div class="column" id="leftcol">  
+        <center>
+          <img class="resize" src="{{url_for('static', filename='images/homepage/ideafactory-25.jpg')}}"> 
+        </center>
+      </div>
+      <div class="column">
+        <h1 style="margin-bottom: 0px;"> switzerland tech trek </h1>
+        <h2 style="margin-top: 0px; font-style: italic;"> march 23-29, 2019 </h2>
+        <h4> We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland!We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! </h4>
+      </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+      <div class="column" align="right">
+
+          <h1 style="color:blue; margin-bottom: 0px; "> entrepalooza</h1>
+          <h2 style="margin-top: 0px; font-style: italic;"> september 14, 2018 </h2>
+          <h4> We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland!We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland! We went to switzerland!  </h4>
+      </div>
+      <div class="column">  
+        <center>
+          <img class="resize" src="{{url_for('static', filename='images/homepage/ideafactory-25.jpg')}}"> 
+        </center>
+      </div>
+
+  </div>
 
 {% endblock %}
