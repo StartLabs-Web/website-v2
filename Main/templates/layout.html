@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+
         {% block head %}
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
@@ -45,7 +45,7 @@
               width: 60%;
               font-family: 'Karla', sans-serif;
             }
-            
+
             a {
               text-decoration: none;
               color: {{colors.link}};
@@ -239,11 +239,70 @@
                 }
             }
 
+            /* *************** */
+            /* Events CSS */
+            /* *************** */
+            	.events-table {
+          	    clear: both;
+          	    list-style-type: none;
+          	    margin-top: 12px !important;
+          	    margin-right: 0px !important;
+          	    margin-bottom: 0px !important;
+          	    margin-left: 0px !important;
+          	    padding-left: 0;
+                border-collapse:collapse;
+                font-family: 'Karla', sans-serif;
+                width: 100%;
 
+          		}
+          		.events-table tr {
+          		    padding-bottom: .5rem;
+          		    padding-top: .5rem;
+          		    text-align: left;
+          		    vertical-align: middle;
+          		}
+          		.events-table td {
+          		    padding-left: 5px;
+          		    padding-right: 5px;
+                  border-bottom: 1px solid rgba(215,215,215,0.7);
+                  border-top: 1px solid rgba(215,215,215,0.7);
+
+          		}
+
+          		.icon {
+          		    vertical-align:middle;
+          		    margin-left: auto;
+          		    margin-right: auto;
+          		}
+
+          		.icon-span {
+          		    width:25px;
+          		    height:25px;
+          		    vertical-align:middle;
+          		    display: inline-block;
+          		}
+
+          		.events_padding {
+          		    width:100%;
+          		    padding:20px;
+          		}
+
+          		.no-events-text {
+          			text-align: center;
+          		}
+              .calendar {
+                display: block;
+                width: 90%;
+                margin: 20px 20px 20px 20px;
+              }
+
+              .past-event {
+                  opacity: .32;
+              }
             /* *************** */
             /* --------------- */
             /* *************** */
-            
+
             .nothing {
                 color: white;
             }
@@ -287,7 +346,7 @@
 
 
         {% endblock %}
- 
+
     </head>
     <body>
 
@@ -322,17 +381,17 @@
                     <a href="./contact">contact</a>
                 </div>
             </div>
-            
+
         </div>
 
         <!-- Content -->
         <div id="content">
             {% block content %}{% endblock %}
         </div>
-        
+
         <!-- Footer -->
         <footer>
-            
+
             <div id="left">
                 <!-- nothing here -->
             </div><div id="center">

@@ -56,7 +56,7 @@
         }
     }
 
-    
+
   </style>
 
   <script>
@@ -69,7 +69,7 @@
 
         function addContrast() {
             var height_start = dark_section.offsetTop;
-            var height_end = height_start + dark_section.clientHeight; 
+            var height_end = height_start + dark_section.clientHeight;
             topbar = document.getElementById("topbar");
             tags = document.getElementById("topbar").getElementsByTagName("*");
 
@@ -86,7 +86,7 @@
                         this.style.color = "white";
                     }
                 }
-            } 
+            }
             // Navbar css in Normal section
             else {
                 topbar.style.backgroundColor = "white";
@@ -113,23 +113,28 @@
 {% block content %}
 
     <div class="half_wide_section">
-        <img class="large_image" src="{{url_for('static', filename='images/homepage/ideafactory-25.jpg')}}"> 
-    </div><div class="half_wide_section"> 
+        <img class="large_image" src="{{url_for('static', filename='images/homepage/ideafactory-25.jpg')}}">
+    </div><div class="half_wide_section">
         <center>
             <p class="common"> <i> welcome to </i> </p>
             <h1> startlabs </h1>
             <p class="description">
-                We are the premier undergraduate entrepreneurship club at MIT, 
-                providing opportunities for student entrepreneurs and working to 
+                We are the premier undergraduate entrepreneurship club at MIT,
+                providing opportunities for student entrepreneurs and working to
                 foster an innovative environment for the entire community.
             </p>
             <br><br>
             <button class="common"> contact us </button>
         </center>
     </div>
-    
-    <br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+    <center>
+      <h2>upcoming events</h2>
+        {% include 'calendar.html' with context%}
+
+    </center>
+
+    <br><br><br><br><br><br><br><br>
 
 
     <div class="wide_section" id="dark_section">
@@ -143,7 +148,7 @@
     </div>
 
 
-    <div class="half_wide_section"> 
+    <div class="half_wide_section">
         <center>
             <h2> events </h2>
             <p class="description">
@@ -154,7 +159,7 @@
             <br>
         </center>
     </div><div class="half_wide_section">
-        <img class="large_image" src="{{url_for('static', filename='images/homepage/somewhere.png')}}"> 
+        <img class="large_image" src="{{url_for('static', filename='images/homepage/somewhere.png')}}">
     </div>
 
 
@@ -163,8 +168,3 @@
 
 
 {% endblock %}
-
-
-
-
-
