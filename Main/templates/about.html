@@ -3,7 +3,13 @@
 {% block head %}
   {{ super() }}
   <style type="text/css">
-    
+    .images {
+      display: flex;
+      justify-content: space-around;
+    }
+    .item_title {
+      font-weight: bold;
+    }
   </style>
 {% endblock %}
 
@@ -11,7 +17,39 @@
   <center>
     <h1>about us</h1>
     <p class="description">
-      StartLabs is my fav seeks to be the hub of undergraduate entrepreneurship activity at MIT. We plan on doing this by hosting community events for student entrepreneurs to meet one another and find co-founders or early hires, connecting student startups to resources across campus or in industry and providing publicity and exposure through our channels, and holding large, campus-wide events to increase student interest in entrepreneurship and understanding of what the profession entails. Our goals are to educate members in material relevant to becoming successful entrepreneurs, increase undergraduate interest in entrepreneurship, and help student startups become successful.
+      StartLabs seeks to be the hub of undergraduate entrepreneurship activity at MIT. We plan on doing this by hosting community events for student entrepreneurs to meet one another and find co-founders or early hires, connecting student startups to resources across campus or in industry and providing publicity and exposure through our channels, and holding large, campus-wide events to increase student interest in entrepreneurship and understanding of what the profession entails. Our goals are to educate members in material relevant to becoming successful entrepreneurs, increase undergraduate interest in entrepreneurship, and help student startups become successful.
     </p>
+    <br>
+    <br>
+    <div class="images description">
+      <div style="width:20%;">
+        <center>
+          <img src="{{url_for('static', filename='images/logos/logo-small.PNG')}}">
+          <p class="item_title">innovation</p>
+          <p class="item_description">we come up with new ideas and new companies.</p>
+        </center>
+      </div>
+      <div style="width:20%;">
+        <center>
+          <img src="{{url_for('static', filename='images/logos/logo-small.PNG')}}">
+          <p class="item_title">startups</p>
+          <p class="item_description">we connect with local, national, and international startups.</p>
+        </center>
+      </div>
+      <div style="width:20%;">
+        <center>
+          <img src="{{url_for('static', filename='images/logos/logo-small.PNG')}}">
+          <p class="item_title">community</p>
+          <p class="item_description">we provide students with a support network of entrepreneurs.</p>
+        </center>
+      </div>
+      <div style="width:20%;">
+        <center>
+          <img src="{{url_for('static', filename='images/logos/logo-small.PNG')}}">
+          <p class="item_title">fun</p>
+          <p class="item_description">we bond, we party, we have fun!</p>
+        </center>
+      </div>
+    </div>
   </center>
 {% endblock %}
