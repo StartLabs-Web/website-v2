@@ -34,7 +34,8 @@ colors["minititle"] = base["medium"]
 #########
 @app.route('/')
 def home():
-    return render_template("home.html", colors=colors)
+    return render_template("home.html", colors=colors, events=getUpcomingEvents(num_total_events, num_future_events),
+        getTimeStringForEvent=getTimeStringForEvent, getDateStringForEvent=getDateStringForEvent, getShortDescription=getShortDescription, isPast=isPast)
 
 @app.route('/about')
 def about():
@@ -67,7 +68,7 @@ def contact():
 Purpose: Get photos and info about team member headshots
 Params:  None
 Returns: a list of dictionaries, with each dict holding information about one team member
-Example: 
+Example:
 [
     {'path': '/static/images/2018-members/leon-white.jpg', 'filename': 'leon-white.jpg', 'firstname': 'leon'},
     {'path': '/static/images/2018-members/matthew-white.jpg', 'filename': 'matthew-white.jpg', 'firstname': 'matthew'}
@@ -87,7 +88,7 @@ def get_headshots_info():
         d["path"] = path
         d["filename"] = d["path"].split("/")[-1]
         d["firstname"] = d["filename"].split("-")[0]
-        headshots_info.append(d) 
+        headshots_info.append(d)
     return headshots_info
 
 """
