@@ -28,6 +28,10 @@ def new_version():
 def old_version():
     return render_template('old/indexold.html')
 
+@app.route('/entrepalooza')
+def entrepalooza_2019():
+    return render_template('old/entrepalooza.html')
+
 @app.route('/email')
 def old_email():
     return render_template('old/email.html')
