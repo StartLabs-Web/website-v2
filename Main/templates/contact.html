@@ -50,7 +50,7 @@
       justify-content: space-between;
     }
     .smallbox {
-      margin: 10px 0px;
+      margin: 0px 0px;
       width: 25%;
       text-align: center;
     }
@@ -74,7 +74,26 @@
         width: 40%;
       }
     }
+    
+    .contact_icon{
+      height: 65px;
+      padding: 13px 30px;
+    }
 
+    #sponsor{
+      height: 85px;
+      padding: 0px 30px;
+    }
+
+    #team{
+      height: 50px;
+      padding:18px 30px;
+    }
+    .h1{
+      font-family: 'neue-einstellung';
+      font-style:normal;
+      font-weight: 400;
+    }
 
   </style>
 
@@ -82,7 +101,7 @@
 
 {% block content %}
   <div class="wide_section">
-    <div class="title">
+    <div class="title h1">
       contact us
     </div>
     <div class="body common">
@@ -92,14 +111,14 @@
 
   <div class="bigbox">
     <div class="smallbox">
-        <img src="{{url_for('static', filename='images/community_icon.png')}}">
+        <img src="{{url_for('static', filename='images/contact/community.svg')}}"class="contact_icon">
         <p class="minititle">community</p>
         <p class="common">
           <a href="#">Click here</a> to join our community! StartLabs community members get access to our innovation and entrepreneurship resources and events on campus.
         </p>
     </div>
     <div class="smallbox">
-      <img src="{{url_for('static', filename='images/team_icon.png')}}">
+      <img src="{{url_for('static', filename='images/contact/team.svg')}}"class="contact_icon" id="team">
       <p class="minititle">team</p>
       <p class="common">
           Applications to join our team with open
@@ -108,7 +127,7 @@
       </p>
     </div>
     <div class="smallbox">
-      <img src="{{url_for('static', filename='images/partner_icon.png')}}">
+      <img src="{{url_for('static', filename='images/contact/sponsor.svg')}}" class="contact_icon" id="sponsor">
       <p class="minititle">partner/sponsor</p>
       <p class="common">
         If you’re interested in partnering with or

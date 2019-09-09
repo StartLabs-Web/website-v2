@@ -12,22 +12,28 @@ app = Flask(__name__)
 #####################
 # first layer (DO NOT USE THESE IN THE HTML/CSS)
 base = {}
-base["dark"] = "rgb(0, 106, 72)"
-base["medium"] = "rgb(29, 161, 67)"
-base["light"] = "rgb(48, 211, 70)"
-base["accent_one"] = "rgb(13, 0, 92)"
-base["accent_two"] = "rgb(255, 194, 0)"
+base["dark"] = "rgb(9, 0, 134)" #dark blue
+base["medium"] = "rgb(228, 0, 124)" #neon pink
+base["light"] = "rgb(255, 203, 0)" #yellow 
+base["accent_one"] = "rgb(69, 92, 255)" #blue
+base["accent_two"] = "rgb(146, 1, 119)" #dark pink
 
 # second layer (USE THESE IN THE HTML/CSS)
 colors = {}
+colors["dark"] = base["dark"]
+colors["medium"] = base["medium"]
+colors["light"] = base["light"]
+
 colors["navbar_nonactive"] = base["dark"]
-colors["navbar_active"] = base["light"]
-colors["h1"] = base["medium"]
-colors["h2"] = base["light"]
+colors["navbar_active"] = base["medium"]
+colors["h1"] = base["dark"]
+colors["h2"] = base["medium"]
+colors["h3"] = base["accent_one"]
 colors["link"] = base["light"]
-colors["contact_button"] = base["accent_two"]
-colors["footer"] = base["dark"]
+colors["contact_button"] = base["medium"]
+colors["footer"] = base["accent_two"]
 colors["minititle"] = base["medium"]
+
 
 # 
 #########

@@ -7,10 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+        <link rel='stylesheet' href="../static/styles/layout.css">
         <style>
 
             /* **************** */
@@ -23,10 +20,13 @@
             }
 
             body {
-                font-family: 'Acme', sans-serif;
+                font-family:  'neue-einstellung','Acme', sans-serif;
             }
 
             h1 {
+                font-family: 'neue-einstellung';
+                font-style:normal;
+                font-weight: 400;
                 color: {{colors.h1}};
                 font-size: 50px;
                 letter-spacing: 4px;
@@ -34,6 +34,8 @@
 
             h2 {
                 color: {{colors.h2}};
+                font-style:normal;
+                font-weight: 400;
                 font-size: 40px;
                 letter-spacing: 3px;
                 margin-top: 0px;
@@ -65,17 +67,18 @@
                 align-items: center;
                 width: 100%;
                 background-color: white;
+                height:60px;
             }
 
             /* Navbar Logo */
             #navbar_logo {
-                padding: 12px 8px;
+                padding: 10px 15px 0px 15px;
             }
             #navbar_logo:hover{
                 opacity: 0.8;
             }
             #navbar_logo img{
-                height: 50px;
+                height: 35px;
             }
 
             /* Navbar Links */
@@ -86,7 +89,7 @@
                 display: inline-block;
                 color: {{colors.navbar_nonactive}};
                 text-align: center;
-                padding: 14px 16px;
+                padding: 14px 15px ;
                 text-decoration: none;
             }
             #navbar a:hover {
@@ -167,7 +170,7 @@
             footer {
                 color: white;
                 width: 100%;
-                height: 100px;
+                height: 60px;
                 display: flex;
                 align-items: center;
                 background-color: {{colors.footer}};
@@ -356,14 +359,14 @@
             <!-- Navbar Logo -->
             <div id="navbar_logo">
                 <a href="./">
-                    <img src="{{url_for('static', filename='images/logos/navbar_logo.PNG')}}">
+                    <img src="{{url_for('static', filename='images/logos/navbar_logo.svg')}}">
                 </a>
             </div>
 
             <!-- Navbar Links (Normal and Mobile versions) -->
             <div id="navbar">
-                <a href="./about">about</a>
-                <a href="./events">events</a>
+                <a href="./">home</a>
+                <!-- <a href="./events">events</a> -->
                 <a href="./partners">partners</a>
                 <a href="./team">team</a>
                 <a href="./contact">contact</a>
@@ -374,8 +377,8 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="./about">about</a>
-                    <a href="./events">events</a>
+                    <a href="./">home</a>
+                    <!-- <a href="./events">events</a> -->
                     <a href="./partners">partners</a>
                     <a href="./team">team</a>
                     <a href="./contact">contact</a>

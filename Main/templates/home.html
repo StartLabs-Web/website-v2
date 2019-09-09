@@ -16,7 +16,7 @@
         width: 100%;
     }
 
-    #left_text {
+    /* #left_text {
         background-image: 
             url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 37.5'%3E%3Crect class='mouse' x='0' y='0' width='100' height='37.5'/%3E%3Cpolygon class='diamondMoBa tulip' points='400, 280, 310, 150, 400, 20, 490, 150'/%3E%3Cstyle%3E .mouse %7B fill: %23ffffff; %7D .tulip %7B fill: %23CC2954; %7D .diamondMoBa %7B animation-name: diamondMovesBack; animation-duration: 4s; animation-iteration-count: infinite; transform-origin: 50%25 50%25; animation-direction: alternate-reverse; %7D @keyframes diamondMovesBack %7B 0%25 %7B transform: translate(0, 0); %7D 100%25 %7B transform: translate(200px, 0); %7D %7D %3C/style%3E%3C/svg%3E "),
             url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 37.5'%3E%3Crect class='mouse' x='0' y='0' width='100' height='37.5'/%3E%3Cpolygon class='diamondMoBa tulip' points='400, 280, 310, 150, 400, 20, 490, 150'/%3E%3Cstyle%3E .mouse %7B fill: %23ffffff; %7D .tulip %7B fill: %23CC2954; %7D .diamondMoBa %7B animation-name: diamondMovesBack; animation-duration: 4s; animation-iteration-count: infinite; transform-origin: 50%25 50%25; animation-direction: alternate-reverse; %7D @keyframes diamondMovesBack %7B 0%25 %7B transform: translate(0, 0); %7D 100%25 %7B transform: translate(200px, 0); %7D %7D %3C/style%3E%3C/svg%3E ");
@@ -29,19 +29,42 @@
         min-height: 
             100px,
             100px;  
-        /* max-height:
+        max-height:
             100px,
-            100px; */
-    }
+            100px; 
+    } */
 
     /* Wide Section / Dark Section */
+
     .wide_section {
-        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("{{url_for('static', filename='images/homepage/wideimage.jpg')}}");
         height: 100vh;
         width: 100%;
         background-size: auto 100%;
         display: flex;
         align-items: center;
+        text-align: center;
+    }
+
+
+    #landing_section{
+        background-image: url("{{url_for('static', filename='images/homepage/landing-shapes.svg')}}"); 
+    }
+
+    #landing_div{
+        margin: 0 auto;
+    }
+    
+    #dark_section{
+        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("{{url_for('static', filename='images/homepage/wideimage.jpg')}}");
+    }
+
+    .about-icons {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .about-image{
+        height:75px;
     }
 
     .wide_section .inner_left {
@@ -130,26 +153,73 @@
 
 {% block content %}
 
+    <div class="wide_section" id="landing">
+        <center> 
+            <div class="wide_section">
+                <center>
+                <p class="common"> <i> welcome to </i> </p>
+                <h1> startlabs </h1>
+                <p class="tagline">
+                    MIT's premier entrepreneurship club
+                </p>
+                <br><br>
+                <button class="common"> contact us </button>
+                </center>
+            </div>
+        </center>
+    </div>
+
+    <div class="wide-section" id="about">
+        <center>
+            <h1>about us</h1>
+            <p class="description">
+            StartLabs seeks to be the hub of undergraduate entrepreneurship activity at MIT. We plan on doing this by hosting community events for student entrepreneurs to meet one another and find co-founders or early hires, connecting student startups to resources across campus or in industry and providing publicity and exposure through our channels, and holding large, campus-wide events to increase student interest in entrepreneurship and understanding of what the profession entails. Our goals are to educate members in material relevant to becoming successful entrepreneurs, increase undergraduate interest in entrepreneurship, and help student startups become successful.
+            </p>
+            <br>
+            <br>
+            <div class="about-icons description">
+            <div style="width:20%;">
+                <center>
+                <img src="{{url_for('static', filename='images/about/about-bulb.svg')}}" class="about-image">
+                <p class="item_title">innovation</p>
+                <p class="item_description">we come up with new ideas and new companies.</p>
+                </center>
+            </div>
+            <div style="width:20%;">
+                <center>
+                <img src="{{url_for('static', filename='images/about/about-rocket.svg')}}" class="about-image">
+                <p class="item_title">startups</p>
+                <p class="item_description">we connect with local, national, and international startups.</p>
+                </center>
+            </div>
+            <div style="width:20%;">
+                <center>
+                <img src="{{url_for('static', filename='images/about/about-community.svg')}}" class="about-image">
+                <p class="item_title">community</p>
+                <p class="item_description">we provide students with a support network of entrepreneurs.</p>
+                </center>
+            </div>
+            <div style="width:20%;">
+                <center>
+                <img src="{{url_for('static', filename='images/about/about-plane.svg')}}" class="about-image">
+                <p class="item_title">fun</p>
+                <p class="item_description">we bond, we party, we have fun!</p>
+                </center>
+            </div>
+            </div>
+        </center>
+    </div>
+    <!-- </div>
     <div class="half_wide_section">
         <img class="large_image" src="{{url_for('static', filename='images/homepage/ideafactory-25.jpg')}}">
     </div><div class="half_wide_section">
         <center>
-            <p class="common"> <i> welcome to </i> </p>
-            <h1> startlabs </h1>
-            <p class="description">
-                We are the premier undergraduate entrepreneurship club at MIT,
-                providing opportunities for student entrepreneurs and working to
-                foster an innovative environment for the entire community.
-            </p>
-            <br><br>
-            <button class="common"> contact us </button>
         </center>
-    </div>
+    </div> -->
 <br><br><br><br><br><br><br><br>
     <center>
-      <h2>upcoming events</h2>
+      <h1>upcoming events</h1>
         {% include 'calendar.html' with context%}
-
     </center>
 
     <br><br><br><br><br><br><br><br>
@@ -166,7 +236,7 @@
     </div>
 
 
-    <div class="half_wide_section">
+    <!-- <div class="half_wide_section">
         <center>
             <h2> events </h2>
             <p class="description">
@@ -178,10 +248,10 @@
         </center>
     </div><div class="half_wide_section">
         <img class="large_image" src="{{url_for('static', filename='images/homepage/somewhere.png')}}">
-    </div>
+    </div> -->
 
 
-    <br><br><br><br><br><br><br><br><br><br>
+    <!-- <br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br>
 
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
@@ -218,12 +288,12 @@
             }
 
             @keyframes diamondTurns {
-                <!-- 0%   { transform: rotate(360deg); }
-                50%  { transform: rotate(-90deg); } -->
+                0%   { transform: rotate(360deg); }
+                50%  { transform: rotate(-90deg); } 
                 100% { transform: rotate(360deg); }
             }
         </style>
-    </svg>
+    </svg> -->
 
 
 {% endblock %}
