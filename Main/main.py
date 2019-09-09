@@ -23,6 +23,8 @@ colors = {}
 colors["dark"] = base["dark"]
 colors["medium"] = base["medium"]
 colors["light"] = base["light"]
+colors["accent_one"] = base["accent_one"]
+colors["accent_two"] = base["accent_two"]
 
 colors["navbar_nonactive"] = base["dark"]
 colors["navbar_active"] = base["medium"]
