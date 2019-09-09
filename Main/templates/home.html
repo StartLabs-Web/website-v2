@@ -42,16 +42,31 @@
         background-size: auto 100%;
         display: flex;
         align-items: center;
-        text-align: center;
     }
 
+    .title{
+        font-size: 90px;
+        font-weight: 600;
+        padding: 0px 0px;
+        margin-block-end: 0px;
+    }
 
-    #landing_section{
-        background-image: url("{{url_for('static', filename='images/homepage/landing-shapes.svg')}}"); 
+    h3{
+        color: {{colors.h3}};
+        font-weight: 600;
+        font-size: 20px;
+        margin-block-start: 0.5em;
+        margin-block-end: 0px;
     }
 
     #landing_div{
-        margin: 0 auto;
+        height: 70vh;
+        display: inline-block;
+        padding-top: 80px;
+        background-image: url("{{url_for('static', filename='images/homepage/landing-shapes.svg')}}"),url("{{url_for('static', filename='images/homepage/landing-side.svg')}}") ;
+        background-position: 110%, 0% 40%;
+        background-size: auto, 8%;
+        background-repeat: no-repeat, no-repeat;
     }
     
     #dark_section{
@@ -87,6 +102,7 @@
     	border-radius: 10px;
         border-color: {{colors.contact_button}};
         padding: 2px 10px 2px 10px;
+        font-size:15px;
     }
 
 
@@ -96,7 +112,6 @@
             width: 100%;
         }
     }
-
 
   </style>
 
@@ -154,19 +169,15 @@
 {% block content %}
 
     <div class="wide_section" id="landing">
-        <center> 
-            <div class="wide_section">
-                <center>
-                <p class="common"> <i> welcome to </i> </p>
-                <h1> startlabs </h1>
-                <p class="tagline">
-                    MIT's premier entrepreneurship club
-                </p>
-                <br><br>
-                <button class="common"> contact us </button>
-                </center>
-            </div>
-        </center>
+        <div class="wide_section" id="landing_div">
+            <center>
+            <!-- <p class="common"> <i> welcome to </i> </p> -->
+            <h1 class = "title">startlabs</h1>
+            <h3 class="tagline">MIT's premier entrepreneurship club</h3>
+            <br><br>
+            <button class="common"> join us </button>
+            </center>
+        </div>
     </div>
 
     <div class="wide-section" id="about">

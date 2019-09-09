@@ -31,7 +31,7 @@ colors["h2"] = base["medium"]
 colors["h3"] = base["accent_one"]
 colors["link"] = base["light"]
 colors["contact_button"] = base["medium"]
-colors["footer"] = base["accent_two"]
+colors["footer"] = base["dark"]
 colors["minititle"] = base["medium"]
 
 
