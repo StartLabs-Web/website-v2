@@ -68,6 +68,10 @@ def team():
 def contact():
     return render_template("contact.html", colors=colors)
 
+@app.route('/entrepalooza')
+def entrepalooza():
+    return render_template("entrepalooza.html", colors=colors)
+
 
 
 #############
