@@ -80,11 +80,6 @@
         height:65px;
     }
 
-    h3{
-        font-size:25px;
-        font-weight:600;
-    }
-
     #innovation_tag{
         color:{{colors.light}};
     }
@@ -113,7 +108,7 @@
     /* Dark Section */
     /******************/
     #dark_section{
-        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("{{url_for('static', filename='images/homepage/wideimage.jpg')}}");
+        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("{{url_for('static', filename='images/homepage/image.jpg')}}");
     }
 
     .wide_section .inner_left {
@@ -128,6 +123,24 @@
         font-size: 40px;
     }
 
+    .photo_tagline{
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .photo_button{
+        color: {{colors.light}};
+        background-color: transparent;
+        border-style: solid;
+        border-width: 2px;
+    	border-radius: 10px;
+        border-color: {{colors.light}};
+        padding: 5px 20px 3px 20px;
+        font-family: 'neue-einstellung';
+        font-size:25px;
+        font-weight:400;
+        /* width:100px; */
+    }
 
 
     /* Changing CSS for small screens */
@@ -254,6 +267,7 @@
 <br><br><br><br>
     <center>
       <h1>upcoming events</h1>
+      <br>
         {% include 'calendar.html' with context%}
     </center>
 
@@ -262,10 +276,11 @@
 
     <div class="wide_section" id="dark_section">
         <div class="inner_left">
-            <p>
-                empowering the next generation of technical entrepreneurs
-                <br>
-                <button class="common"> contact us </button>
+            <p class="photo_tagline">
+                empowering the next generation <br>
+                of technical entrepreneurs.
+                <br><br>
+                <button class="photo_button"> contact us </button> 
             </p>
         </div>
     </div>
