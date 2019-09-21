@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block head %}
+  {{ super() }}
+
+  <style>
+
+    .description{
+
+      /* background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 300'%3E%3Crect class='mouse' x='0' y='0' width='800' height='300'/%3E%3Cpolygon class='diamondMoBa tulip' points='400, 280, 310, 150, 400, 20, 490, 150'/%3E%3Cstyle%3E .mouse %7B fill: %23ffffff; %7D .tulip %7B fill: %23CC2954; %7D .diamondMoBa %7B animation-name: diamondMovesBack; animation-duration: 4s; animation-iteration-count: infinite; transform-origin: 50%25 50%25; animation-direction: alternate-reverse; %7D @keyframes diamondMovesBack %7B 0%25 %7B transform: translate(0, 0); %7D 100%25 %7B transform: translate(200px, 0); %7D %7D %3C/style%3E%3C/svg%3E "); */
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      min-height: 150px;
+      text-align:justify;  
+      font-size: 18px;  
+    }
+
+    .event{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .info_session{
+        margin-left: 170px;
+        color: {{colors.accent_two}};
+    }
+    .social{
+        margin-left: 153px;
+        color: {{colors.dark}};
+    }
+    .resume_drop{
+        margin-left: 178px;
+        color: {{colors.light}};
+    }
+    .interview{
+        margin-left: 155px;
+        color: {{colors.medium}};
+    }
+    
+    .room1{margin-left: 190px;}
+    .room2{margin-left: 169px;}
+    .link{
+        margin-left: 190px;
+        color: {{colors.light}};
+        font-weight: 600;
+    }
+    .room3{margin-left: 193px;}
+    .bottom{
+        /* color: {{colors.dark}}; */
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+  </style>
+
+{% endblock %}
+
+{% block content %}
+  <center>
+    <h1> recruitment week </h1>
+
+    <p class="description">
+        <br><br>
+        sep. 25, 7:30 - 8:30 <span class = 'event info_session'> info session </span> <span class = 'room room1'> 4-163 </span> <br><br>
+        sep. 26, 7:30 - 8:30 <span class = 'event social'> startlabs social </span>  <span class = 'room room2'> 4-153 </span> <br><br>
+        sep. 27 @ 11:59 pm <span class = 'event resume_drop'> resume drop </span>  <span class = 'room link' ><u><a href= "https://forms.gle/DEnd3SohixSohdcSA">here </a></u></span> <br><br>
+        sep. 29, 2:00 - 6:00  <span class = 'event interview'> interview day </span>  <span class = 'room room3'> tbd </span> <br><br><br><br><br><br>
+        <center>
+            <span class = "bottom">email us at startlabs-management@mit.edu if you have any questions! </span>
+        </center>
+    </p>
+
+
+  </center>
+
+{% endblock %}

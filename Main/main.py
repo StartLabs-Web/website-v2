@@ -72,6 +72,9 @@ def contact():
 def entrepalooza():
     return render_template("entrepalooza.html", colors=colors)
 
+@app.route('/apply')
+def recruitment():
+    return render_template("recruitment.html", colors=colors)
 
 
 #############
