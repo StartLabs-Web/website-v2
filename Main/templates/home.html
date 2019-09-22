@@ -108,11 +108,14 @@
     /* Dark Section */
     /******************/
     #dark_section{
-        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("{{url_for('static', filename='images/homepage/image.jpg')}}");
+        background-image: linear-gradient( rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20) ), url("{{url_for('static', filename='images/homepage/startlabsgrouptelephoto.jpg')}}");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 45%;
     }
 
     .wide_section .inner_left {
-        height: auto;
+        height: 70%;
         width: 70%;
         display: inline-block;
     }
@@ -141,6 +144,7 @@
         font-size:25px;
         font-weight:400;
         /* width:100px; */
+        margin-top: 20px;
     }
 
 
@@ -281,7 +285,7 @@
             <p class="photo_tagline">
                 empowering the next generation <br>
                 of technical entrepreneurs.
-                <br><br>
+                <br>
                 <button class="photo_button" onclick="window.location.href = 'contact';"> contact us </button> 
             </p>
         </div>
