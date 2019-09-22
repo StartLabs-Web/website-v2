@@ -5,51 +5,101 @@
 
   <style>
 
-    .description{
+    /* Row of event information */
+    /****************************/
+ 
+    .row {
+      width: 60%;
+      display: flex;
+      margin: 10px ;
+    }
 
-      /* background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 300'%3E%3Crect class='mouse' x='0' y='0' width='800' height='300'/%3E%3Cpolygon class='diamondMoBa tulip' points='400, 280, 310, 150, 400, 20, 490, 150'/%3E%3Cstyle%3E .mouse %7B fill: %23ffffff; %7D .tulip %7B fill: %23CC2954; %7D .diamondMoBa %7B animation-name: diamondMovesBack; animation-duration: 4s; animation-iteration-count: infinite; transform-origin: 50%25 50%25; animation-direction: alternate-reverse; %7D @keyframes diamondMovesBack %7B 0%25 %7B transform: translate(0, 0); %7D 100%25 %7B transform: translate(200px, 0); %7D %7D %3C/style%3E%3C/svg%3E "); */
-      background-repeat: no-repeat;
-      background-position: bottom right;
-      min-height: 150px;
-      text-align:justify;  
-      font-size: 18px;  
+    .datetime{
+      justify-content: left;
+      width: 33%;
+      display: flex;
     }
 
     .event{
-        font-size: 20px;
-        font-weight: 600;
-    }
-    .info_session{
-        margin-left: 170px;
-        color: {{colors.accent_two}};
-    }
-    .social{
-        margin-left: 153px;
-        color: {{colors.dark}};
-    }
-    .resume_drop{
-        margin-left: 178px;
-        color: {{colors.light}};
-    }
-    .interview{
-        margin-left: 155px;
-        color: {{colors.medium}};
-    }
-    
-    .room1{margin-left: 250px;}
-    .room2{margin-left: 229px;}
-    .link{
-        margin-left: 250px;
-        color: {{colors.light}};
-        font-weight: 600;
-    }
-    .room3{margin-left: 253px;}
-    .bottom{
-        /* color: {{colors.dark}}; */
-        font-size: 18px;
-        font-weight: 400;
+      font-size: 20px;
+      font-weight: 600;
+      width: 33%;
+      display: flex;
+      justify-content: space-around;
+      padding: 5px;
     }
 
+    .room{
+      justify-content: flex-end;
+      width: 33%;
+      display: flex;
+    }
+
+    /* Custom colors */
+    /****************/
+    .info_session{
+        color: {{colors.accent_two}};
+    }
+
+    .social{
+        color: {{colors.dark}};
+    }
+    
+    .resume_drop{
+        color: {{colors.light}};
+    }
+
+    .interview{
+        color: {{colors.medium}};
+    }
+
+    .link{
+        color: {{colors.light}};
+        font-weight: 600;
+    }
+
+
+    /* Footer line */
+    /***************/
+
+    .bottom{
+      margin-top: 20%;
+      display: flex;
+      width: 100%;
+      justify-content:space-around;
+    }
+
+    /* Small screens */
+    /*****************/
+    @media only screen and (max-width: 600px) {
+      .row {
+        margin: 10px;
+        padding-bottom: 7%;
+        width: 80%;
+        flex-direction: column;
+        margin: 10px;
+      }
+      .datetime{
+        width:100%;
+        justify-content:space-around;
+      }
+      .event{
+        width: 100%;
+        justify-content:space-around;
+      }
+      .room{
+        width: 100%;
+        justify-content:space-around;
+      }
+
+      .bottom{
+        margin-top: 27%;
+        display: flex;
+        width: 100%;
+        justify-content:space-around;
+      }
+
+    }
   </style>
 
 {% endblock %}
@@ -57,16 +107,38 @@
 {% block content %}
   <center>
     <h1> recruitment week </h1>
-
-    <p class="description">
-        <br><br>
-        sep. 25, 7:30 - 8:30 <span class = 'event info_session'> info session </span> <span class = 'room room1'> 4-163 </span> <br><br>
-        sep. 26, 7:30 - 8:30 <span class = 'event social'> startlabs social </span>  <span class = 'room room2'> 4-153 </span> <br><br>
-        sep. 27 @ 11:59 pm <span class = 'event resume_drop'> resume drop </span>  <span class = 'room link' ><u><a href= "https://forms.gle/DEnd3SohixSohdcSA">here </a></u></span> <br><br>
-        sep. 29, 2:00 - 6:00  <span class = 'event interview'> interview day </span>  <span class = 'room room3'> tbd </span> <br><br><br><br><br><br>
-        <center>
-            <span class = "bottom">email us at startlabs-management@mit.edu if you have any questions! </span>
-        </center>
+    <div>
+      <p class="description">
+        
+        <div class = "eventtable">
+          <div class = "row">
+            <div class = "datetime"> sep. 25, 7:30 - 8:30</div> 
+            <div class = "event info_session"> info session</div>
+            <div class = "room"> room 4-163</div>
+          </div>
+          <div class = "row">
+            <div class = "datetime"> sep. 26, 7:30 - 8:30 </div> 
+            <div class = "event social"> startlabs social </div>
+            <div class = "room"> room 4-153</div>
+          </div>
+          <div class = "row">
+            <div class = "datetime"> sep. 27 @ 11:59 pm</div> 
+            <div class = "event resume_drop"> resume drop </div>
+            <div class = "link room"> <u><a href="https://forms.gle/DEnd3SohixSohdcSA">drop here</a></u></div>
+          </div>
+          <div class = "row">
+            <div class = "datetime"> sep. 29, 2:00 - 6:00</div> 
+            <div class = "event interview"> interview day</div>
+            <div class = "room"> room tbd </div>
+          </div>
+        </div>
+        
+        <div class = "row">
+          <div class = "bottom">
+            email us at startlabs-management@mit.edu if you have any questions! 
+          </div>
+        </div>
+    </div>
     </p>
 
 
