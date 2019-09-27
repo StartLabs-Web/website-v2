@@ -80,6 +80,9 @@
             #navbar a:hover {
                 color: {{colors.navbar_active}};
             }
+            #navbar .selected {
+                color: {{colors.navbar_active}};
+            }
 
             /* hide hamburger */
             #dropdown {
@@ -304,11 +307,13 @@
 
             var url = location.href;
             var url_split = url.split('/');
+            console.log(url)
+            console.log(url.indexOf("/"));
             if (url_split[url_split.length - 1] == ""){
                 url_split.pop();
             }
             var link_ending = url_split[url_split.length - 1];
-            console.log(link_ending); //ex: "redesign", "home", "about"
+            console.log("link_ending: ", link_ending); //ex: "redesign", "home", "about"
 
             $( document ).ready(function() {
                 $("#navbar").children("ul").children("li").children("a").each(function() {
@@ -348,12 +353,12 @@
 
             <!-- Navbar Links (Normal and Mobile versions) -->
             <div id="navbar">
-                <a href="./">home</a>
+                <a href="./" {% if page == 'home' %} class="selected" {% endif %}>home</a>
                 <!-- <a href="./events">events</a> -->
-                <a href='./apply'>apply</a>
-                <a href="./partners">partners</a>
-                <a href="./team">team</a>
-                <a href="./contact">contact</a>
+                <a href='./apply' {% if page == 'apply' %} class="selected" {% endif %}>apply</a>
+                <a href="./partners" {% if page == 'partners' %} class="selected" {% endif %}>partners</a>
+                <a href="./team" {% if page == 'team' %} class="selected" {% endif %}>team</a>
+                <a href="./contact" {% if page == 'contact' %} class="selected" {% endif %}>contact</a>
             </div>
             <div id="dropdown">
                 <button id="dropbtn">

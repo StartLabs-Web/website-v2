@@ -43,38 +43,38 @@ colors["minititle"] = base["medium"]
 #########
 @app.route('/')
 def home():
-    return render_template("home.html", colors=colors, events=getUpcomingEvents(num_total_events, num_future_events),
+    return render_template("home.html", page="home", colors=colors, events=getUpcomingEvents(num_total_events, num_future_events),
         getTimeStringForEvent=getTimeStringForEvent, getDateStringForEvent=getDateStringForEvent, getShortDescription=getShortDescription, isPast=isPast)
 
 @app.route('/about')
 def about():
-    return render_template("about.html", colors=colors)
+    return render_template("about.html", page="about", colors=colors)
 
 @app.route('/events')
 def events():
-    return render_template("events.html", colors=colors, events=getUpcomingEvents(num_total_events, num_future_events),
+    return render_template("events.html", page="events", colors=colors, events=getUpcomingEvents(num_total_events, num_future_events),
         getTimeStringForEvent=getTimeStringForEvent, getDateStringForEvent=getDateStringForEvent, getShortDescription=getShortDescription, isPast=isPast)
 
 @app.route('/partners')
 def partners():
-    return render_template("partners.html", colors=colors)
+    return render_template("partners.html", page="partners", colors=colors)
 
 @app.route('/team')
 def team():
     headshots_info = get_headshots_info()
-    return render_template("team.html", colors=colors, headshots_info = headshots_info)
+    return render_template("team.html", page="team", colors=colors, headshots_info = headshots_info)
 
 @app.route('/contact')
 def contact():
-    return render_template("contact.html", colors=colors)
+    return render_template("contact.html", page="contact", colors=colors)
 
 @app.route('/entrepalooza')
 def entrepalooza():
-    return render_template("entrepalooza.html", colors=colors)
+    return render_template("entrepalooza.html", page="entrepalooza", colors=colors)
 
 @app.route('/apply')
 def recruitment():
-    return render_template("recruitment.html", colors=colors)
+    return render_template("recruitment.html", page="apply", colors=colors)
 
 
 #############
