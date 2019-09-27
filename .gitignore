@@ -1,7 +1,7 @@
 .DS_STORE
 
 # ignore the token.json file
-
+Main/token.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
