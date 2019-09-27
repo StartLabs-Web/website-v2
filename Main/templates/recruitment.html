@@ -59,6 +59,31 @@
     }
 
 
+    /* Resume Drop */
+
+    button {
+        color: {{colors.medium}};
+        background-color: transparent;
+        border-style: solid;
+        border-width: 2px;
+    	border-radius: 10px;
+        border-color: {{colors.medium}};
+        padding: 5px 20px 3px 20px;
+        font-family: 'neue-einstellung';
+        font-size:15px;
+        font-weight:600;
+        /* width:100px; */
+    }
+
+    #drop{
+        cursor:pointer;
+    }
+
+    #drop:hover {
+        color: white;
+        background-color:{{colors.medium}};
+    }
+
     /* Footer line */
     /***************/
 
@@ -107,6 +132,8 @@
 {% block content %}
   <center>
     <h1> recruitment week </h1>
+
+    <button class="common" onclick="window.location.href = 'https://forms.gle/DEnd3SohixSohdcSA';" id ="drop"> Submit Application / Drop Resume </button>
     <div>
       <p class="description">
         
@@ -120,11 +147,6 @@
             <div class = "datetime"> sep. 27, 7:30 - 8:30 </div> 
             <div class = "event social"> startlabs social </div>
             <div class = "room"> room 4-153</div>
-          </div>
-          <div class = "row">
-            <div class = "datetime"> sep. 27 @ 11:59 pm</div> 
-            <div class = "event resume_drop"> resume drop </div>
-            <div class = "link room"> <u><a href="https://forms.gle/DEnd3SohixSohdcSA">drop here</a></u></div>
           </div>
           <div class = "row">
             <div class = "datetime"> sep. 29, 2:00 - 6:00</div> 
