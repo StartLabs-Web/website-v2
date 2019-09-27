@@ -44,7 +44,7 @@
     }
 
     #landing_div{
-        height: 80vh;
+        height: 90vh;
         display: inline-block;
         padding-top: 50px;
         background-image: url("{{url_for('static', filename='images/homepage/landing-shapes.svg')}}"),url("{{url_for('static', filename='images/homepage/landing-side.svg')}}") ;
@@ -64,7 +64,7 @@
         border-color: {{colors.contact_button}};
         padding: 5px 20px 3px 20px;
         font-family: 'neue-einstellung';
-        font-size:15px;
+        font-size:23px;
         font-weight:600;
         /* width:100px; */
     }
@@ -80,11 +80,17 @@
 
     /* About Section */
     /******************/
+    #about{
+        padding-top: 10vh;
+    }
+
     .about-icons {
         display: flex;
         justify-content: space-around;
     }
-
+    .about-subsection{
+        width: 22%;
+    }
     .about-image{
         height:65px;
     }
@@ -108,6 +114,7 @@
     .description{
         text-align: justify;
         line-height:20px;
+        padding-bottom: 5%;
     }
 
     .item_description{
@@ -129,15 +136,17 @@
         display: inline-block;
     }
 
-    .wide_section .inner_left p {
+    /* .wide_section .inner_left p {
         margin: 30px;
         color: white;
         font-size: 40px;
-    }
+    } */
 
     .photo_tagline{
-        font-size: 30px;
+        font-size: 40px;
         font-weight: 600;
+        color: white;
+        margin: 30px;
     }
 
     /* CONTACT BUTTON */
@@ -165,11 +174,132 @@
 
 
     /* Changing CSS for small screens */
-    @media only screen and (max-width: 800px) {
-        .half_wide_section {
-            width: 100%;
+    @media only screen and (min-width: 601px) and (max-width: 900px) {
+        #landing_div{
+            height:95vh;
+            background-position: 100% 95%, 0% 20%;
+            background-size: auto, 8%;
+            background-repeat: no-repeat, no-repeat;
         }
 
+        #about{
+            padding-top: 0vh;
+            padding-bottom: 10vh;
+        }
+
+        .title{
+            font-size: 100px;
+            font-weight: 800;
+            padding: 30% 0px 0px 0px;
+            margin-block-end: 0px;
+        }
+
+        .tagline{
+            color: {{colors.h3}};
+            font-weight: 600;
+            font-size: 20px;
+            margin-block-start: 0px;
+            margin-block-end: 0.5em;
+        }
+
+        button{
+            font-size: 17px;
+        }
+
+        .wide_section{
+            height: 100%;
+
+        }
+
+
+        /*ABOUT SECTION*/
+
+        .about-icons {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .about-subsection{
+            width:40%;
+            /* padding: 10px; */
+        }
+        .description{
+            text-align: left;
+            line-height:20px;
+            padding-bottom: 10%
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        #landing_div{
+            height:115%;
+            background-position: 100% 80%, 0% 15%;
+            background-size: auto, 8%;
+            background-repeat: no-repeat, no-repeat;
+            justify-content: center;
+        }
+
+        #about{
+            padding-top: 0vh;
+        }
+        .title{
+            font-size: 70px;
+            font-weight: 800;
+            padding: 53% 0px 0px 0px;
+            margin-block-end: 0px;
+        }
+        .tagline{
+            color: {{colors.h3}};
+            font-weight: 600;
+            font-size: 15px;
+            margin-block-start: 0px;
+            margin-block-end: 0.5em;
+        }
+
+
+        button{
+            font-size: 13px;
+        }
+
+        .about-icons {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .about-subsection{
+            width: 100%;
+            justify-content: space-around;
+            margin: 12px;
+
+        }
+        .description{
+            text-align: left;
+            line-height:20px;
+            padding-bottom: 10%;
+        }
+        
+        #dark_section{
+            font-size:16px;
+            height: 100%;
+        }
+
+        .photo_tagline{
+            font-size:18px;
+            color: white;
+            /* height:0px; */
+        }
+
+        /* .wide_section .inner_left p {
+            color: white;
+            font-size: 18px;
+        } */
+
+        .photo_button{
+            font-size:18px;
+            /* margin-bottom: 20%; */
+        }
     }
 
   </style>
@@ -227,8 +357,8 @@
 
 {% block content %}
 
-    <div class="wide_section" id="landing">
-        <div class="wide_section" id="landing_div">
+    <div class = "wide_section" id="landing">
+        <div class = "wide_section" id="landing_div">
             <center>
             <!-- <p class="common"> <i> welcome to </i> </p> -->
             <h1 class = "title">startlabs</h1>
@@ -246,31 +376,29 @@
             <p class="description">
             StartLabs is a hub of undergraduate entrepreneurship activity at MIT. We host community events for student entrepreneurs to meet one another and find co-founders or early hires, connecting student startups to resources across campus or in industry and providing publicity and exposure through our channels, and holding large, campus-wide events to increase student interest in entrepreneurship and understanding of what the profession entails. Our goals are to educate members in material relevant to becoming successful entrepreneurs, increase undergraduate interest in entrepreneurship, and help student startups become successful.
             </p>
-            <br>
-            <br>
             <div class="about-icons description">
-            <div style="width:22%;">
+            <div class="about-subsection">
                 <center>
                 <img src="{{url_for('static', filename='images/about/about-bulb.svg')}}" class="about-image">
                 <h3 id="innovation_tag">innovation</h3>
                 <p class="item_description">we come up with new ideas and new companies.</p>
                 </center>
             </div>
-            <div style="width:22%;">
+            <div class="about-subsection">
                 <center>
                 <img src="{{url_for('static', filename='images/about/about-rocket.svg')}}" class="about-image">
                 <h3 id="startups_tag">startups</h3>
                 <p class="item_description">we connect with local, national, and international startups.</p>
                 </center>
             </div>
-            <div style="width:22%;">
+            <div class="about-subsection">
                 <center>
                 <img src="{{url_for('static', filename='images/about/about-community.svg')}}" class="about-image">
                 <h3 id="community_tag">community</h3>
                 <p class="item_description">we provide a support network of entrepreneurs.</p>
                 </center>
             </div>
-            <div style="width:22%;">
+            <div class="about-subsection">
                 <center>
                 <img src="{{url_for('static', filename='images/about/about-plane.svg')}}" class="about-image">
                 <h3 id="fun_tag">fun</h3>
@@ -298,7 +426,7 @@
 
 
     <div class="wide_section" id="dark_section">
-        <div class="inner_left">
+        <div class="inner_left bottom">
             <p class="photo_tagline">
                 empowering the next generation <br>
                 of technical entrepreneurs.
