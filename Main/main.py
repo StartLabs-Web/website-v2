@@ -107,7 +107,6 @@ def get_headshots_info():
         headshots_info.append(d)
     # Also add those people without facial pictures taken
     remaining_names = [
-        "Vaibhavi Shah"	,
         "Avichal Goel"	,
         "Alex Gu"	,
         "Jeremy McCulloch"	,
@@ -158,7 +157,7 @@ def get_headshots_info():
         "Shruti Ravikumar"	,
         "Thomas Ngo"	,
     ]
-    remaining_names = sorted(remaining_names)
+    # remaining_names = sorted(remaining_names)
     for name in remaining_names:
         d = dict()
         d["path"] = '/static/images/anon-face.png'
