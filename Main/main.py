@@ -134,7 +134,6 @@ def get_headshots_info():
         "Wilson Spearman"	,
         "Isaac Lau"	,
         "Sreya Vengara"	,
-        "Eswar Anandapadmanaban"	,
         "Katherine Wang"	,
         "Sathya Peri"	,
         "Alex Quach"	,
