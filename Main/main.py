@@ -105,6 +105,66 @@ def get_headshots_info():
         d["filename"] = d["path"].split("/")[-1]
         d["firstname"] = d["filename"].split("-")[0]
         headshots_info.append(d)
+    # Also add those people without facial pictures taken
+    remaining_names = [
+        "Vaibhavi Shah"	,
+        "Avichal Goel"	,
+        "Alex Gu"	,
+        "Jeremy McCulloch"	,
+        "Caleb Harris"	,
+        "Anurag Golla"	,
+        "Amber Lu"	,
+        "Lucy McMillan"	,
+        "Anj Fayemi"	,
+        "Saumya Rawat"	,
+        "Ally Hong"	,
+        "Kendyll Hicks"	,
+        "Jennifer Pan"	,
+        "Spencer Toll"	,
+        "Shobhita Sundaram"	,
+        "Tobi Mustapha"	,
+        "Adriano Hernandez"	,
+        "Amanda Garofalo"	,
+        "Sarah Moseson"	,
+        "Sophie Van Pelt"   ,
+        "Anton Morgunov"	,
+        "GiMin Choi"	,
+        "Ting Li"	,
+        "Brendan Ashworth"	,
+        "Lilian Wang"	,
+        "Wilson Spearman"	,
+        "Isaac Lau"	,
+        "Sreya Vengara"	,
+        "Eswar Anandapadmanaban"	,
+        "Katherine Wang"	,
+        "Sathya Peri"	,
+        "Alex Quach"	,
+        "Allen Wang"	,
+        "Anjali Chadha"	,
+        "Anjali Singh"	,
+        "Daniela Velez"	,
+        "Dev Patale"	,
+        "Eileen Pan"	,
+        "Hannah Kim"	,
+        "Isaac Toscano"	,
+        "Ishana Shastri"	,
+        "Jamie Fu"	,
+        "Jessica Sonner"	,
+        "Neha Hulkund"	,
+        "Nitya Parthasarathy"	,
+        "Raunak Chowdhury"	,
+        "Ruben Castro"	,
+        "Shayna Ahteck"	,
+        "Shruti Ravikumar"	,
+        "Thomas Ngo"	,
+    ]
+    remaining_names = sorted(remaining_names)
+    for name in remaining_names:
+        d = dict()
+        d["path"] = '/static/images/anon-face.png'
+        d["filename"] = "n/a"
+        d["firstname"] = name
+        headshots_info.append(d)
     return headshots_info
 
 """
