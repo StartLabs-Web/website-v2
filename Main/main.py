@@ -105,6 +105,64 @@ def get_headshots_info():
         d["filename"] = d["path"].split("/")[-1]
         d["firstname"] = d["filename"].split("-")[0]
         headshots_info.append(d)
+    # Also add those people without facial pictures taken
+    remaining_names = [
+        "Adriano Hernandez",
+        "Alex Gu",
+        "Alex Quach",
+        "Allen Wang",
+        "Ally Hong",
+        "Amanda Garofalo",
+        "Amber Lu",
+        "Anj Fayemi",
+        "Anjali Chadha",
+        "Anjali Singh",
+        "Anton Morgunov",
+        "Anurag Golla",
+        "Avichal Goel",
+        "Brendan Ashworth",
+        "Caleb Harris",
+        "Daniela Velez",
+        "Dev Patale",
+        "Eileen Pan",
+        "GiMin Choi",
+        "Hannah Kim",
+        "Isaac Lau",
+        "Isaac Toscano",
+        "Ishana Shastri",
+        "Jamie Fu",
+        "Jennifer Pan",
+        "Jeremy McCulloch",
+        "Jessica Sonner",
+        "Katherine Wang",
+        "Kendyll Hicks",
+        "Lilian Wang",
+        "Lucy McMillan",
+        "Neha Hulkund",
+        "Nitya Parthasarathy",
+        "Raunak Chowdhury",
+        "Ruben Castro",
+        "Sarah Moseson",
+        "Sathya Peri",
+        "Saumya Rawat",
+        "Shayna Ahteck",
+        "Shobhita Sundaram",
+        "Shruti Ravikumar",
+        "Sophie Van Pelt",
+        "Spencer Toll",
+        "Sreya Vengara",
+        "Thomas Ngo",
+        "Ting Li",
+        "Tobi Mustapha",
+        "Wilson Spearman",
+    ]
+    # remaining_names = sorted(remaining_names)
+    for name in remaining_names:
+        d = dict()
+        d["path"] = '/static/images/anon-face.png'
+        d["filename"] = "n/a"
+        d["firstname"] = name
+        headshots_info.append(d)
     return headshots_info
 
 """
