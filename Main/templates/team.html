@@ -5,18 +5,55 @@
   <style type="text/css">
 
     .headshots {
+      vertical-align: top;
       display: inline-block;
       width: 300px;
-      height: 300px;
+      height: 400px;
+      position: relative;
+    }
+    .headshots_blurb {
+      height: 100%;
+      width: 100%;
+      background-color: rgb(243, 243, 243);
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .headshots_blurb:hover {
+      opacity: 1;
+      -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 0.5s; /* Firefox < 16 */
+       -ms-animation: fadein 0.5s; /* Internet Explorer */
+        -o-animation: fadein 0.5s; /* Opera < 12.1 */
+           animation: fadein 0.5s;
     }
     .fullname {
       font-size: 20px;
       margin: 5px 5px 5px 5px;
     }
-    .position {
-      font-size: 10px;
-      font-style: italic; 
-      margin: 5px 5px 5px 5px;
+
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    
+    /* Internet Explorer */
+    @-ms-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
     }
 
   </style>
@@ -29,15 +66,29 @@
   </center>
 
   <center>
-  {% for d in headshots_info %}
+  {% for entry in headshots_info %}
     <div class="headshots">
-      <img src="{{d['path']}}" height="60%"  alt="" />
+      <img src="{{entry['image_path']}}" height="200px"  alt="" />
       <p class="fullname">
-        {{d['firstname']}}
+        {{entry['Name']}}
       </p>
-      <!-- <p class="position">
-        (position)
-      </p> -->
+      <p>
+        {{entry['Department']}}
+      </p>
+      <p>
+        Class of {{entry['Graduation Year']}}
+      </p>
+      <div class="headshots_blurb">
+          <p>
+            {{entry['Name']}}
+          </p>
+          <p>
+            {{entry['Major']}}
+          </p>
+          <p>
+            {{entry['Blurb']}}
+          </p>
+      </div>
     </div>    
   {% endfor %}
 

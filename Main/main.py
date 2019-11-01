@@ -3,7 +3,7 @@ import datetime
 from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
-import os
+import os, csv
 
 app = Flask(__name__)
 
@@ -62,7 +62,7 @@ def partners():
 @app.route('/team')
 def team():
     headshots_info = get_headshots_info()
-    return render_template("team.html", page="team", colors=colors, headshots_info = headshots_info)
+    return render_template("team.html", page="team", colors=colors, headshots_info = get_team_data())
 
 @app.route('/contact')
 def contact():
@@ -80,6 +80,44 @@ def recruitment():
 #############
 # Headshots #
 #############
+"""
+A sample entry of 'all_data':
+    OrderedDict([
+        ('Timestamp', '2019/10/11 9:17:32 AM AST'), 
+        ('Name', 'Isaac Lau'), 
+        ('Graduation Year', '2022'), 
+        ('Major', '6-2 Minor in 2; EECS with a Minor in MechE'), 
+        ('Department', 'Large Events'), 
+        ('Blurb', "As a moonshot engineer, I seek to push the boundaries of human capablities in speed and control through the power of autonomy and I am most interested in the interplay between mechanical and electrical systems.  If I'm not working on p-sets, catch me on campus working on the Hyperloop pod or find me in a machine shop!  "), ('image_path', '/static/images/anon-face.png')
+    ])       
+"""
+def get_team_data():
+    # Get filepaths of existing imgs
+    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2018-members'))
+    print(existing_filenames)
+    # Read the csv file
+    filename = os.path.join(app.static_folder, 'StartLabs Team Bios.csv')
+    # Build up the all_data list 
+    all_data = []
+    with open(filename) as csv_file:
+        csv_reader = csv.DictReader(csv_file, delimiter=',')
+        for row in csv_reader:
+            # Set the image_path
+            # If the image exists, give it an image from 2018-members, otherwise give it anon-face
+            fullname = row["Name"]
+            firstname, lastname = fullname.split(" ")
+            possible_img_name = firstname.lower() + "-white.jpg"
+            if (possible_img_name in existing_filenames):
+                possible_img_path = "images/2018-members/" + firstname.lower() + "-white.jpg"
+                row["image_path"] = url_for('static', filename=possible_img_path)
+            else:
+                row["image_path"] = '/static/images/anon-face.png'
+            all_data.append(row)
+    # For debugging:
+    # for row in all_data:
+    #     print('row: ', row)
+    return all_data
+            
 """
 Purpose: Get photos and info about team member headshots
 Params:  None
@@ -272,4 +310,4 @@ def getUpcomingEvents(num_total, num_future):
     return events
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=8080)
