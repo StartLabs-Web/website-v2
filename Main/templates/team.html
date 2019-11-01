@@ -12,8 +12,10 @@
       position: relative;
     }
     .headshots_blurb {
-      height: 100%;
-      width: 100%;
+      height: 80%;
+      width: 80%;
+      padding: 10%;
+      overflow: auto;
       background-color: rgb(243, 243, 243);
       position: absolute;
       top: 0;
@@ -68,7 +70,7 @@
   <center>
   {% for entry in headshots_info %}
     <div class="headshots">
-      <img src="{{entry['image_path']}}" height="200px"  alt="" />
+      <img src="{{url_for('static', filename=entry['image_path'])}}" height="200px"  alt="" />
       <p class="fullname">
         {{entry['Name']}}
       </p>
@@ -79,12 +81,12 @@
         Class of {{entry['Graduation Year']}}
       </p>
       <div class="headshots_blurb">
-          <p>
+          <h4>
             {{entry['Name']}}
-          </p>
-          <p>
+          </h4>
+          <h6>
             {{entry['Major']}}
-          </p>
+          </h6>
           <p>
             {{entry['Blurb']}}
           </p>

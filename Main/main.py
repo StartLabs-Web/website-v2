@@ -109,9 +109,11 @@ def get_team_data():
             possible_img_name = firstname.lower() + "-white.jpg"
             if (possible_img_name in existing_filenames):
                 possible_img_path = "images/2018-members/" + firstname.lower() + "-white.jpg"
-                row["image_path"] = url_for('static', filename=possible_img_path)
+                row["image_path"] = possible_img_path
+                # row["image_path"] = url_for('static', filename=possible_img_path)
             else:
-                row["image_path"] = '/static/images/anon-face.png'
+                row["image_path"] = 'images/anon-face.png'
+                # row["image_path"] = '/static/images/anon-face.png'
             all_data.append(row)
     # For debugging:
     # for row in all_data:
