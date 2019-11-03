@@ -312,4 +312,4 @@ def getUpcomingEvents(num_total, num_future):
     return events
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    app.run(debug=True)

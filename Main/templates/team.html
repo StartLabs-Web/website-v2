@@ -16,7 +16,8 @@
       width: 80%;
       padding: 10%;
       overflow: auto;
-      background-color: rgb(243, 243, 243);
+      background-color: rgb(182, 195, 255);
+      border-radius: 5px;
       position: absolute;
       top: 0;
       left: 0;
@@ -58,6 +59,12 @@
         to   { opacity: 1; }
     }
 
+    .iconCite, .iconCite * {
+      font-size: 10px; 
+      color: white; 
+      text-decoration: none;
+    }
+
   </style>
 
 {% endblock %}
@@ -94,7 +101,7 @@
     </div>    
   {% endfor %}
 
-  <div style="font-size: 10px;">
+  <div class="iconCite">
     Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a>
   </div>
 
