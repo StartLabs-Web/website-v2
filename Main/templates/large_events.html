@@ -3,72 +3,79 @@
 {% block head %}
   {{ super() }}
 
-  <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
   <style>
-    
-    .homepage-wrapper {
-        margin: 15 px;
+
+    #partners_descrip{
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      min-height: 150px;
+      text-align:justify;    
     }
 
-    .row {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%
-    }
-
-    .column {
-        display: flex;
-        flex-direction: column;
-        flex-basis: 100%;
-        flex: 50%;
-    }
-    
-    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 1000000px) {
-    .column {
-    width: 100%;
-    }
-    } 
-
-    .leftcol {
+    #partners_logos {
       display: block;
-      width: 50%;
-      margin: 20px 20px 20px 20px;
+      width: 90%;
+      margin: 0px 20px 20px 20px;
+    }
+    #partners_logos img{
+      max-width: 300px;
+      max-height: 200px;
+      vertical-align: middle;
+      margin: 0px 50px 20px 50px;
     }
 
-    #leftcol img {
-        width: 100%;
+    img {
+      float: right;
+      max-width:50%;
+      max-height:80%;
+    
     }
+
+    .column {
+      float: left;
+    }
+
+    .left {
+      width: 25%;
+    }
+
+    .right {
+      width: 75%;
+    }
+
 
   </style>
 
 {% endblock %}
 
 {% block content %}
-    <div class="homepage-wrapper">
-        <div class="row">
-            <div class="column" id="leftcol">
-                <img src="{{url_for('static', filename='images/homepage/ideafactory-25.jpg')}}"> 
-            </div>
-            <div class="column" id="rightcol">
-                <center>
-                <h2> welcome to </h2>
-                <h1> startlabs </h1>
-                <p id="home_descrip" class="description">
-                    We are the premier undergraduate entrepreneurship club at MIT, 
-                    providing opportunities for student entrepreneurs and working to 
-                    foster an innovative environment for the entire community.
-                </p>
-                </center>
-            </div>
-        </div>
-    </div>
-    
+  <center>
+    <h1> large events </h1>
+
+    <p id="partners_descrip" class="description">
+      Over the year, we organize a wide variety of different events, ranging from case studies and speaker series to international
+tech treks and Entrepalooza. We love experimenting with new ideas, so each semester always has a unique and creative
+lineup of amazing events. Please reach out and <a href="contact"><u>contact us</u></a> for any potential partnerships!
+    </p>
+
+<p>
+    <img src="{{url_for('static', filename='images/contact-us-wide-bg-alt.jpg')}}">
+
+    <h2> Swiss Tech Trek </h2>
+  Over the year, we organize a wide variety of different events, ranging from case studies and speaker series to international tech treks and Entrepalooza. We love experimenting with new ideas, so each semester always has a unique and creative lineup of amazing events. Please reach out and contact us for any potential partnerships!
+  
+</p>
+
+<p>
+    <img src="{{url_for('static', filename='images/contact-us-wide-bg-alt.jpg')}}">
+
+    <h2> Swiss Tech Trek </h2>
+  Over the year, we organize a wide variety of different events, ranging from case studies and speaker series to international tech treks and Entrepalooza. We love experimenting with new ideas, so each semester always has a unique and creative lineup of amazing events. Please reach out and contact us for any potential partnerships!
+  
+</p>
+
+
+
+  </center>
 
 {% endblock %}
-
-
-
-
-

@@ -52,7 +52,7 @@ def about():
 
 @app.route('/events')
 def events():
-    return render_template("events.html", page="events", colors=colors, events=getUpcomingEvents(num_total_events, num_future_events),
+    return render_template("large_events.html", page="events", colors=colors, events=getUpcomingEvents(num_total_events, num_future_events),
         getTimeStringForEvent=getTimeStringForEvent, getDateStringForEvent=getDateStringForEvent, getShortDescription=getShortDescription, isPast=isPast)
 
 @app.route('/partners')
