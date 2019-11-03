@@ -53,6 +53,7 @@
                 background-color: white;
                 height:60px;
                 font-weight: 600;
+                z-index: 5;
             }
 
             /* Navbar Logo */
@@ -102,10 +103,12 @@
                 }
                 #dropbtn {
                     background-color: white;
-                    padding: 16px;
                     border: none;
                     cursor: pointer;
-                    margin: 0px 20px 0px 20px;
+                    padding-top: 0px;
+                    padding-right: 20px;
+                    margin: 0px 5px 0px 5px;
+                    height:20px;
                 }
                 #dropbtn :hover {
                     opacity: 0.6;
@@ -361,10 +364,11 @@
                 <a href="./contact" {% if page == 'contact' %} class="selected" {% endif %}>contact</a>
             </div>
             <div id="dropdown">
-                <button id="dropbtn">
-                    <!-- <img src="{{url_for('static', filename='images/hamburger_icon.svg')}}"> -->
-                    <i class="fas fa-bars"></i>
-                </button>
+                <a href="javascript:void(0);">
+                    <p><img id="dropbtn" src="{{url_for('static', filename='images/hamburger_darkblue.svg')}}"></p>
+                    <p><i>  </i>
+                    </p>
+                </a>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="./">home</a>
                     <!-- <a href="./events">events</a> -->
