@@ -52,8 +52,9 @@ def about():
 
 @app.route('/events')
 def events():
-    return render_template("large_events.html", page="events", colors=colors, events=getUpcomingEvents(num_total_events, num_future_events),
-        getTimeStringForEvent=getTimeStringForEvent, getDateStringForEvent=getDateStringForEvent, getShortDescription=getShortDescription, isPast=isPast)
+    return render_template("construction.html", page="events", colors=colors)
+    # return render_template("large_events.html", page="events", colors=colors, events=getUpcomingEvents(num_total_events, num_future_events),
+    #     getTimeStringForEvent=getTimeStringForEvent, getDateStringForEvent=getDateStringForEvent, getShortDescription=getShortDescription, isPast=isPast)
 
 @app.route('/partners')
 def partners():
@@ -96,7 +97,7 @@ def get_team_data():
     existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2018-members'))
     print(existing_filenames)
     # Read the csv file
-    filename = os.path.join(app.static_folder, 'StartLabs Team Bios.csv')
+    filename = os.path.join(app.static_folder, 'TeamBios.csv')
     # Build up the all_data list 
     all_data = []
     with open(filename) as csv_file:
@@ -114,6 +115,7 @@ def get_team_data():
             else:
                 row["image_path"] = 'images/anon-face.png'
                 # row["image_path"] = '/static/images/anon-face.png'
+            print(row)
             all_data.append(row)
     # For debugging:
     # for row in all_data:
