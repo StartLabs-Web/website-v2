@@ -6,10 +6,9 @@
   <style>
 
     #partners_descrip{
-      background-repeat: no-repeat;
-      background-position: bottom right;
       min-height: 150px;
-      text-align:justify;    
+      text-align: justify;
+      margin: 10px 300px;    
     }
 
     #partners_logos {
@@ -24,25 +23,58 @@
       margin: 0px 50px 20px 50px;
     }
 
-    img {
-      float: right;
-      max-width:50%;
-      max-height:80%;
-    
+    .swiss_container {
+      width: 80%;
+      /* border: 2px solid black; */
+    }
+    .swiss_container .left {
+      display: inline-block;
+      width: 30%;
+      height: 100px;
+    }
+    .swiss_container img {
+      width: 100%;
+    }
+    .swiss_container .right {
+      box-sizing: border-box;
+      margin: 0px;
+      padding: 30px;
+      display: inline-block;
+      width: 69%;
+      height: 100px;
+      text-align: left;
+    }
+    .swiss_container .subheading {
+      font-size: 20px;
+      color: black;
+      font-style: italic;
     }
 
-    .column {
-      float: left;
+    .general_container {
+      width: 80%;
+      /* border: 2px solid black; */
     }
-
-    .left {
-      width: 25%;
+    .general_container .left {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 49%;
+      height: 100px;
+      vertical-align: top;
+      padding: 30px 30px;
     }
-
-    .right {
-      width: 75%;
+    .general_container .right {
+      display: inline-block;
+      width: 50%;
+      height: 100px;
     }
-
+    .general_container .heading {
+      font-size: 40px;
+      font-weight: 600;
+      color: {{colors.accent_one}};
+    }
+    .general_container img {
+      width: 100%;
+    }
 
   </style>
 
@@ -50,30 +82,55 @@
 
 {% block content %}
   <center>
-    <h1> large events </h1>
+    <h1> events </h1>
 
-    <p id="partners_descrip" class="description">
+    <p id="partners_descrip">
       Over the year, we organize a wide variety of different events, ranging from case studies and speaker series to international
-tech treks and Entrepalooza. We love experimenting with new ideas, so each semester always has a unique and creative
-lineup of amazing events. Please reach out and <a href="contact"><u>contact us</u></a> for any potential partnerships!
+      tech treks and Entrepalooza. We love experimenting with new ideas, so each semester always has a unique and creative
+      lineup of amazing events. Please reach out and <a href="contact"><u>contact us</u></a> for any potential partnerships!
     </p>
 
-<p>
-    <img src="{{url_for('static', filename='images/contact-us-wide-bg-alt.jpg')}}">
+    <div class="swiss_container">
+      <div class="left">
+        <img src="{{url_for('static', filename='images/contact-us-wide-bg-alt.jpg')}}">
+      </div>
+      <div class="right">
+        <h2> switzerland tech trek </h2>
+        <p class="subheading">
+          march 23-29, 2019
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+          nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+          enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+          nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+          hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat
+          nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+          Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy
+          nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+          enim ad minim veniam, 
+        </p>
+      </div>
+    </div>
 
-    <h2> Swiss Tech Trek </h2>
-  Over the year, we organize a wide variety of different events, ranging from case studies and speaker series to international tech treks and Entrepalooza. We love experimenting with new ideas, so each semester always has a unique and creative lineup of amazing events. Please reach out and contact us for any potential partnerships!
-  
-</p>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
 
-<p>
-    <img src="{{url_for('static', filename='images/contact-us-wide-bg-alt.jpg')}}">
-
-    <h2> Swiss Tech Trek </h2>
-  Over the year, we organize a wide variety of different events, ranging from case studies and speaker series to international tech treks and Entrepalooza. We love experimenting with new ideas, so each semester always has a unique and creative lineup of amazing events. Please reach out and contact us for any potential partnerships!
-  
-</p>
-
+    <div class="general_container">
+      <div class="left">
+        <p class="heading">
+          events
+        </p>
+        StartLabs hosts a gamut of events, both for team members and for
+        the entire MIT community. From Entrepalooza, our large entrepre-
+        neurship forum, to our annual international tech trek, we provide
+        opportunities for students to explore, connect, and innovate    
+      </div>
+      <div class="right">
+        <img src="{{url_for('static', filename='images/contact-us-wide-bg-alt.jpg')}}">
+      </div>
+    </div>
 
 
   </center>
