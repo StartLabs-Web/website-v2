@@ -77,6 +77,11 @@ def recruitment():
     return render_template("recruitment.html", page="apply", colors=colors)
 
 
+@app.route('/ideafactory')
+def ideafactory():
+    return render_template("ideafactory.html", page="ideafactory", colors=colors) 
+
+
 #############
 # Headshots #
 #############
