@@ -86,6 +86,20 @@
     
 {% endblock %}
 
+
+{% block topbar %}
+<!-- Custom Topbar -->
+<div id="topbar" class="sticky">
+    <!-- Navbar Logo -->
+    <div id="navbar_logo">
+        <a href="./">
+            <img src="{{url_for('static', filename='images/logos/navbar_logo.svg')}}">
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+
 {% block content %}
 <div class = "poster">
     <center>
