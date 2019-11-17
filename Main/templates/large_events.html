@@ -8,7 +8,8 @@
     #partners_descrip{
       min-height: 150px;
       text-align: justify;
-      margin: 10px 300px;    
+      margin: 10px; 
+      width: 60vw;
     }
 
     #partners_logos {
@@ -24,13 +25,23 @@
     }
 
     .swiss_container {
-      width: 80%;
+      width: 80vw;
       /* border: 2px solid black; */
     }
     .swiss_container .left {
-      display: inline-block;
-      width: 30%;
-      height: 100px;
+      box-sizing: border-box;
+      display: inline-flex;
+      width: 40vw;
+      height: inherit;
+      vertical-align: top;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiss_container iframe {
+      width: 100%;
+      height: 300px;
+      margin-top: 30px;
     }
     .swiss_container img {
       width: 100%;
@@ -40,8 +51,7 @@
       margin: 0px;
       padding: 30px;
       display: inline-block;
-      width: 69%;
-      height: 100px;
+      width: 39vw;
       text-align: left;
     }
     .swiss_container .subheading {
@@ -51,20 +61,20 @@
     }
 
     .general_container {
-      width: 80%;
+      width: 80vw;
       /* border: 2px solid black; */
     }
     .general_container .left {
       box-sizing: border-box;
       display: inline-block;
-      width: 49%;
+      width: 40vw;
       height: 100px;
       vertical-align: top;
       padding: 30px 30px;
     }
     .general_container .right {
       display: inline-block;
-      width: 50%;
+      width: 39vw;
       height: 100px;
     }
     .general_container .heading {
@@ -92,7 +102,8 @@
 
     <div class="swiss_container">
       <div class="left">
-        <img src="{{url_for('static', filename='images/contact-us-wide-bg-alt.jpg')}}">
+        <!-- <img src="{{url_for('static', filename='images/contact-us-wide-bg-alt.jpg')}}"> -->
+        <iframe src="https://www.youtube.com/embed/T31EWs2JuGM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="right">
         <h2> switzerland tech trek </h2>
@@ -100,21 +111,42 @@
           march 23-29, 2019
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-          nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-          enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
-          nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
-          hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat
-          nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-          Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy
-          nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-          enim ad minim veniam, 
+          StartLabs went to Switzerland this spring break to immerse
+          ourselves in the amazing entrepreneurial
+          ecosystems of Zurich and Geneva. We’ve chosen
+          to focus on these cities for their involvement
+          with emerging fields like financial technology,
+          robotics, biotechnology, and micro/nanotechnology,
+           boosted by the presence of nearby ETH and
+          
+          EPFL. Through this week long experience, we
+          
+          hope to learn what distinguishes Swiss innovation
+           from the rest of the world and inspire our
+          
+          community members to entrepreneurship that is
+          both locally built and globally aware.
         </p>
       </div>
     </div>
 
-    <br><br><br>
-    <br><br><br>
+
+    <div class="swiss_container">
+      <div class="left">
+        <!-- <img src="{{url_for('static', filename='images/contact-us-wide-bg-alt.jpg')}}"> -->
+        <iframe src="https://www.youtube.com/embed/Nf0LLSqocws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="right">
+        <h2> israel tech trek </h2>
+        <p class="subheading">
+          spring 2018
+        </p>
+        <p>
+          We visited Israel this spring break to immerse ourselves in the amazing entrepreneurship ecosystems of Tel Aviv and Jerusalem. The “Startup Nation” has roughly 3,000 startups in just a 10 mile radius, the most startups per capita in any ecosystem around the world. It’s especially known for its presence in hi-tech industries like cybersecurity, unmanned aerial vehicles, SaaS and Fintech, which appeal heavily to the MIT demographic. 
+        </p>
+      </div>
+    </div>
+
     <br><br><br>
 
     <div class="general_container">
@@ -128,11 +160,14 @@
         opportunities for students to explore, connect, and innovate    
       </div>
       <div class="right">
-        <img src="{{url_for('static', filename='images/contact-us-wide-bg-alt.jpg')}}">
+        <img src="{{url_for('static', filename='images/somewhere.png')}}">
       </div>
     </div>
 
 
   </center>
+
+  <br><br><br><br>
+  <br><br><br><br>
 
 {% endblock %}
