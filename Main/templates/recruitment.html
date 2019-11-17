@@ -88,12 +88,19 @@
     /***************/
 
     .bottom{
-      margin-top: 20%;
+      /* margin-top: 20%; */
       display: flex;
       width: 100%;
       justify-content:space-around;
     }
 
+
+    .community_section {
+      width: 50%;
+      margin: 50px;
+      overflow-wrap: break-word;
+    }
+    
     /* Small screens */
     /*****************/
     @media only screen and (max-width: 600px) {
@@ -133,8 +140,21 @@
   <center>
     <h1> recruitment week </h1>
 
-    <button class="common" onclick="window.location.href = 'https://forms.gle/DEnd3SohixSohdcSA';" id ="drop"> Submit Application / Drop Resume </button>
-    <div>
+    <div class="community_section">
+        <h2> Announcement: Recruitment for Fall 2019 has Concluded!</h2>
+        <br><br>
+        <p class="common">
+          If you would still like to join our community, 
+            <a href="https://forms.gle/b6jsjfpCb8az5ad98" class="community_tag">
+              <u>click here!</u>
+            </a> 
+          StartLabs community members get access to our innovation
+          and entrepreneurship resources and events on campus.
+        </p>
+    </div>
+
+    <!-- <button class="common" onclick="window.location.href = 'https://forms.gle/DEnd3SohixSohdcSA';" id ="drop"> Submit Application / Drop Resume </button>
+    <div class="old">
       <p class="description">
         
         <div class = "eventtable">
@@ -153,13 +173,15 @@
             <div class = "event interview"> interview day</div>
             <div class = "room"> room tbd </div>
           </div>
-        </div>
+        </div> -->
         
+        <br>
         <div class = "row">
           <div class = "bottom">
             email us at startlabs-management@mit.edu if you have any questions! 
           </div>
         </div>
+        <br><br>
     </div>
     </p>
 
