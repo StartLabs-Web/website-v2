@@ -4,13 +4,13 @@
     {{ super() }}
     <style>
     .container {
-      width: 80vw;
+      width: 85vw;
       /* border: 2px solid black; */
     }
    .left {
       box-sizing: border-box;
       display: inline-flex;
-      width: 30vw;
+      width: 35vw;
       vertical-align: top;
       padding: 10px;
       justify-content: center;
@@ -64,7 +64,6 @@
             text-align: left;
         }
         .poster{
-            height: 1500px;
             background-image: url("{{url_for('static', filename='images/ideafactory/if-bottom.png')}}"),url("{{url_for('static', filename='images/ideafactory/if-bottom.png')}}") ;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -161,24 +160,25 @@
             towards entrepreneurship, members will build long-lasting
             relationships and explore how cultural context shapes and
             evolves innovation. 
-	</p>
+	    <br><br>
+	    <a href = 'https://forms.gle/AG9n63CZ278FtUH26' id = "apps"> 
+                <u>Applications</u>
+            </a> are open!
+        </p>
       </div>
       <div class="right">
             <img class="ideafactoryimg" src="{{url_for('static', filename='images/ideafactory/zurich.jpg')}}"/>
       </div>
 
-        </div>
+   </div>
         <!-- <p class="tagline"> 
             <a href = 'https://forms.gle/AG9n63CZ278FtUH26' id = "apps"> 
                 <u>applications</u>
             </a> are open until November 26
         </p> -->
-        <p class="body">
-            <br/><br/>
-        </p> 
         <p class = 'tagline'>
-            <a id='when'>when? </a><a class = "details_text">February 2020</a><br/>
-            <a id='where'>where? </a><a class = "details_text">To Be Determined</a>  <br /> 
+            <a id='when'>when? </a><a class = "details_text">Saturday, February 29 from 11am to 4pm</a><br/>
+            <a id='where'>where? </a><a class = "details_text">The Martin Trust Center</a>  <br /> 
         </p>
 
         <!-- <div class="map">
