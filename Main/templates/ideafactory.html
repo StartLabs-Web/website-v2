@@ -3,6 +3,32 @@
 {% block head %}
     {{ super() }}
     <style>
+    .container {
+      width: 80vw;
+      /* border: 2px solid black; */
+    }
+   .left {
+      box-sizing: border-box;
+      display: inline-flex;
+      width: 30vw;
+      vertical-align: top;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    .right {
+      box-sizing: border-box;
+      margin: 0px;
+      padding: 30px;
+      display: inline-block;
+      width: 49vw;
+      text-align: left;
+      overflow-wrap: break-word;
+    }
+	.ideafactoryimg {
+            width: 100%;
+		
+	}
         h1 {
             padding-top: 5vh;
             color: black;
@@ -32,7 +58,7 @@
             font-weight: 400; 
         }
         .body{
-            width: 60%;
+            width: 100%;
             float: left;
             justify-content: left;
             text-align: left;
@@ -124,27 +150,30 @@
     <center>
     <h1> welcome to the <a class = "title"> MIT idea factory!</a> </h1>
     <div class = "description">
+      <div class="container">
+      <div class="left">
         <p class="body" style="font-size: 20px;">
-            MIT <a href="./" class="logotext">startlabs</a> is proud to present <b>Idea Factory</b>, an initiative
-            designed to connect the MIT startup ecosystem within the Boston Area. Last year, the inaugural Idea Factory, was 
-            an open ideation session held in Zurich.  
-        </p>
-        <!-- <p class="tagline"> 
-            <a href = 'https://forms.gle/AG9n63CZ278FtUH26' id = "apps"> 
-                <u>applications</u>
-            </a> are open until November 26
-        </p> -->
-        <p class="body">
-            Participants will ideate solutions to pressing problems on the
-            forefront of innovation, presented by established companies
-            and venture incubators today.
-            <br />  <br /> 
+            MIT <a href="./" class="logotext">startlabs</a> is proud to present <b>Idea Factory</b>. Participants will ideate solutions to pressing problems on the forefront of innovation, presented by established companies and venture incubators today.
+	    <br />  <br />
             Students from MIT, the greater Boston area and industry
             professionals will come together to form teams. Comparing
             perspectives on technological advances and approaches
             towards entrepreneurship, members will build long-lasting
             relationships and explore how cultural context shapes and
             evolves innovation. 
+	</p>
+      </div>
+      <div class="right">
+            <img class="ideafactoryimg" src="{{url_for('static', filename='images/ideafactory/zurich.jpg')}}"/>
+      </div>
+
+        </div>
+        <!-- <p class="tagline"> 
+            <a href = 'https://forms.gle/AG9n63CZ278FtUH26' id = "apps"> 
+                <u>applications</u>
+            </a> are open until November 26
+        </p> -->
+        <p class="body">
             <br/><br/>
         </p> 
         <p class = 'tagline'>
