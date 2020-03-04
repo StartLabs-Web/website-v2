@@ -1,7 +1,8 @@
 .DS_STORE
 
 # ignore the token.json file
-Main/token.json
+token.json
+mailing_list_info.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

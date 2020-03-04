@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for
 import datetime
+import mailing_list_info
 from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
@@ -233,6 +234,9 @@ def get_headshots_filepaths():
 num_total_events = 3
 num_future_events = 2
 description_length_chars = 140
+
+def addMemberToMailingList(email):
+    os.system("/mit/consult/bin/mmblanche " + mailing_list_name + " -p " + mailing_list_password + " -a " + email)
 
 def isPast(event):
     if 'date' in event['start']:
