@@ -1,13 +1,15 @@
 from flask import Flask, render_template, url_for
 import datetime
-try:
-    __import__(mailing_list_info)
-except:
-    print()
 from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
 import os, csv
+
+try:
+    __import__(mailing_list_info)
+except:
+    mailing_list_name = None
+    mailing_list_password = None
 
 app = Flask(__name__)
 
@@ -53,6 +55,14 @@ def home():
 @app.route('/about')
 def about():
     return render_template("about.html", page="about", colors=colors)
+
+@app.route('/test')
+def test():
+    return render_template("mailing-list.html")
+
+@app.route('/add_to_mailing_list', methods=['POST'])
+def add_to_mailing_list():
+    addMemberToMailingList(request.form['email'])
 
 @app.route('/events')
 def events():
@@ -239,7 +249,8 @@ num_future_events = 2
 description_length_chars = 140
 
 def addMemberToMailingList(email):
-    os.system("/mit/consult/bin/mmblanche " + mailing_list_name + " -p " + mailing_list_password + " -a " + email)
+    if mailing_list_name != None:
+        os.system("/mit/consult/bin/mmblanche " + mailing_list_name + " -p " + mailing_list_password + " -a " + email)
 
 def isPast(event):
     if 'date' in event['start']:
