@@ -1,6 +1,9 @@
 from flask import Flask, render_template, url_for
 import datetime
-import mailing_list_info
+try:
+    __import__(mailing_list_info)
+except:
+    print()
 from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
