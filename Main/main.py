@@ -125,6 +125,7 @@ def get_team_data():
                 # row["image_path"] = '/static/images/anon-face.png'
             # print(row)
             all_data.append(row)
+    all_data.sort(key=lambda x: x['Name'].split()[-1])
     # For debugging:
     # for row in all_data:
     #     print('row: ', row)
