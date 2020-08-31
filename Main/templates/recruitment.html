@@ -34,19 +34,32 @@
       width: 33%;
       display: flex;
     }
+    a { 
+	    color: {{colors.accent_one}}
+    }
+    a:hover {
+	    color: {{colors.accent_two}};
+    }
+    .intro { 
+	    width: 60%
+    }
 
     /* Custom colors */
     /****************/
     .info_session{
-        color: {{colors.accent_two}};
+        color: {{colors.light}};
     }
 
-    .social{
-        color: {{colors.dark}};
+    .startup_jeopardy{
+        color: {{colors.accent_two}};
     }
     
-    .resume_drop{
-        color: {{colors.light}};
+    .social{
+        color: {{colors.accent_one}};
+    }
+
+    .application{
+        color: {{colors.medium}};
     }
 
     .interview{
@@ -54,7 +67,6 @@
     }
 
     .link{
-        color: {{colors.light}};
         font-weight: 600;
     }
 
@@ -88,19 +100,12 @@
     /***************/
 
     .bottom{
-      /* margin-top: 20%; */
+      margin-top: 10%;
       display: flex;
       width: 100%;
       justify-content:space-around;
     }
 
-
-    .community_section {
-      width: 50%;
-      margin: 50px;
-      overflow-wrap: break-word;
-    }
-    
     /* Small screens */
     /*****************/
     @media only screen and (max-width: 600px) {
@@ -140,48 +145,37 @@
   <center>
     <h1> recruitment week </h1>
 
-    <div class="community_section">
-        <h2> Announcement: Recruitment for Fall 2019 has Concluded!</h2>
-        <br><br>
-        <p class="common">
-          If you would still like to join our community, 
-            <a href="https://forms.gle/b6jsjfpCb8az5ad98" class="community_tag">
-              <u>click here!</u>
-            </a> 
-          StartLabs community members get access to our innovation
-          and entrepreneurship resources and events on campus.
-        </p>
-    </div>
-
-    <!-- <button class="common" onclick="window.location.href = 'https://forms.gle/DEnd3SohixSohdcSA';" id ="drop"> Submit Application / Drop Resume </button>
-    <div class="old">
+    <div>
       <p class="description">
-        
+        <div class = "intro">
+		This year, our recruitment week will take place remotely on the week of September 7. If you have any interest in StartLabs, please fill out <a href="cutt.ly/StartLabs"> this short form </a> if you have interested in startlabs and would like to get updates on our recruiting events. 
+        </div>
+    	<br>    
         <div class = "eventtable">
           <div class = "row">
-            <div class = "datetime"> sep. 25, 7:30 - 8:30</div> 
-            <div class = "event info_session"> info session</div>
-            <div class = "room"> room 4-163</div>
-          </div>
+            <div class = "datetime"> sep. 8, 5 - 6 pm ET</div> 
+            <div class = "event info_session"> Meet the Team</div>
+	    <div class = "room"><a href="http://www.cutt.ly/StartLabs1">cutt.ly/StartLabs1 </a> </div>
+        </div>
           <div class = "row">
-            <div class = "datetime"> sep. 27, 7:30 - 8:30 </div> 
-            <div class = "event social"> startlabs social </div>
-            <div class = "room"> room 4-153</div>
-          </div>
+            <div class = "datetime"> sep. 9, 8 - 9 pm ET</div> 
+            <div class = "event startup_jeopardy"> Startup Jeopardy</div>
+	    <div class = "room"><a href="http://www.cutt.ly/StartLabs2">cutt.ly/StartLabs2</a></div>        
+        </div>
           <div class = "row">
-            <div class = "datetime"> sep. 29, 2:00 - 6:00</div> 
-            <div class = "event interview"> interview day</div>
-            <div class = "room"> room tbd </div>
-          </div>
-        </div> -->
-        
-        <br>
+            <div class = "datetime"> sep. 10, 8 - 9 pm ET</div> 
+            <div class = "event social"> StartLabs Social</div>
+	    <div class = "room"><a href="http://cutt.ly/StartLabs3">cutt.ly/StartLabs3</a></div>        
+        </div>
+          <div class = "row">
+            <div class = "datetime"> sep. 11, 11:59 pm  ET</div> 
+            <div class = "event application"> Application Due</div>
+        </div>
         <div class = "row">
           <div class = "bottom">
             email us at startlabs-management@mit.edu if you have any questions! 
           </div>
         </div>
-        <br><br>
     </div>
     </p>
 
