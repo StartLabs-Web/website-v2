@@ -103,7 +103,7 @@ A sample entry of 'all_data':
 def get_team_data():
     # Get filepaths of existing imgs
     existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2018-members'))
-    print(existing_filenames)
+    # print(existing_filenames)
     # Read the csv file
     filename = os.path.join(app.static_folder, 'TeamBios.csv')
     # Build up the all_data list 
@@ -123,8 +123,9 @@ def get_team_data():
             else:
                 row["image_path"] = 'images/anon-face.png'
                 # row["image_path"] = '/static/images/anon-face.png'
-            print(row)
+            # print(row)
             all_data.append(row)
+    all_data.sort(key=lambda x: x['Name'].split()[-1])
     # For debugging:
     # for row in all_data:
     #     print('row: ', row)
