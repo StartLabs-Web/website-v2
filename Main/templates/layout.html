@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html>
     <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -203,7 +203,30 @@
                 width: 33%;
                 text-align: right;
             }
+    .access_button{
+        color: {{colors.medium}};
+        background-color: transparent;
+        border-style: solid;
+        border-width: 2px;
+    	border-radius: 10px;
+        border-color: {{colors.medium}};
+        padding: 5px 20px 3px 20px;
+        font-family: 'neue-einstellung';
+        font-size:25px;
+        font-weight:400;
+        /* width:100px; */
+        margin-top: 20px;
+        cursor:pointer;
+    }
 
+    #access{
+        cursor:pointer;
+    }
+
+    #access:hover {
+        color: white;
+        background-color:{{colors.contact_button}};
+    }
 
             /* ************ */
             /* Social Icons */
@@ -408,6 +431,8 @@
         <!-- Content -->
         <div id="content">
             {% block content %}{% endblock %}
+	    <center><button id="access" class="access_button" onclick="window.location.href = 'http://accessibility.mit.edu';"> accessibility</button></center> 
+		<br>
         </div>
 
         <!-- Footer -->
