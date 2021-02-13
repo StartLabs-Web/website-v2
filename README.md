@@ -14,4 +14,4 @@ $ pip install -r requirements.txt
 ```
 
 
-Navigate to the website repo with `$ cd startup.mit.edu/New-Wensote` and then pull updates. 
+Navigate to the website repo with `$ cd startup.mit.edu` and then pull updates. 
