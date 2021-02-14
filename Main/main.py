@@ -125,9 +125,9 @@ def get_team_data():
             # If the image exists, give it an image from 2018-members, otherwise give it anon-face
             fullname = row["Name"]
             firstname, lastname = fullname.split(" ")
-            possible_img_name = firstname.lower() + "-white.jpgo"
+            possible_img_name = firstname.lower() + "-white.jpg"
             if (possible_img_name in existing_filenames):
-                possible_img_path = "images/2018-members/" + firstname.lower() + "-white.jpgo"
+                possible_img_path = "images/2018-members/" + firstname.lower() + "-white.jpg"
                 row["image_path"] = possible_img_path
                 # row["image_path"] = url_for('static', filename=possible_img_path)
             else:
