@@ -11,7 +11,7 @@ except:
     mailing_list_name = None
     mailing_list_password = None
 
-app = Flask(__name__)
+app = Flask(__name__)  
 
 #####################
 # Define CSS colors #
