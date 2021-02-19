@@ -5,6 +5,8 @@ from httplib2 import Http
 from oauth2client import file, client, tools
 import os, csv
 
+import chardet
+
 try:
     __import__(mailing_list_info)
 except:
@@ -76,7 +78,7 @@ def partners():
 @app.route('/team')
 def team():
     headshots_info = get_headshots_info()
-    return render_template("team.html", page="team", colors=colors, headshots_info = get_team_data())
+    return render_template("team.html", page="team", colors=colors, team_headshots_info = get_team_data(), exec_headshots_info = get_exec_data())
 
 @app.route('/contact')
 def contact():
@@ -102,7 +104,7 @@ def ideafactory():
 """
 A sample entry of 'all_data':
     OrderedDict([
-        ('Timestamp', '2019/10/11 9:17:32 AM AST'), 
+        ('Timestamp', '2021/10/11 9:17:32 AM AST'), 
         ('Name', 'Isaac Lau'), 
         ('Graduation Year', '2022'), 
         ('Major', '6-2 Minor in 2; EECS with a Minor in MechE'), 
@@ -112,22 +114,26 @@ A sample entry of 'all_data':
 """
 def get_team_data():
     # Get filepaths of existing imgs
-    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2018-members'))
+    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2021-team'))
     # print(existing_filenames)
     # Read the csv file
-    filename = os.path.join(app.static_folder, 'TeamBios.csv')
+    filename = os.path.join(app.static_folder, 'TeamBios2021.csv')
     # Build up the all_data list 
     all_data = []
-    with open(filename) as csv_file:
+    with open(filename, encoding = "ISO-8859-1") as csv_file:
         csv_reader = csv.DictReader(csv_file, delimiter=',')
         for row in csv_reader:
             # Set the image_path
-            # If the image exists, give it an image from 2018-members, otherwise give it anon-face
+            # If the image exists, give it an image from 2021-team, otherwise give it anon-face
             fullname = row["Name"]
             firstname, lastname = fullname.split(" ")
-            possible_img_name = firstname.lower() + "-white.jpg"
+            
+            # Below is what we used to use with white background images
+            # possible_img_name = firstname.lower() + "-white.jpg"
+
+            possible_img_name = firstname.lower() + lastname.lower() + ".jpg"
             if (possible_img_name in existing_filenames):
-                possible_img_path = "images/2018-members/" + firstname.lower() + "-white.jpg"
+                possible_img_path = "images/2021-team/" + firstname.lower() + lastname.lower() + ".jpg"
                 row["image_path"] = possible_img_path
                 # row["image_path"] = url_for('static', filename=possible_img_path)
             else:
@@ -136,6 +142,40 @@ def get_team_data():
             # print(row)
             all_data.append(row)
     all_data.sort(key=lambda x: x['Name'].split()[-1])
+    # For debugging:
+    # for row in all_data:
+    #     print('row: ', row)
+    return all_data
+
+def get_exec_data():
+    # Get filepaths of existing imgs
+    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2021-exec'))
+    # print(existing_filenames)
+    # Read the csv file
+    filename = os.path.join(app.static_folder, 'ExecBios2021.csv')
+    # Build up the all_data list 
+    all_data = []
+    with open(filename, encoding = "ISO-8859-1") as csv_file:
+        csv_reader = csv.DictReader(csv_file, delimiter=',')
+        for row in csv_reader:
+            # Set the image_path
+            # If the image exists, give it an image from 2021-team, otherwise give it anon-face
+            fullname = row["Name"]
+            firstname, lastname = fullname.split(" ")
+            
+            # Below is what we used to use with white background images
+            # possible_img_name = firstname.lower() + "-white.jpg"
+
+            possible_img_name = firstname.lower() + lastname.lower() + ".jpg"
+            if (possible_img_name in existing_filenames):
+                possible_img_path = "images/2021-exec/" + firstname.lower() + lastname.lower() + ".jpg"
+                row["image_path"] = possible_img_path
+                # row["image_path"] = url_for('static', filename=possible_img_path)
+            else:
+                row["image_path"] = 'images/anon-face.png'
+                # row["image_path"] = '/static/images/anon-face.png'
+            # print(row)
+            all_data.append(row)
     # For debugging:
     # for row in all_data:
     #     print('row: ', row)
@@ -156,7 +196,7 @@ def get_headshots_info():
     # only accept photos with 'white'
     headshots_paths = []
     for f in file_paths:
-        if "white" in f:
+        # if "white" in f:
             headshots_paths.append(f)
     # turn into a list of dictionary
     headshots_info = []
@@ -234,10 +274,10 @@ Returns: (list of strings) all the filepaths to the headshot photos
 def get_headshots_filepaths():
     file_paths = []
     # find the absolute path to the folder, then list folder contents
-    filenames = os.listdir(os.path.join(app.static_folder, 'images/2018-members'))
+    filenames = os.listdir(os.path.join(app.static_folder, 'images/2021-team'))
     # make the path relative to location of 'static' folder
     for i in range(len(filenames)):
-        tmp_path = os.path.join('images/2018-members/', filenames[i])
+        tmp_path = os.path.join('images/2021-team/', filenames[i])
         file_paths.append(url_for('static', filename=tmp_path))
     return file_paths
 
