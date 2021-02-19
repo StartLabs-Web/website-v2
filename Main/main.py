@@ -5,8 +5,6 @@ from httplib2 import Http
 from oauth2client import file, client, tools
 import os, csv
 
-import chardet
-
 try:
     __import__(mailing_list_info)
 except:
@@ -120,7 +118,8 @@ def get_team_data():
     filename = os.path.join(app.static_folder, 'TeamBios2021.csv')
     # Build up the all_data list 
     all_data = []
-    with open(filename, encoding = "ISO-8859-1") as csv_file:
+    # with open(filename, encoding = "ISO-8859-1") as csv_file:
+    with open(filename) as csv_file:
         csv_reader = csv.DictReader(csv_file, delimiter=',')
         for row in csv_reader:
             # Set the image_path
