@@ -76,7 +76,7 @@ def partners():
 @app.route('/team')
 def team():
     headshots_info = get_headshots_info()
-    return render_template("team.html", page="team", colors=colors, team_headshots_info = [], exec_headshots_info = [])
+    return render_template("team.html", page="team", colors=colors, headshots_info = [])
 
 @app.route('/contact')
 def contact():
