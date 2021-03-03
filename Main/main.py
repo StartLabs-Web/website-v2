@@ -5,8 +5,6 @@ from httplib2 import Http
 from oauth2client import file, client, tools
 import os, csv
 
-import chardet
-
 try:
     __import__(mailing_list_info)
 except:
