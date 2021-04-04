@@ -21,7 +21,7 @@
       margin: 0px;
       padding: 30px;
       display: inline-block;
-      width: 49vw;
+      width: 46vw;
       text-align: left;
       overflow-wrap: break-word;
     }
@@ -56,6 +56,11 @@
         .details_text{
             color: black;
             font-weight: 400; 
+        }
+        .details_text1{
+            color: black;
+            font-weight: 400; 
+            text-decoration: underline;
         }
         .body{
             width: 100%;
@@ -131,19 +136,6 @@
 {% endblock %}
 
 
-{% block topbar %}
-<!-- Custom Topbar -->
-<div id="topbar" class="sticky">
-    <!-- Navbar Logo -->
-    <div id="navbar_logo">
-        <a href="./">
-            <img src="{{url_for('static', filename='images/logos/navbar_logo.svg')}}">
-        </a>
-    </div>
-</div>
-{% endblock %}
-
-
 {% block content %}
 <div class = "poster">
     <center>
@@ -161,24 +153,27 @@
             relationships and explore how cultural context shapes and
             evolves innovation. 
 	    <br><br>
-	    <a href = 'https://forms.gle/AG9n63CZ278FtUH26' id = "apps"> 
+	    <a href = 'https://lu.ma/SLidea' id = "apps"> 
                 <u>Applications</u>
             </a> are open!
         </p>
       </div>
       <div class="right">
-            <img class="ideafactoryimg" src="{{url_for('static', filename='images/ideafactory/zurich.jpg')}}"/>
+            <img class="ideafactoryimg" src="{{url_for('static', filename='images/ideafactory/2021flyer.png')}}"/>
       </div>
 
    </div>
         <!-- <p class="tagline"> 
-            <a href = 'https://forms.gle/AG9n63CZ278FtUH26' id = "apps"> 
+            <a href = 'https://lu.ma/SLidea' id = "apps"> 
                 <u>applications</u>
             </a> are open until November 26
         </p> -->
         <p class = 'tagline'>
-            <a id='when'>when? </a><a class = "details_text">Saturday, February 29 from 11am to 4pm</a><br/>
-            <a id='where'>where? </a><a class = "details_text">The Martin Trust Center</a>  <br /> 
+            <a id='when'>weekday events: </a><a class = "details_text">April 6-9, from 7pm to 7:45pm ET</a><br/>
+            <a id='where'>event link: </a><a class = "details_text1" href = 'http://bit.ly/ideafactory-week'>bit.ly/ideafactory-week</a>  <br /> 
+            <br />
+            <a id='when'>main ideathon: </a><a class = "details_text">Saturday, April 10 from 9am to 4pm ET</a><br/>
+            <a id='where'>event link: </a><a class = "details_text1" href = 'https://mit.zoom.us/j/92129322283?pwd=WG9vV2JhK0tPVmt4VitGT1lEV2t6Zz09'>Here</a>  <br /> 
         </p>
 
         <!-- <div class="map">
