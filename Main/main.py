@@ -114,26 +114,29 @@ A sample entry of 'all_data':
 """
 def get_team_data():
     # Get filepaths of existing imgs
-    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2021-team'))
+    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2022-team'))
     # print(existing_filenames)
     # Read the csv file
-    filename = os.path.join(app.static_folder, 'TeamBios2021.csv')
+    filename = os.path.join(app.static_folder, 'TeamBios2022.csv')
     # Build up the all_data list 
     all_data = []
     with open(filename, encoding = "ISO-8859-1") as csv_file:
         csv_reader = csv.DictReader(csv_file, delimiter=',')
         for row in csv_reader:
             # Set the image_path
-            # If the image exists, give it an image from 2021-team, otherwise give it anon-face
+            # If the image exists, give it an image from 2022-team, otherwise give it anon-face
             fullname = row["Name"]
-            firstname, lastname = fullname.split(" ")
+            if fullname.count(' ') == 1:
+                firstname, lastname = fullname.split(" ")
+            else:
+                firstname, middlename, lastname = fullname.split(" ")
             
             # Below is what we used to use with white background images
             # possible_img_name = firstname.lower() + "-white.jpg"
 
             possible_img_name = firstname.lower() + lastname.lower() + ".jpg"
             if (possible_img_name in existing_filenames):
-                possible_img_path = "images/2021-team/" + firstname.lower() + lastname.lower() + ".jpg"
+                possible_img_path = "images/2022-team/" + firstname.lower() + lastname.lower() + ".jpg"
                 row["image_path"] = possible_img_path
                 # row["image_path"] = url_for('static', filename=possible_img_path)
             else:
@@ -149,17 +152,17 @@ def get_team_data():
 
 def get_exec_data():
     # Get filepaths of existing imgs
-    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2021-exec'))
+    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2022-exec'))
     # print(existing_filenames)
     # Read the csv file
-    filename = os.path.join(app.static_folder, 'ExecBios2021.csv')
+    filename = os.path.join(app.static_folder, 'ExecBios2022.csv')
     # Build up the all_data list 
     all_data = []
     with open(filename, encoding = "ISO-8859-1") as csv_file:
         csv_reader = csv.DictReader(csv_file, delimiter=',')
         for row in csv_reader:
             # Set the image_path
-            # If the image exists, give it an image from 2021-team, otherwise give it anon-face
+            # If the image exists, give it an image from 2022-team, otherwise give it anon-face
             fullname = row["Name"]
             firstname, lastname = fullname.split(" ")
             
@@ -168,7 +171,7 @@ def get_exec_data():
 
             possible_img_name = firstname.lower() + lastname.lower() + ".jpg"
             if (possible_img_name in existing_filenames):
-                possible_img_path = "images/2021-exec/" + firstname.lower() + lastname.lower() + ".jpg"
+                possible_img_path = "images/2022-exec/" + firstname.lower() + lastname.lower() + ".jpg"
                 row["image_path"] = possible_img_path
                 # row["image_path"] = url_for('static', filename=possible_img_path)
             else:
@@ -274,10 +277,10 @@ Returns: (list of strings) all the filepaths to the headshot photos
 def get_headshots_filepaths():
     file_paths = []
     # find the absolute path to the folder, then list folder contents
-    filenames = os.listdir(os.path.join(app.static_folder, 'images/2021-team'))
+    filenames = os.listdir(os.path.join(app.static_folder, 'images/2022-team'))
     # make the path relative to location of 'static' folder
     for i in range(len(filenames)):
-        tmp_path = os.path.join('images/2021-team/', filenames[i])
+        tmp_path = os.path.join('images/2022-team/', filenames[i])
         file_paths.append(url_for('static', filename=tmp_path))
     return file_paths
 
