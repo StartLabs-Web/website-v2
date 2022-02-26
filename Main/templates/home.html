@@ -60,6 +60,10 @@
         margin-block-end: 0.5em;
     }
 
+    .tagline3{
+        color: {{colors.h3}};
+    }
+
     #landing_div{
         height: 90vh;
         display: inline-block;
@@ -109,15 +113,19 @@
         padding-top: 10vh;
     }
 
-    .about-icons {
+    .about-icons, .sponsor-icons {
         display: flex;
         justify-content: space-around;
     }
-    .about-subsection{
+    .about-subsection, .sponsor-subsection{
         width: 22%;
     }
     .about-image{
         height:65px;
+    }
+
+    .sponsor-image{
+        height:160px;
     }
 
     #innovation_tag{
@@ -139,6 +147,13 @@
     .description{
         text-align: justify;
         line-height:20px;
+        padding-bottom: 5%;
+    }
+
+    .description2{
+        text-align: center;
+        line-height:20px;
+        font-size: 16pt;
         padding-bottom: 5%;
     }
 
@@ -246,6 +261,10 @@
 
         .tagline2{
             font-size: 16px;
+        }
+
+        .tagline3{
+            color: {{colors.h3}};
         }
 
         button{
@@ -495,11 +514,37 @@
         <center>
         </center>
     </div> -->
-    <br><br><br><br>
+
+    
+    <!-- <br><br><br><br>
     <center>
       <h1>upcoming events</h1>
-      <br>
-        {% include 'calendar.html' with context%}
+      <br> -->
+        <!-- % include 'calendar.html' with context% -->
+        <!-- Above, if you want to make it work, put curly brackets before and after % -->
+    <!-- </center> -->
+
+
+    <br><br><br><br>
+    <center>
+    <h1>sponsors</h1>
+    <p class="description2">
+        StartLabs can successfully run only with our generous sponsors. If your fund/firm is interested in sponsoring, please contact <a class = "tagline3" href = 'https://lu.ma/ideafactory'>startlabs-management@mit.edu</a>
+    </p>
+    <div class="sponsor-icons description">
+        <div class="sponsor-subsection">
+            <center>
+            <img src="{{url_for('static', filename='images/sponsors/E14-logo.png')}}" class="sponsor-image">
+            <h3>E14 Fund</h3>
+            </center>
+        </div>
+        <div class="sponsor-subsection">
+            <center>
+                <img src="{{url_for('static', filename='images/sponsors/adelante.jpeg')}}" class="sponsor-image">
+                <h3>Adelante Ventures</h3>
+            </center>
+        </div>
+        </div>
     </center>
 
 
