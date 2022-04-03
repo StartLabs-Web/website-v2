@@ -227,6 +227,18 @@
         font-size: 50px;
     }
 
+    @media only screen and (min-width: 901px) and (max-width: 1400px) {
+        .sponsor-icons {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .sponsor-subsection{
+            width:53%;
+            /* padding: 10px; */
+        }
+    }
+
     /* Changing CSS for small screens */
     @media only screen and (min-width: 601px) and (max-width: 900px) {
         #landing_div{
@@ -537,6 +549,7 @@
                 <a href= "https://www.e14fund.com/">
                     <img src="{{url_for('static', filename='images/sponsors/E14-logo.png')}}" class="sponsor-image"> 
                 </a>
+                <br></br>
              </center>
          </div>
         <div class="sponsor-subsection">
@@ -544,13 +557,15 @@
                 <a href= "https://adelante.ventures/">
                     <img src="{{url_for('static', filename='images/sponsors/adelante.jpeg')}}" class="sponsor-image"> 
                 </a>
+                <br></br>
             </center>
         </div>
         <div class="sponsor-subsection">
             <center>
                 <a href= "https://www.bmw.com/">
-                    <img src="{{url_for('static', filename='images/sponsors/BMW_logo.png')}}" class="sponsor-image"> 
+                    <img src="{{url_for('static', filename='images/sponsors/BMW_Logo.jpg')}}" class="sponsor-image"> 
                 </a>
+                <br></br>
             </center>
         </div>
         <div class="sponsor-subsection">
@@ -558,16 +573,17 @@
                 <a href= "https://www.dwih-newyork.org/">
                     <img src="{{url_for('static', filename='images/sponsors/langfassung_logo.png')}}" class="sponsor-image"> 
                 </a>
+                <br></br>
             </center>
         </div>
     </div>
-
     <div class="sponsor-icons description">
         <div class="sponsor-subsection">
             <center>
                 <a href= "https://www.celonis.com/">
-                    <img src="{{url_for('static', filename='images/sponsors/Celonis_Logo.png')}}" class="sponsor-image"> 
+                    <img src="{{url_for('static', filename='images/sponsors/Celonis_logo.jpg')}}" class="sponsor-image"> 
                 </a>
+                <br></br>
             </center>
         </div>
 
@@ -576,13 +592,15 @@
                 <a href= "https://www.heidelbergengineering.com/">
                     <img src="{{url_for('static', filename='images/sponsors/Heidelberg_Logo.png')}}" class="sponsor-image"> 
                 </a>
+                <br></br>
              </center>
          </div>
          <div class="sponsor-subsection">
             <center>
                 <a href= "https://www.modifi.com/">
-                    <img src="{{url_for('static', filename='images/sponsors/Modifi_Logo.png')}}" class="sponsor-image"> 
+                    <img src="{{url_for('static', filename='images/sponsors/Modifi_Logo.svg')}}" class="sponsor-image"> 
                 </a>
+                <br></br>
              </center>
          </div>
     </div>
