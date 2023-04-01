@@ -152,10 +152,10 @@ def get_team_data():
 
 def get_exec_data():
     # Get filepaths of existing imgs
-    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2022-exec'))
+    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2023-exec'))
     # print(existing_filenames)
     # Read the csv file
-    filename = os.path.join(app.static_folder, 'ExecBios2022.csv')
+    filename = os.path.join(app.static_folder, 'ExecBios2023.csv')
     # Build up the all_data list 
     all_data = []
     with open(filename, encoding = "ISO-8859-1") as csv_file:
@@ -171,7 +171,7 @@ def get_exec_data():
 
             possible_img_name = firstname.lower() + lastname.lower() + ".jpg"
             if (possible_img_name in existing_filenames):
-                possible_img_path = "images/2022-exec/" + firstname.lower() + lastname.lower() + ".jpg"
+                possible_img_path = "images/2023-exec/" + firstname.lower() + lastname.lower() + ".jpg"
                 row["image_path"] = possible_img_path
                 # row["image_path"] = url_for('static', filename=possible_img_path)
             else:
