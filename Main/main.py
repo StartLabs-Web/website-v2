@@ -114,10 +114,10 @@ A sample entry of 'all_data':
 """
 def get_team_data():
     # Get filepaths of existing imgs
-    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2022-team'))
-    # print(existing_filenames)
+    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2024-team'))
+    print(existing_filenames)
     # Read the csv file
-    filename = os.path.join(app.static_folder, 'TeamBios2022.csv')
+    filename = os.path.join(app.static_folder, 'TeamBios2024.csv')
     # Build up the all_data list 
     all_data = []
     with open(filename, encoding = "ISO-8859-1") as csv_file:
@@ -136,7 +136,7 @@ def get_team_data():
 
             possible_img_name = firstname.lower() + lastname.lower() + ".jpg"
             if (possible_img_name in existing_filenames):
-                possible_img_path = "images/2022-team/" + firstname.lower() + lastname.lower() + ".jpg"
+                possible_img_path = "images/2024-team/" + firstname.lower() + lastname.lower() + ".jpg"
                 row["image_path"] = possible_img_path
                 # row["image_path"] = url_for('static', filename=possible_img_path)
             else:
@@ -152,10 +152,10 @@ def get_team_data():
 
 def get_exec_data():
     # Get filepaths of existing imgs
-    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2023-exec'))
+    existing_filenames = os.listdir(os.path.join(app.static_folder, 'images/2024-exec'))
     # print(existing_filenames)
     # Read the csv file
-    filename = os.path.join(app.static_folder, 'ExecBios2023.csv')
+    filename = os.path.join(app.static_folder, 'ExecBios2024.csv')
     # Build up the all_data list 
     all_data = []
     with open(filename, encoding = "ISO-8859-1") as csv_file:
@@ -171,7 +171,7 @@ def get_exec_data():
 
             possible_img_name = firstname.lower() + lastname.lower() + ".jpg"
             if (possible_img_name in existing_filenames):
-                possible_img_path = "images/2023-exec/" + firstname.lower() + lastname.lower() + ".jpg"
+                possible_img_path = "images/2024-exec/" + firstname.lower() + lastname.lower() + ".jpg"
                 row["image_path"] = possible_img_path
                 # row["image_path"] = url_for('static', filename=possible_img_path)
             else:
@@ -277,10 +277,10 @@ Returns: (list of strings) all the filepaths to the headshot photos
 def get_headshots_filepaths():
     file_paths = []
     # find the absolute path to the folder, then list folder contents
-    filenames = os.listdir(os.path.join(app.static_folder, 'images/2022-team'))
+    filenames = os.listdir(os.path.join(app.static_folder, 'images/2024-team'))
     # make the path relative to location of 'static' folder
     for i in range(len(filenames)):
-        tmp_path = os.path.join('images/2022-team/', filenames[i])
+        tmp_path = os.path.join('images/2024-team/', filenames[i])
         file_paths.append(url_for('static', filename=tmp_path))
     return file_paths
 
