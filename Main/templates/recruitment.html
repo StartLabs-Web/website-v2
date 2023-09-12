@@ -110,6 +110,14 @@
       justify-content:space-around;
     }
 
+    #partners_logos img{
+      max-width: 50%;
+      /* max-height: 50%; */
+      height: auto
+      vertical-align: middle;
+      margin: 0px 50px 20px 50px;
+    }
+
     /* Small screens */
     /*****************/
     @media only screen and (max-width: 600px) {
@@ -140,6 +148,7 @@
         justify-content:space-around;
       }
 
+
     }
   </style>
 
@@ -148,7 +157,7 @@
 {% block content %}
   <center>
     <h1> recruitment week </h1>
-    <h2><a href=""> Application Is Now Closed!! </a></h2>
+    <h2><a href="https://tinyurl.com/startlabs-application"> Application is open from 09/18 until 09/23 11:59pm EST!!</a></h2>
 
     <!-- <div>
       <p class="description">
@@ -187,9 +196,13 @@
             email us at startlabs-management@mit.edu if you have any questions! 
           </div>
         </div>
+      </p>
+    </div> -->
+    <br>
+    <br>
+    <div id="partners_logos">
+      <img src="{{url_for('static', filename='images/logos/recruitment.png')}}">
     </div>
-    </p> -->
-
 
   </center>
 
