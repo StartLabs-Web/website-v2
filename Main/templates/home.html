@@ -19,9 +19,9 @@
     /* Wide Section*/
 
     .wide_section {
-        height: 100vh;
+        height: 100%;
         width: 100%;
-        background-size: auto 100%;
+        background-size: auto auto;
         display: flex;
         align-items: center;
     }
@@ -166,7 +166,7 @@
     #dark_section{
         background-image: linear-gradient( rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20) ), url("{{url_for('static', filename='images/homepage/startlabsgroupphoto2.jpg')}}");
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 100%, 100%;
         background-position-y: 45%;
     }
 
@@ -619,7 +619,7 @@
 
     <br><br><br><br><br><br><br><br>
 
-    <div class="wide_section" id="dark_section">
+    <div class="wide_section"  id="dark_section">
         <div class="inner_left bottom">
             <p class="photo_tagline">
                 empowering the next generation <br>

@@ -57,6 +57,27 @@
             /* Navbar Settings */
             /* *************** */
 
+            /* .subnav {
+                display: None
+            }
+
+            #navbar a:hover .subnav{
+                margin-left: auto;
+                position: relative;
+                display: inline-block;
+            } */
+
+            /* #navbar a div a{
+                display: None
+            }
+
+            #navbar a:hover div a{
+                margin-left: auto;
+                position: relative;
+                display: inline-block;
+            } */
+
+
             #topbar {
                 display: flex;
                 align-items: center;
@@ -79,7 +100,7 @@
             }
 
             /* Navbar Links */
-            #navbar {
+            /* #navbar {
                 margin-left: auto;
             }
             #navbar a {
@@ -94,7 +115,76 @@
             }
             #navbar .selected {
                 color: {{colors.navbar_active}};
+            } */
+
+            #navbar {
+                margin-left: auto;
             }
+
+            #navbar ul{
+                list-style: None;
+            }
+            
+            #navbar li {
+
+                display: inline-block;
+            }
+            #navbar li a {
+
+                color: {{colors.navbar_nonactive}};
+                text-align: center;
+                padding: 14px 15px;
+                text-decoration: none;
+
+            }
+
+            #navbar ul li a:hover {
+                color: {{colors.navbar_active}};
+            }
+
+            #navbar .selected {
+                color: {{colors.navbar_active}};
+            }
+
+            #navbar ul li ul{
+                display:none;
+            }
+
+            #navbar ul li:hover ul{
+                /* margin-left: auto; */
+                position: absolute;
+                display: block;
+                padding-left: 0;
+                padding-top: 10px;
+                z-index: 999;
+            }
+
+            #navbar ul li:hover ul li{
+                position: relative;
+                display: block;
+                background-color: white;
+                /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+                /* z-index: 1; */
+                /* text-align: right; */
+                /* top: 10px; */
+                /* z-index: 999; */
+                padding: 10px 10px;
+                
+            }
+
+            #navbar ul li:hover ul li a{
+                color: {{colors.navbar_nonactive}};
+                text-align: center;
+                text-decoration: none;
+            }
+
+            #navbar ul li:hover ul li a:hover{
+                color: {{colors.navbar_active}};
+            }
+            
+
+
+
 
             /* hide hamburger */
             #dropdown {
@@ -136,6 +226,7 @@
                 }
 
                 /* Dropdown show contents */
+                
                 .dropdown-content {
                     display: none;
                     position: absolute;
@@ -160,6 +251,7 @@
                 #dropdown a:hover {
                     color: {{colors.navbar_active}};
                 }
+                
 
                 .show {
                     display: block;
@@ -402,14 +494,30 @@
 
             <!-- Navbar Links (Normal and Mobile versions) -->
             <div id="navbar">
-                <a href="./" {% if page == 'home' %} class="selected" {% endif %}>home</a>
-                <!-- <a href="./ideafactory" {% if page == 'ideafactory' %} class="selected" {% endif %}>idea factory</a> -->
-                <a href="./events" {% if page == 'events' %} class="selected" {% endif %}>events</a>
-                <a href='./apply' {% if page == 'apply' %} class="selected" {% endif %}>apply</a>
-                <a href="./partners" {% if page == 'partners' %} class="selected" {% endif %}>partners</a>
-                <a href="./team" {% if page == 'team' %} class="selected" {% endif %}>team</a>
-                <a href="./contact" {% if page == 'contact' %} class="selected" {% endif %}>contact</a>
+
+                <ul>
+                    <li><a href="./" {% if page == 'home' %} class="selected" {% endif %}>home</a></li>
+                    <!-- <a href="./ideafactory" {% if page == 'ideafactory' %} class="selected" {% endif %}>idea factory</a> -->
+                    <li><a href="./events" {% if page == 'events' %} class="selected" {% endif %}>events</a>
+                    <!-- <div class="subnav">
+                        <a href="./events" {% if page == 'events' %} class="selected" {% endif %}>events</a>
+                        <div class="dropdown-content">
+                            <a href="./events" {% if page == 'events' %} class="selected" {% endif %}>overview</a>
+                            <a href="./events" {% if page == 'events' %} class="selected" {% endif %}>general</a>
+                                            <a href="./events" {% if page == 'events' %} class="selected" {% endif %}>techtrek</a>
+                    </div> -->
+                        <ul class = "dropdown-menu">
+                            <!-- <li><a href="./events" {% if page == 'events' %} class="selected" {% endif %}>overview</a></li> -->
+                            <li><a href="./techtrek" {% if page == 'techtrek' %} class="selected" {% endif %}>techtrek</a></li>
+                        </ul>
+                    </li>
+                    <li><a href='./apply' {% if page == 'apply' %} class="selected" {% endif %}>apply</a></li>
+                    <li><a href="./partners" {% if page == 'partners' %} class="selected" {% endif %}>partners</a></li>
+                    <li><a href="./team" {% if page == 'team' %} class="selected" {% endif %}>team</a></li>
+                    <li><a href="./contact" {% if page == 'contact' %} class="selected" {% endif %}>contact</a></li>
+                </ul>
             </div>
+
             <div id="dropdown" class="dropdownclass">
                 <a href="javascript:void(0);">
                     <p><img id="dropbtn" src="{{url_for('static', filename='images/hamburger_darkblue.svg')}}"></p>
@@ -420,6 +528,7 @@
                     <a href="./">home</a>
                     <!-- <a href="./ideafactory">idea factory</a> -->
                     <a href="./events">events</a>
+                    <a href="./techtrek">techtrek</a>
                     <a href='./apply'>apply</a>
                     <a href="./partners">partners</a>
                     <a href="./team">team</a>

@@ -69,7 +69,11 @@ def add_to_mailing_list():
 @app.route('/events')
 def events():
     # return render_template("construction.html", page="events", colors=colors)
-    return render_template("large_events.html", page="events", colors=colors)
+    return render_template("events.html", page="events", colors=colors)
+
+@app.route('/techtrek')
+def techtrek():
+    return render_template("techtrek.html", page="techtrek", colors=colors)
 
 @app.route('/partners')
 def partners():
